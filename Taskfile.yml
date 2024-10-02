@@ -1,0 +1,45 @@
+version: '3'
+
+vars:
+  MACHINE: chronos
+  GENERATION_INFO:
+    sh: nixos-rebuild list-generations --flake {{ .ROOT_DIR }}#{{ .MACHINE}} --json | jq -r '.[] | select(.current == true) | "Gen-\(.generation) Linux \(.kernelVersion) NixOS \(.nixosVersion)"'
+
+tasks:
+
+  format:
+    cmds:
+      - silent: true
+        cmd: alejandra . --quiet
+
+  build:
+    cmds:
+      - silent: true
+        cmd: sudo nixos-rebuild switch --refresh --flake {{ .ROOT_DIR }}#{{ .MACHINE}}
+
+  commit:
+    cmds:
+      - task: format
+      - silent: true
+        cmd: git commit -am "{{ .GENERATION_INFO }}" && git push
+
+  generation:
+    cmds:
+      - silent: true
+        cmd: echo {{ .GENERATION_INFO }}
+
+  gc:
+    cmds:
+      - silent: true
+        cmd: sudo nix-collect-garbage --delete-older-than 10d
+
+  update-flakes:
+    cmds:
+      - silent: true
+        cmd: nix flake update
+
+  tree:
+    cmds:
+      - silent: true
+        cmd: nix run nixpkgs#nix-tree
+  
