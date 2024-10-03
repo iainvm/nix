@@ -22,15 +22,20 @@
     nixos-wsl,
     flake-utils,
     ...
-  }:
+  } @ inputs:
     {
       # Systems
       nixosConfigurations = {
         # Potamoi
         potamoi = import ./systems/potamoi/configuration.nix {
-          inherit nixpkgs nixos-wsl;
+          inherit self nixpkgs nixos-wsl;
         };
       };
+
+      nixosModules = builtins.listToAttrs (map (name: {
+        name = nixpkgs.lib.strings.removeSuffix ".nix" name;
+        value = import (./nixosModules + "/${name}");
+      }) (builtins.attrNames (builtins.readDir ./nixosModules)));
     }
     # Dev Shell for updating the flake
     // flake-utils.lib.eachDefaultSystem (system: {

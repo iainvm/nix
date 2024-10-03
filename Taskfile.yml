@@ -4,7 +4,7 @@ tasks:
   show:
     cmds:
       - silent: true
-        cmd: nix flakes show
+        cmd: nix flake show
 
   format:
     cmds:

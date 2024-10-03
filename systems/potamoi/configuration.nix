@@ -1,4 +1,5 @@
 {
+  self,
   nixpkgs,
   nixos-wsl,
   ...
@@ -11,22 +12,14 @@ in
 
     modules = [
       nixos-wsl.nixosModules.default
+      self.nixosModules.nix-flakes
       {
+        nix-flakes.enable = true;
         wsl.enable = true;
         wsl.defaultUser = "iain";
         networking.hostName = "potamoi";
         system.stateVersion = "24.05";
-      }
-      {
-        nix = {
-          gc = {
-            automatic = true;
-            options = "--delete-older-than 10d";
-          };
 
-          settings.experimental-features = ["nix-command" "flakes"];
-        };
-        # Install git
         environment.systemPackages = with pkgs; [
           git
         ];
