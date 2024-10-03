@@ -1,16 +1,15 @@
-version: '3'
-
-vars:
-  MACHINE: chronos
-  GENERATION_INFO:
-    sh: nixos-rebuild list-generations --flake {{ .ROOT_DIR }}#{{ .MACHINE}} --json | jq -r '.[] | select(.current == true) | "Gen-\(.generation) Linux \(.kernelVersion) NixOS \(.nixosVersion)"'
+version: "3"
 
 tasks:
-
   format:
     cmds:
       - silent: true
         cmd: alejandra . --quiet
+
+  show:
+    cmds:
+      - silent: true
+        cmd: nix flakes show
 
   build:
     cmds:
@@ -42,4 +41,3 @@ tasks:
     cmds:
       - silent: true
         cmd: nix run nixpkgs#nix-tree
-  
