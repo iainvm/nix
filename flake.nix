@@ -1,6 +1,5 @@
 {
-  # github.com/iainvm/nix
-  description = "My Nix config";
+  description = "My Nix configs";
 
   # Dependencies
   inputs = {
@@ -17,11 +16,26 @@
     };
   };
 
-  outputs = {self, nixpkgs, nixos-wsl, flake-utils, ...}:
-  {
-    # Dev Shell for updating nix configs
-    flake-utils.lib.eachDefaultSystem (system: {
-        devShell = import ./devShell.nix {inherit nixpkgs;};
+  outputs = {
+    self,
+    nixpkgs,
+    nixos-wsl,
+    flake-utils,
+    ...
+  }:
+    {
+      # Systems
+      nixosConfigurations = {
+        # Potamoi
+        potamoi = import ./systems/potamoi/configuration.nix {
+          inherit nixpkgs nixos-wsl;
+        };
+      };
+    }
+    # Dev Shell for updating the flake
+    // flake-utils.lib.eachDefaultSystem (system: {
+      devShells = import ./dev/shell.nix {
+        inherit system nixpkgs;
+      };
     });
-  };
 }

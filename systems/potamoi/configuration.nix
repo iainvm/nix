@@ -1,16 +1,35 @@
-# NixOS-WSL specific options are documented on the NixOS-WSL repository:
-# https://github.com/nix-community/NixOS-WSL
-
-{ config, lib, pkgs, ... }:
-
 {
-  imports = [
-    # include NixOS-WSL modules
-    <nixos-wsl/modules>
-  ];
+  nixpkgs,
+  nixos-wsl,
+  ...
+}: let
+  system = "x86_64-linux";
+  pkgs = nixpkgs.legacyPackages.${system};
+in
+  nixpkgs.lib.nixosSystem {
+    system = system;
 
-  wsl.enable = true;
-  wsl.defaultUser = "nixos";
+    modules = [
+      nixos-wsl.nixosModules.default
+      {
+        wsl.enable = true;
+        wsl.defaultUser = "iain";
+        networking.hostName = "potamoi";
+        system.stateVersion = "24.05";
+      }
+      {
+        nix = {
+          gc = {
+            automatic = true;
+            options = "--delete-older-than 10d";
+          };
 
-  system.stateVersion = "24.05"; # Did you read the comment?
-}
+          settings.experimental-features = ["nix-command" "flakes"];
+        };
+        # Install git
+        environment.systemPackages = with pkgs; [
+          git
+        ];
+      }
+    ];
+  }

@@ -1,43 +1,22 @@
 version: "3"
 
 tasks:
-  format:
-    cmds:
-      - silent: true
-        cmd: alejandra . --quiet
-
   show:
     cmds:
       - silent: true
         cmd: nix flakes show
 
-  build:
+  format:
     cmds:
       - silent: true
-        cmd: sudo nixos-rebuild switch --refresh --flake {{ .ROOT_DIR }}#{{ .MACHINE}}
+        cmd: alejandra . --quiet
 
-  commit:
+  switch:
     cmds:
-      - task: format
       - silent: true
-        cmd: git commit -am "{{ .GENERATION_INFO }}" && git push
+        cmd: sudo nixos-rebuild switch --flake .
 
-  generation:
+  switch-to:
     cmds:
       - silent: true
-        cmd: echo {{ .GENERATION_INFO }}
-
-  gc:
-    cmds:
-      - silent: true
-        cmd: sudo nix-collect-garbage --delete-older-than 10d
-
-  update-flakes:
-    cmds:
-      - silent: true
-        cmd: nix flake update
-
-  tree:
-    cmds:
-      - silent: true
-        cmd: nix run nixpkgs#nix-tree
+        cmd: sudo nixos-rebuild switch --flake .#{{ .CLI_ARGS }}
