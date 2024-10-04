@@ -19,7 +19,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixos-wsl,
     flake-utils,
     ...
   } @ inputs:
@@ -28,14 +27,13 @@
       nixosConfigurations = {
         # Potamoi
         potamoi = import ./systems/potamoi/configuration.nix {
-          inherit self nixpkgs nixos-wsl;
+          inherit self inputs nixpkgs;
         };
       };
 
-      nixosModules = builtins.listToAttrs (map (name: {
-        name = nixpkgs.lib.strings.removeSuffix ".nix" name;
-        value = import (./nixosModules + "/${name}");
-      }) (builtins.attrNames (builtins.readDir ./nixosModules)));
+      nixosModules = {
+        default = import ./nixosModules/default.nix;
+      };
     }
     # Dev Shell for updating the flake
     // flake-utils.lib.eachDefaultSystem (system: {

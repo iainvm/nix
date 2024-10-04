@@ -1,7 +1,7 @@
 {
   self,
+  inputs,
   nixpkgs,
-  nixos-wsl,
   ...
 }: let
   system = "x86_64-linux";
@@ -11,14 +11,22 @@ in
     system = system;
 
     modules = [
-      nixos-wsl.nixosModules.default
-      self.nixosModules.nix-flakes
+      inputs.nixos-wsl.nixosModules.default
+      self.nixosModules.default
       {
-        nix-flakes.enable = true;
         wsl.enable = true;
-        wsl.defaultUser = "iain";
+        nix-flakes.enable = true;
         networking.hostName = "potamoi";
         system.stateVersion = "24.05";
+
+        # Users
+        simple-users = {
+          users = {
+            iain = {
+              group = "iain";
+            };
+          };
+        };
 
         environment.systemPackages = with pkgs; [
           git
