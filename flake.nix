@@ -11,9 +11,18 @@
       url = "github:nix-community/NixOS-WSL/main";
     };
 
+    home-manager = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
+
+    # vscode-server = {
+    #   url = "github:nix-community/nixos-vscode-server";
+    # };
   };
 
   outputs = {
