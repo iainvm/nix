@@ -35,7 +35,7 @@
       # Systems
       nixosConfigurations = {
         # Potamoi
-        potamoi = import ./systems/potamoi/configuration.nix {
+        potamoi = import ./nixosConfigurations/potamoi/configuration.nix {
           inherit self inputs nixpkgs;
         };
       };
@@ -46,7 +46,7 @@
     }
     # Dev Shell for updating the flake
     // flake-utils.lib.eachDefaultSystem (system: {
-      devShells = import ./dev/shell.nix {
+      devShells = import ./devShells/configuration.nix {
         inherit system nixpkgs;
       };
     });
