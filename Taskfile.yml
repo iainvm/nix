@@ -6,6 +6,11 @@ tasks:
       - silent: true
         cmd: nix flake show
 
+  check:
+    cmds:
+      - silent: true
+        cmd: nix flake check
+
   format:
     cmds:
       - silent: true

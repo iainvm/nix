@@ -1,5 +1,6 @@
 {
   lib,
+  self,
   config,
   nixpkgs,
   inputs,
@@ -7,6 +8,10 @@
 }: let
   pkgs = nixpkgs.legacyPackages.${config.system};
 in {
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+  ];
+
   options.simple-users = {
     users = lib.mkOption {
       type = lib.types.attrsOf (lib.types.submodule {

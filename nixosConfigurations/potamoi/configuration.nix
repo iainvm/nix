@@ -13,7 +13,6 @@ in
 
     modules = [
       inputs.nixos-wsl.nixosModules.default
-      inputs.home-manager.nixosModules.home-manager
       self.nixosModules.default
       {
         wsl.enable = true;

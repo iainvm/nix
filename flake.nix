@@ -43,6 +43,10 @@
       nixosModules = {
         default = import ./nixosModules/default.nix;
       };
+
+      homeManagerModules = {
+        default = import ./homeManagerModules/default.nix;
+      };
     }
     # Dev Shell for updating the flake
     // flake-utils.lib.eachDefaultSystem (system: {
