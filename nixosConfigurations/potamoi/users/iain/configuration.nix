@@ -1,6 +1,13 @@
-{inputs, ...}: {
+{inputs, ...}: 
+let
+  user = "iain";
+  name = "Iain";
+  fullName = "Iain Majer";
+  email = "iainvm@outlook.com";
+in
+{
   home.stateVersion = "24.05";
-  home.username = "iain";
+  home.username = user;
   home.homeDirectory = "/home/iain";
   programs.home-manager.enable = true;
 
@@ -8,14 +15,15 @@
     inputs.self.homeManagerModules.default
   ];
 
+  # Shell
   zsh.enable = true;
-  programs.direnv = {
-    enable = true;
 
-    config = {
-      global = {
-        hide_env_diff = true;
-      };
-    };
+  # CLI
+  git = {
+    enable = true;
+    name = fullName;
+    email = email;
   };
+  direnv.enable = true;
+
 }
