@@ -4,24 +4,30 @@
 in
   nixpkgs.lib.nixosSystem {
     system = system;
+    specialArgs = {inherit inputs;};
 
     modules = [
-      ./hardware-configuration.nix
+      self.nixosModules.default
       {
+        wsl.enable = true;
+        nix-flakes.enable = true;
         networking.hostName = "chronos";
         system.stateVersion = "24.05";
-        nix = {
-          gc = {
-            automatic = true;
-            options = "--delete-older-than 10d";
-          };
-          settings.experimental-features = ["nix-command" "flakes"];
-        };
 
-        # Install git
-        environment.systemPackages = with pkgs; [
-          git
-        ];
+        programs.zsh.enable = true;
+
+        # Users
+        wsl.defaultUser = "iain";
+        simple-users = {
+          users = {
+            iain = {
+              group = "iain";
+              extraGroups = ["wheel"];
+              shell = pkgs.zsh;
+              home-manager = ./users/iain/configuration.nix;
+            };
+          };
+        };
       }
     ];
   }

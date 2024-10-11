@@ -34,6 +34,10 @@
     {
       # Systems
       nixosConfigurations = {
+        # Chronos
+        chronos = import ./nixosConfigurations/chronos/configuration.nix {
+          inherit self inputs nixpkgs;
+        };
         # Potamoi
         potamoi = import ./nixosConfigurations/potamoi/configuration.nix {
           inherit self inputs nixpkgs;
