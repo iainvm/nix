@@ -17,7 +17,6 @@ in
         programs.zsh.enable = true;
 
         # Users
-        wsl.defaultUser = "iain";
         simple-users = {
           users = {
             iain = {
