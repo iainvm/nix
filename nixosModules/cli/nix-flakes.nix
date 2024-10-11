@@ -3,8 +3,8 @@
   config,
   ...
 }: {
-  options = {
-    nix-flakes.enable = lib.mkEnableOption "enable nix flakes";
+  options.nix-flakes = {
+    enable = lib.mkEnableOption "enable nix flakes";
   };
 
   config = lib.mkIf config.nix-flakes.enable {

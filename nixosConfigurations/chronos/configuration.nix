@@ -1,4 +1,5 @@
 {nixpkgs, ...}: let
+  computerName = "chronos";
   system = "x86_64-linux";
   pkgs = nixpkgs.legacyPackages.${system};
 in
@@ -9,11 +10,14 @@ in
     modules = [
       self.nixosModules.default
       {
-        wsl.enable = true;
-        nix-flakes.enable = true;
-        networking.hostName = "chronos";
         system.stateVersion = "24.05";
-
+        nix-flakes.enable = true;
+        network = {
+          enable = true;
+          hostName = computerName;
+        };
+        
+        # System Packages
         programs.zsh.enable = true;
 
         # Users
