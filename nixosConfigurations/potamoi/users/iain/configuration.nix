@@ -8,7 +8,7 @@ in
 {
   home.stateVersion = "24.05";
   home.username = user;
-  home.homeDirectory = "/home/iain";
+  home.homeDirectory = "/home/${user}";
   programs.home-manager.enable = true;
 
   imports = [
