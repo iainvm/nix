@@ -1,11 +1,9 @@
-{inputs, ...}: 
-let
+{inputs, ...}: let
   user = "iain";
   name = "Iain";
   fullName = "Iain Majer";
   email = "iainvm@outlook.com";
-in
-{
+in {
   home.stateVersion = "24.05";
   home.username = user;
   home.homeDirectory = "/home/${user}";
@@ -25,5 +23,4 @@ in
     email = email;
   };
   direnv.enable = true;
-
 }

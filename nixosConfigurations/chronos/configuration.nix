@@ -1,13 +1,19 @@
-{nixpkgs, ...}: let
+{
+  self,
+  inputs,
+  nixpkgs,
+  ...
+}: let
   computerName = "chronos";
   system = "x86_64-linux";
   pkgs = nixpkgs.legacyPackages.${system};
 in
   nixpkgs.lib.nixosSystem {
     system = system;
-    specialArgs = {inherit inputs;};
+    specialArgs = {inherit inputs nixpkgs system;};
 
     modules = [
+      ./hardware-configuration.nix
       self.nixosModules.default
       {
         # Nix
@@ -15,11 +21,15 @@ in
         nix-flakes.enable = true;
 
         # System
+        plymouth.enable = true;
+        en-gb.enable = true;
+        nvidia.enable = true;
+        bluetooth.enable = true;
         network = {
           enable = true;
           hostName = computerName;
         };
-        
+
         # System Packages
         zsh.enable = true;
 

@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  nixpkgs,
   ...
 }: {
   options.nvidia = {
@@ -8,6 +9,12 @@
   };
 
   config = lib.mkIf config.nvidia.enable {
+    nixpkgs.config.allowUnfreePredicate = pkg:
+      builtins.elem (lib.getName pkg) [
+        "nvidia-x11"
+        "nvidia-settings"
+      ];
+
     boot.kernelParams = ["nvidia_drm.fbdev=1"];
     services.xserver.videoDrivers = ["nvidia"];
 
@@ -19,10 +26,10 @@
     # };
 
     hardware = {
-      graphics = {
-        enable = true;
-      };
-      
+      # graphics = {
+      #   enable = true;
+      # };
+
       nvidia = {
         open = true;
         nvidiaSettings = true;

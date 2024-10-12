@@ -4,6 +4,7 @@
   nixpkgs,
   ...
 }: let
+  computerName = "potamoi";
   system = "x86_64-linux";
   pkgs = nixpkgs.legacyPackages.${system};
 in
@@ -15,11 +16,19 @@ in
       inputs.nixos-wsl.nixosModules.default
       self.nixosModules.default
       {
-        wsl.enable = true;
-        nix-flakes.enable = true;
-        networking.hostName = "potamoi";
+        # Nix
         system.stateVersion = "24.05";
+        nix-flakes.enable = true;
 
+        # System
+        wsl.enable = true;
+        en-gb.enable = true;
+        network = {
+          enable = true;
+          hostName = computerName;
+        };
+
+        # System Packages
         programs.zsh.enable = true;
 
         # Users

@@ -6,6 +6,7 @@
     ./hardware/nvidia.nix
     ./language/en-gb.nix
     ./shells/zsh.nix
+    ./system/plymouth.nix
     ./users/simple-users.nix
   ];
 }
