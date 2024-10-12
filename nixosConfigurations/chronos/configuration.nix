@@ -10,15 +10,18 @@ in
     modules = [
       self.nixosModules.default
       {
+        # Nix
         system.stateVersion = "24.05";
         nix-flakes.enable = true;
+
+        # System
         network = {
           enable = true;
           hostName = computerName;
         };
         
         # System Packages
-        programs.zsh.enable = true;
+        zsh.enable = true;
 
         # Users
         simple-users = {
