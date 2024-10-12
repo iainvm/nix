@@ -32,6 +32,7 @@ in
 
         # Environment
         sddm.enable = true;
+        hyprland.enable = true;
 
         # System Packages
         zsh.enable = true;

@@ -9,5 +9,6 @@
     ./shells/zsh.nix
     ./system/plymouth.nix
     ./users/simple-users.nix
+    ./window-manager/hyprland.nix
   ];
 }
