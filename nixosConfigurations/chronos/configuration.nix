@@ -30,6 +30,9 @@ in
           hostName = computerName;
         };
 
+        # Environment
+        sddm.enable = true;
+
         # System Packages
         zsh.enable = true;
 

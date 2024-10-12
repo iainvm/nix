@@ -1,6 +1,7 @@
 {self, ...}: {
   imports = [
     ./cli/nix-flakes.nix
+    ./display-manager/sddm.nix
     ./hardware/bluetooth.nix
     ./hardware/network.nix
     ./hardware/nvidia.nix
