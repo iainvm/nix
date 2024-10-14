@@ -3,10 +3,11 @@
   self,
   config,
   nixpkgs,
+  system,
   inputs,
   ...
 }: let
-  pkgs = nixpkgs.legacyPackages.${config.system};
+  pkgs = nixpkgs.legacyPackages.${system};
 in {
   imports = [
     inputs.home-manager.nixosModules.home-manager

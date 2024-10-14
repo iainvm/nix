@@ -21,7 +21,14 @@ in
         nix-flakes.enable = true;
 
         # System
-        wsl.enable = true;
+        wsl = {
+          enable = true;
+          extraBin = [
+            {src = nixpkgs.lib.getExe' pkgs.coreutils "dirname";}
+            {src = nixpkgs.lib.getExe' pkgs.coreutils "readlink";}
+            {src = nixpkgs.lib.getExe' pkgs.coreutils "uname";}
+          ];
+        };
         en-gb.enable = true;
         network = {
           enable = true;
@@ -30,6 +37,7 @@ in
 
         # System Packages
         programs.zsh.enable = true;
+        vscode-server.enable = true;
 
         # Users
         wsl.defaultUser = "iain";

@@ -13,9 +13,6 @@ in {
     inputs.self.homeManagerModules.default
   ];
 
-  # Applications
-  vscode-server.enable = true;
-
   # Shell
   zsh.enable = true;
 
