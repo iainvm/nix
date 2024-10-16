@@ -21,6 +21,7 @@ in
         nix-flakes.enable = true;
 
         # System
+        boot.kernelModules = [];
         wsl = {
           enable = true;
           extraBin = [
