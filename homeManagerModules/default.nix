@@ -1,7 +1,8 @@
 {self, ...}: {
   imports = [
-    ./shells/zsh.nix
     ./cli/direnv.nix
+    ./cli/dpm.nix
     ./cli/git.nix
+    ./shells/zsh.nix
   ];
 }

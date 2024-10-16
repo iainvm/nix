@@ -23,4 +23,5 @@ in {
     email = email;
   };
   direnv.enable = true;
+  dpm.enable = true;
 }
