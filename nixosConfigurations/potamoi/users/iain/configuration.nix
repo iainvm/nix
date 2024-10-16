@@ -14,7 +14,12 @@ in {
   ];
 
   # Shell
-  zsh.enable = true;
+  zsh = {
+    enable = true;
+    starship = {
+      enable = true;
+    };
+  };
 
   # CLI
   git = {
