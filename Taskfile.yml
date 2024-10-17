@@ -25,3 +25,8 @@ tasks:
     cmds:
       - silent: true
         cmd: sudo nixos-rebuild switch --flake .#{{ .CLI_ARGS }}
+
+  test-switch:
+    cmds:
+      - silent: true
+        cmd: sudo nixos-rebuild test --flake .

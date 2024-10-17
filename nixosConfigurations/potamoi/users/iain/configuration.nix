@@ -18,6 +18,7 @@ in {
     enable = true;
     starship = {
       enable = true;
+      transientPrompt = true;
     };
   };
 
