@@ -12,6 +12,7 @@
     "[](fg:#394260 bg:#212736)"
     "$nodejs"
     "$golang"
+    "$python"
     "[](fg:#212736 bg:#1d2230)"
     "[](fg:#1d2230)"
     "$nix_shell"

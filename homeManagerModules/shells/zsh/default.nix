@@ -16,27 +16,31 @@
     };
   };
 
-  config = lib.mkIf config.zsh.enable {
+  config = lib.mkMerge [
+    {}
 
-    # Pure ZSH configuration
-    programs = {
-      zsh = {
-        enable = true;
-        dotDir = ".config/zsh";
+    (lib.mkIf config.zsh.enable
+    {
+      programs = {
+        zsh = {
+          enable = true;
+          dotDir = ".config/zsh";
+        };
       };
-    }
+    })
 
-    # Starship configuration
-    // lib.mkIf config.zsh.starship.enable {
-      # Transient prompt
-      zsh = {
-        initExtra = lib.mkIf config.zsh.starship.transientPrompt (builtins.readFile ./starship/transient.zsh);
-      };
+    (lib.mkIf config.zsh.starship.enable
+    {
+      programs = {
+        zsh = {
+          initExtra = lib.mkIf config.zsh.starship.transientPrompt (builtins.readFile ./starship/transient.zsh);
+        };
 
-      starship = {
-        enable = true;
-        settings = import ./starship/themes/${config.zsh.starship.theme}.nix { inherit lib; };
+        starship = {
+          enable = true;
+          settings = import ./starship/themes/${config.zsh.starship.theme}.nix { inherit lib; };
+        };
       };
-    };
-  };
+    })
+  ];
 }
