@@ -14,7 +14,7 @@ in {
   ];
 
   # Shell
-  zsh = {
+  fish = {
     enable = true;
     starship = {
       enable = true;

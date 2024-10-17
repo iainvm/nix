@@ -7,6 +7,10 @@
       url = "github:NixOS/nixpkgs/nixos-24.05";
     };
 
+    nixpkgs-unstable = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
+
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
     };
@@ -28,6 +32,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     flake-utils,
     ...
   } @ inputs:
@@ -36,11 +41,11 @@
       nixosConfigurations = {
         # Chronos
         chronos = import ./nixosConfigurations/chronos/configuration.nix {
-          inherit self inputs nixpkgs;
+          inherit self inputs nixpkgs nixpkgs-unstable;
         };
         # Potamoi
         potamoi = import ./nixosConfigurations/potamoi/configuration.nix {
-          inherit self inputs nixpkgs;
+          inherit self inputs nixpkgs nixpkgs-unstable;
         };
       };
 
@@ -55,7 +60,7 @@
     # Dev Shell for updating the flake
     // flake-utils.lib.eachDefaultSystem (system: {
       devShells = import ./devShells/configuration.nix {
-        inherit system nixpkgs;
+        inherit system nixpkgs nixpkgs-unstable;
       };
     });
 }

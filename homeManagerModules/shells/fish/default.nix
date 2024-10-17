@@ -3,8 +3,8 @@
   config,
   ...
 }: {
-  options.zsh = {
-    enable = lib.mkEnableOption "enable zsh";
+  options.fish = {
+    enable = lib.mkEnableOption "enable fish";
 
     starship = {
       enable = lib.mkEnableOption "enable starship";
@@ -19,26 +19,22 @@
   config = lib.mkMerge [
     {}
 
-    (lib.mkIf config.zsh.enable
+    (lib.mkIf config.fish.enable
       {
         programs = {
-          zsh = {
+          fish = {
             enable = true;
-            dotDir = ".config/zsh";
           };
         };
       })
 
-    (lib.mkIf config.zsh.starship.enable
+    (lib.mkIf config.fish.starship.enable
       {
         programs = {
-          zsh = {
-            initExtra = lib.mkIf config.zsh.starship.transientPrompt (builtins.readFile ./starship/transient.zsh);
-          };
-
           starship = {
             enable = true;
-            settings = import ./starship/themes/${config.zsh.starship.theme}.nix {inherit lib;};
+            enableTransience = lib.mkIf config.fish.starship.transientPrompt true;
+            settings = import ./starship/themes/${config.fish.starship.theme}.nix {inherit lib;};
           };
         };
       })
