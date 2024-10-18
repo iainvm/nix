@@ -27,8 +27,9 @@ in {
   # };
 
   applications = {
-    vscode.enable = true;
     kitty.enable = true;
+    vscode.enable = true;
+    wofi.enable = true;
   };
 
   shells = {
