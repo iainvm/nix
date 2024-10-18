@@ -7,6 +7,7 @@
     ./hardware/nvidia.nix
     ./language/en-gb.nix
     ./services/vscode-server.nix
+    ./shells/fish.nix
     ./shells/zsh.nix
     ./system/plymouth.nix
     ./users/simple-users.nix
