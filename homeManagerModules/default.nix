@@ -1,5 +1,6 @@
 {self, ...}: {
   imports = [
+    ./applications/kitty
     ./applications/vscode
     ./cli/direnv
     ./cli/dpm

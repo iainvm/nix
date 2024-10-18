@@ -28,6 +28,7 @@ in {
 
   applications = {
     vscode.enable = true;
+    kitty.enable = true;
   };
 
   shells = {
