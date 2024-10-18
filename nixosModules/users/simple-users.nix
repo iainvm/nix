@@ -43,6 +43,10 @@ in {
   };
 
   config = {
+    # Install shell
+    # environment.systemPackages = lib.mapAttrs (name: user: user.shell) config.simple-users.users;
+    environment.systemPackages = [pkgs.fish];
+
     users = {
       users =
         lib.mapAttrs (name: user: {

@@ -1,10 +1,11 @@
 {self, ...}: {
   imports = [
-    ./cli/direnv.nix
-    ./cli/dpm.nix
-    ./cli/git.nix
+    ./applications/vscode
+    ./cli/direnv
+    ./cli/dpm
+    ./cli/git
     ./shells/fish
     ./shells/zsh
-    ./window-manager/hyprland
+    ./system/hyprland
   ];
 }

@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  options.fish = {
+  options.shells.fish = {
     enable = lib.mkEnableOption "enable fish";
 
     starship = {
@@ -19,7 +19,7 @@
   config = lib.mkMerge [
     {}
 
-    (lib.mkIf config.fish.enable
+    (lib.mkIf config.shells.fish.enable
       {
         programs = {
           fish = {
@@ -28,13 +28,13 @@
         };
       })
 
-    (lib.mkIf config.fish.starship.enable
+    (lib.mkIf config.shells.fish.starship.enable
       {
         programs = {
           starship = {
             enable = true;
-            enableTransience = lib.mkIf config.fish.starship.transientPrompt true;
-            settings = import ./starship/themes/${config.fish.starship.theme}.nix {inherit lib;};
+            enableTransience = lib.mkIf config.shells.fish.starship.transientPrompt true;
+            settings = import ./starship/themes/${config.shells.fish.starship.theme}.nix {inherit lib;};
           };
         };
       })

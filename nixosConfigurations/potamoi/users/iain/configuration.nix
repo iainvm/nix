@@ -13,21 +13,23 @@ in {
     inputs.self.homeManagerModules.default
   ];
 
-  # Shell
-  fish = {
-    enable = true;
-    starship = {
+  shells = {
+    fish = {
       enable = true;
-      transientPrompt = true;
+      starship = {
+        enable = true;
+        transientPrompt = true;
+      };
     };
   };
 
-  # CLI
-  git = {
-    enable = true;
-    name = fullName;
-    email = email;
+  cli = {
+    git = {
+      enable = true;
+      name = fullName;
+      email = email;
+    };
+    direnv.enable = true;
+    dpm.enable = true;
   };
-  direnv.enable = true;
-  dpm.enable = true;
 }

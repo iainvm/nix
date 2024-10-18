@@ -13,9 +13,6 @@ in {
     inputs.self.homeManagerModules.default
   ];
 
-  # System Configurations
-  hyprland.enable = true;
-
   # Dotfiles
   home.file = {
     ".config" = {
@@ -25,21 +22,31 @@ in {
     };
   };
 
-  # Shell
-  fish = {
-    enable = true;
-    starship = {
+  # system = {
+  #   hyprland.enable = true;
+  # };
+
+  applications = {
+    vscode.enable = true;
+  };
+
+  shells = {
+    fish = {
       enable = true;
-      transientPrompt = true;
+      starship = {
+        enable = true;
+        transientPrompt = true;
+      };
     };
   };
 
-  # CLI
-  git = {
-    enable = true;
-    name = fullName;
-    email = email;
+  cli = {
+    git = {
+      enable = true;
+      name = fullName;
+      email = email;
+    };
+    direnv.enable = true;
+    dpm.enable = true;
   };
-  direnv.enable = true;
-  dpm.enable = true;
 }

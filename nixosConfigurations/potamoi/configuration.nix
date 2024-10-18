@@ -10,7 +10,7 @@
 in
   nixpkgs.lib.nixosSystem {
     system = system;
-    specialArgs = {inherit inputs;};
+    specialArgs = {inherit inputs nixpkgs system;};
 
     modules = [
       inputs.nixos-wsl.nixosModules.default

@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  options.git = {
+  options.cli.git = {
     enable = lib.mkEnableOption "enable git";
 
     name = lib.mkOption {
@@ -17,12 +17,12 @@
     };
   };
 
-  config = lib.mkIf config.git.enable {
+  config = lib.mkIf config.cli.git.enable {
     programs.git = {
       enable = true;
 
-      userName = config.git.name;
-      userEmail = config.git.email;
+      userName = config.cli.git.name;
+      userEmail = config.cli.git.email;
 
       extraConfig = {
         init = {
