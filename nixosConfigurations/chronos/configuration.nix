@@ -35,7 +35,7 @@ in
         hyprland.enable = true;
 
         # System Packages
-        zsh.enable = true;
+        fish.enable = true;
 
         # Users
         simple-users = {

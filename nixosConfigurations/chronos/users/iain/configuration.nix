@@ -14,7 +14,13 @@ in {
   ];
 
   # Shell
-  zsh.enable = true;
+  fish = {
+    enable = true;
+    starship = {
+      enable = true;
+      transientPrompt = true;
+    };
+  };
 
   # CLI
   git = {
@@ -23,4 +29,5 @@ in {
     email = email;
   };
   direnv.enable = true;
+  dpm.enable = true;
 }

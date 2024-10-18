@@ -37,8 +37,7 @@ in
         };
 
         # System Packages
-        # programs.zsh.enable = true;
-        programs.fish.enable = true;
+        fish.enable = true;
         vscode-server.enable = true;
 
         # Users
