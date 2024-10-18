@@ -13,6 +13,18 @@ in {
     inputs.self.homeManagerModules.default
   ];
 
+  # System Configurations
+  hyprland.enable = true;
+
+  # Dotfiles
+  home.file = {
+    ".config" = {
+      source = ./dotfiles;
+      target = ".config/";
+      recursive = true;
+    };
+  };
+
   # Shell
   fish = {
     enable = true;

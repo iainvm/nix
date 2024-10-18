@@ -5,5 +5,6 @@
     ./cli/git.nix
     ./shells/fish
     ./shells/zsh
+    ./window-manager/hyprland
   ];
 }
