@@ -26,6 +26,10 @@ in {
   #   hyprland.enable = true;
   # };
 
+  fonts = {
+    nerd-fonts.enable = true;
+  };
+
   applications = {
     firefox.enable = true;
     kitty.enable = true;
