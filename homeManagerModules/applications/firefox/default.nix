@@ -25,6 +25,5 @@
         iain = import ./profiles/iain/default.nix {inherit pkgs;};
       };
     };
-
   };
 }
