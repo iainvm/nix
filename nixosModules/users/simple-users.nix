@@ -28,7 +28,7 @@ in {
           };
           shell = lib.mkOption {
             type = lib.types.nullOr (lib.types.either lib.types.shellPackage (lib.types.passwdEntry lib.types.path));
-            default = pkgs.shadow;
+            default = pkgs.bash;
             description = "The shell of the user.";
           };
 

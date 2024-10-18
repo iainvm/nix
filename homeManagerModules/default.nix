@@ -1,5 +1,6 @@
 {self, ...}: {
   imports = [
+    ./applications/firefox
     ./applications/kitty
     ./applications/vscode
     ./applications/wofi

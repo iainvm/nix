@@ -27,6 +27,7 @@ in {
   # };
 
   applications = {
+    firefox.enable = true;
     kitty.enable = true;
     vscode.enable = true;
     wofi.enable = true;

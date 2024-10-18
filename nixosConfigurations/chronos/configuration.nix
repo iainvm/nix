@@ -42,6 +42,7 @@ in
           users = {
             iain = {
               group = "iain";
+              shell = pkgs.fish;
               extraGroups = ["wheel"];
               home-manager = ./users/iain/configuration.nix;
             };
