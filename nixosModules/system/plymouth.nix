@@ -12,6 +12,7 @@ in {
   };
 
   config = lib.mkIf config.plymouth.enable {
+    boot.initrd.systemd.enable = true;
     boot.plymouth = {
       enable = true;
       theme = "hexagon_2";

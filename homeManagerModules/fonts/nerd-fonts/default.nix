@@ -9,7 +9,7 @@
 
     # List of fonts to install
     fonts = lib.mkOption {
-      type = lib.types.listOf lib.types.string;
+      type = lib.types.listOf lib.types.str;
       default = ["Hack"];
       example = ["Hack" "FiraCode"];
     };
