@@ -21,7 +21,10 @@ in
         nix-flakes.enable = true;
 
         # System
-        plymouth.enable = true;
+        plymouth = {
+          enable = true;
+          silent-boot = true;
+        };
         en-gb.enable = true;
         nvidia.enable = true;
         bluetooth.enable = true;
@@ -46,6 +49,15 @@ in
               extraGroups = ["wheel"];
               home-manager = ./users/iain/configuration.nix;
             };
+          };
+        };
+
+        # Need to add to modules
+        services.displayManager.sddm.settings = {
+          Autologin = {
+            Session = "hyprland.desktop";
+            # Session = "gnome-xorg.desktop";
+            User = "iain";
           };
         };
       }
