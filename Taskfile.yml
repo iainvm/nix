@@ -30,3 +30,8 @@ tasks:
     cmds:
       - silent: true
         cmd: sudo nixos-rebuild test --flake .
+
+  garbage-collect:
+    cmds:
+      - silent: true
+        cmd: sudo nix-collect-garbage --delete-older-than 10d

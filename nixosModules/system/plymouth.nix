@@ -20,6 +20,7 @@ in {
       {
         boot = {
           initrd.verbose = false;
+          initrd.systemd.enable = true;
           plymouth = {
             enable = true;
             theme = "hexagon_2";
@@ -36,7 +37,6 @@ in {
         boot = {
           consoleLogLevel = 0;
           initrd.verbose = false;
-          initrd.systemd.enable = true;
           kernelParams = [
             "quiet"
             "splash"
