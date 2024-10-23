@@ -5,6 +5,10 @@
 }: {
   options.shells.zsh = {
     enable = lib.mkEnableOption "enable zsh";
+    plugins = lib.mkOption {
+      type = lib.types.listOf lib.types.anything;
+      default = [];
+    };
 
     starship = {
       enable = lib.mkEnableOption "enable starship";
@@ -25,6 +29,7 @@
           zsh = {
             enable = true;
             dotDir = ".config/zsh";
+            plugins = config.shells.zsh.plugins;
           };
         };
       })

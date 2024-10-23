@@ -1,4 +1,9 @@
-{inputs, ...}: let
+{
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: let
   user = "iain";
   name = "Iain";
   fullName = "Iain Majer";
@@ -16,6 +21,7 @@ in {
   shells = {
     zsh = {
       enable = true;
+      plugins = import ./zsh_plugins.nix {inherit pkgs lib;};
       starship = {
         enable = true;
         transientPrompt = true;
