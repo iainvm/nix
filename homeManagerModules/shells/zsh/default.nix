@@ -10,6 +10,8 @@ in {
   options.shells.zsh = {
     enable = lib.mkEnableOption "enable zsh";
     plugins = zshModule.options.programs.zsh.plugins;
+    initExtra = zshModule.options.programs.zsh.initExtra;
+    aliases = zshModule.options.programs.zsh.shellAliases;
 
     starship = {
       enable = lib.mkEnableOption "enable starship";
@@ -27,10 +29,20 @@ in {
     (lib.mkIf config.shells.zsh.enable
       {
         programs = {
+          fzf = {
+            enable = true;
+          };
+
           zsh = {
             enable = true;
             dotDir = ".config/zsh";
             plugins = config.shells.zsh.plugins;
+            initExtra = config.shells.zsh.initExtra;
+            shellAliases = config.shells.zsh.aliases;
+          };
+
+          eza = {
+            enable = true;
           };
         };
       })

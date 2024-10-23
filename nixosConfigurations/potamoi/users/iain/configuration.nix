@@ -18,16 +18,7 @@ in {
     inputs.self.homeManagerModules.default
   ];
 
-  shells = {
-    zsh = {
-      enable = true;
-      plugins = import ./zsh_plugins.nix {inherit pkgs lib;};
-      starship = {
-        enable = true;
-        transientPrompt = true;
-      };
-    };
-  };
+  shells = import ./shell.nix {inherit pkgs lib;};
 
   cli = {
     git = {
