@@ -37,7 +37,7 @@ in
         };
 
         # System Packages
-        fish.enable = true;
+        zsh.enable = true;
         vscode-server.enable = true;
 
         # Users
@@ -47,7 +47,7 @@ in
             iain = {
               group = "iain";
               extraGroups = ["wheel"];
-              shell = pkgs.fish;
+              shell = pkgs.zsh;
               home-manager = ./users/iain/configuration.nix;
             };
           };
