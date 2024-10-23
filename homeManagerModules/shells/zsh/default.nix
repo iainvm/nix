@@ -1,14 +1,15 @@
 {
   lib,
+  pkgs,
   config,
+  inputs,
   ...
-}: {
+}: let
+  zshModule = import "${inputs.home-manager}/modules/programs/zsh.nix" {inherit pkgs lib config;};
+in {
   options.shells.zsh = {
     enable = lib.mkEnableOption "enable zsh";
-    plugins = lib.mkOption {
-      type = lib.types.listOf lib.types.anything;
-      default = [];
-    };
+    plugins = zshModule.options.programs.zsh.plugins;
 
     starship = {
       enable = lib.mkEnableOption "enable starship";
