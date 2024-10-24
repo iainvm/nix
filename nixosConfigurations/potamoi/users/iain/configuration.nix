@@ -18,6 +18,15 @@ in {
     inputs.self.homeManagerModules.default
   ];
 
+  # Dotfiles
+  home.file = {
+    ".config" = {
+      source = ./dotfiles;
+      target = ".config/";
+      recursive = true;
+    };
+  };
+
   shells = import ./shell.nix {inherit pkgs lib;};
 
   cli = {

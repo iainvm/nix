@@ -15,6 +15,10 @@
       type = lib.types.str;
       description = "The users email";
     };
+
+    hooks = {
+      jira = lib.mkEnableOption "enable jira pre-commit hooks";
+    };
   };
 
   config = lib.mkIf config.cli.git.enable {
@@ -27,6 +31,7 @@
       extraConfig = {
         init = {
           defaultBranch = "main";
+          templatedir = "~/.config/git/init";
         };
 
         url = {
