@@ -21,7 +21,7 @@ in {
       autoNumlock = true;
     };
 
-    security.pam.services.gdm-password.enableGnomeKeyring = true;
+    security.pam.services.sddm.enableGnomeKeyring = true;
 
     # Keyring stuff
     environment.systemPackages = with pkgs; [
