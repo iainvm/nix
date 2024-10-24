@@ -1,14 +1,11 @@
 {
   lib,
-  self,
+  pkgs,
   config,
-  nixpkgs,
   system,
   inputs,
   ...
-}: let
-  pkgs = nixpkgs.legacyPackages.${system};
-in {
+}: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -43,10 +40,6 @@ in {
   };
 
   config = {
-    # Install shell
-    # environment.systemPackages = lib.mapAttrs (name: user: user.shell) config.simple-users.users;
-    environment.systemPackages = [pkgs.fish];
-
     users = {
       users =
         lib.mapAttrs (name: user: {
@@ -55,7 +48,6 @@ in {
           extraGroups = user.extraGroups or [];
           home = "/home/${name}";
           shell = user.shell;
-          # Add more user attributes as needed
         })
         config.simple-users.users;
 
@@ -68,6 +60,8 @@ in {
     };
 
     home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
       extraSpecialArgs = {inherit inputs;};
       users =
         lib.mapAttrs (name: user: import user.home-manager)

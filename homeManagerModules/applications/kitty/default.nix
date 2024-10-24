@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  nixpkgs,
   ...
 }: {
   options.applications.kitty = {

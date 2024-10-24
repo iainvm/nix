@@ -2,27 +2,34 @@
   self,
   inputs,
   nixpkgs,
+  nixpkgs-unstable,
   ...
 }: let
-  computerName = "chronos";
   system = "x86_64-linux";
-  pkgs = nixpkgs.legacyPackages.${system};
+  computerName = "chronos";
+  pkgs = import nixpkgs {
+    inherit system;
+    config.allowUnfree = true;
+    overlays = [
+      (final: prev: {
+        unstable = import inputs.nixpkgs-unstable {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
+        };
+      })
+    ];
+  };
 in
   nixpkgs.lib.nixosSystem {
-    system = system;
-    specialArgs = {inherit inputs nixpkgs system;};
+    inherit pkgs;
+    specialArgs = {inherit inputs;};
 
     modules = [
       ./hardware-configuration.nix
       self.nixosModules.default
       {
-        nixpkgs.config.allowUnfreePredicate = pkg:
-          builtins.elem (nixpkgs.lib.getName pkg) [
-            "nvidia-x11"
-            "nvidia-settings"
-            "1password"
-            "1password-cli"
-          ];
         # Nix
         system.stateVersion = "24.05";
         nix-flakes.enable = true;

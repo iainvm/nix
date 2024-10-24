@@ -2,12 +2,8 @@
   lib,
   config,
   inputs,
-  nixpkgs,
-  system,
   ...
-}: let
-  pkgs = nixpkgs.legacyPackages.${system};
-in {
+}: {
   imports = [
     inputs.vscode-server.nixosModules.default
   ];

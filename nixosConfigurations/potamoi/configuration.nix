@@ -1,16 +1,28 @@
 {
   self,
   inputs,
-  nixpkgs,
   ...
 }: let
   computerName = "potamoi";
   system = "x86_64-linux";
-  pkgs = nixpkgs.legacyPackages.${system};
+  pkgs = import inputs.nixpkgs {
+    inherit system;
+    config.allowUnfree = true;
+    # overlays = [
+    #   (final: prev: {
+    #     unstable = import inputs.nixpkgs-unstable {
+    #       inherit system;
+    #       config = {
+    #         allowUnfree = true;
+    #       };
+    #     };
+    #   })
+    # ];
+  };
 in
-  nixpkgs.lib.nixosSystem {
+  inputs.nixpkgs.lib.nixosSystem {
     system = system;
-    specialArgs = {inherit inputs nixpkgs system;};
+    specialArgs = {inherit inputs;};
 
     modules = [
       inputs.nixos-wsl.nixosModules.default
@@ -25,9 +37,9 @@ in
         wsl = {
           enable = true;
           extraBin = [
-            {src = nixpkgs.lib.getExe' pkgs.coreutils "dirname";}
-            {src = nixpkgs.lib.getExe' pkgs.coreutils "readlink";}
-            {src = nixpkgs.lib.getExe' pkgs.coreutils "uname";}
+            {src = inputs.nixpkgs.lib.getExe' pkgs.coreutils "dirname";}
+            {src = inputs.nixpkgs.lib.getExe' pkgs.coreutils "readlink";}
+            {src = inputs.nixpkgs.lib.getExe' pkgs.coreutils "uname";}
           ];
         };
         en-gb.enable = true;

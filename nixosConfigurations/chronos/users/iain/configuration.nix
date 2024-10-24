@@ -1,4 +1,8 @@
-{inputs, ...}: let
+{
+  inputs,
+  system,
+  ...
+}: let
   user = "iain";
   name = "Iain";
   fullName = "Iain Majer";

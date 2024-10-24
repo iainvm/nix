@@ -1,4 +1,4 @@
-{self, ...}: {
+{...}: {
   imports = [
     ./applications/firefox
     ./applications/kitty

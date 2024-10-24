@@ -45,14 +45,16 @@
         };
         # Potamoi
         potamoi = import ./nixosConfigurations/potamoi/configuration.nix {
-          inherit self inputs nixpkgs nixpkgs-unstable;
+          inherit self inputs;
         };
       };
 
+      # NixOS Modules
       nixosModules = {
         default = import ./nixosModules/default.nix;
       };
 
+      # Home Manager Modules
       homeManagerModules = {
         default = import ./homeManagerModules/default.nix;
       };
@@ -60,7 +62,7 @@
     # Dev Shell for updating the flake
     // flake-utils.lib.eachDefaultSystem (system: {
       devShells = import ./devShells/configuration.nix {
-        inherit system nixpkgs nixpkgs-unstable;
+        inherit inputs system;
       };
     });
 }

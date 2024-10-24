@@ -1,11 +1,10 @@
 {
   system,
-  nixpkgs,
-  nixpkgs-unstable,
+  inputs,
   ...
 }: let
-  pkgs = nixpkgs.legacyPackages.${system};
-  pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+  pkgs = inputs.nixpkgs.legacyPackages.${system};
+  pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
 in {
   default = pkgs.mkShell {
     packages = [

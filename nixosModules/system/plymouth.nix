@@ -1,12 +1,10 @@
 {
   lib,
+  pkgs,
   config,
   system,
-  nixpkgs,
   ...
-}: let
-  pkgs = nixpkgs.legacyPackages.${system};
-in {
+}: {
   options.plymouth = {
     enable = lib.mkEnableOption "enable plymouth";
     silent-boot = lib.mkEnableOption "enable silent boot";

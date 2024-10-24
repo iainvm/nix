@@ -1,12 +1,11 @@
 {
   lib,
+  pkgs,
   config,
   system,
   nixpkgs,
   ...
-}: let
-  pkgs = nixpkgs.legacyPackages.${system};
-in {
+}: {
   options.sddm = {
     enable = lib.mkEnableOption "enable sddm";
   };

@@ -1,7 +1,7 @@
 {
   lib,
+  pkgs,
   config,
-  nixpkgs,
   ...
 }: {
   options.applications.vscode = {
@@ -9,13 +9,9 @@
   };
 
   config = lib.mkIf config.applications.vscode.enable {
-    nixpkgs.config.allowUnfreePredicate = pkg:
-      builtins.elem (lib.getName pkg) [
-        "vscode"
-      ];
-
     programs.vscode = {
       enable = true;
+      package = pkgs.unstable.vscode;
     };
   };
 }

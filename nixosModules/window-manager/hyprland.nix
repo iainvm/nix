@@ -1,12 +1,10 @@
 {
   lib,
+  pkgs,
   config,
   system,
-  nixpkgs,
   ...
-}: let
-  pkgs = nixpkgs.legacyPackages.${system};
-in {
+}: {
   options.hyprland = {
     enable = lib.mkEnableOption "enable hyprland";
   };
