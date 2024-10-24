@@ -2,6 +2,7 @@
   imports = [
     ./applications/firefox
     ./applications/kitty
+    ./applications/swappy
     ./applications/vscode
     ./applications/wofi
     ./cli/direnv
