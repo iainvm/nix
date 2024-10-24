@@ -1,26 +1,29 @@
 {
   self,
   inputs,
+  nixpkgs,
+  nixpkgs-unstable,
   ...
 }: let
   computerName = "potamoi";
   system = "x86_64-linux";
-  pkgs = import inputs.nixpkgs {
+  pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    # overlays = [
-    #   (final: prev: {
-    #     unstable = import inputs.nixpkgs-unstable {
-    #       inherit system;
-    #       config = {
-    #         allowUnfree = true;
-    #       };
-    #     };
-    #   })
-    # ];
+    overlays = [
+      (final: prev: {
+        unstable = import nixpkgs-unstable {
+          inherit system;
+          config = {
+            allowUnfree = true;
+          };
+        };
+      })
+    ];
   };
 in
-  inputs.nixpkgs.lib.nixosSystem {
+  nixpkgs.lib.nixosSystem {
+    inherit pkgs;
     system = system;
     specialArgs = {inherit inputs;};
 

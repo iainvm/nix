@@ -12,7 +12,7 @@
     config.allowUnfree = true;
     overlays = [
       (final: prev: {
-        unstable = import inputs.nixpkgs-unstable {
+        unstable = import nixpkgs-unstable {
           inherit system;
           config = {
             allowUnfree = true;
@@ -24,6 +24,7 @@
 in
   nixpkgs.lib.nixosSystem {
     inherit pkgs;
+    system = system;
     specialArgs = {inherit inputs;};
 
     modules = [
