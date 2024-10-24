@@ -10,6 +10,7 @@
     ./cli/git
     ./fonts/nerd-fonts
     ./shells/zsh
+    ./system/dunst
     ./system/hyprland
   ];
 }

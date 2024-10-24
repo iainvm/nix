@@ -27,9 +27,9 @@ in {
     };
   };
 
-  # system = {
-  #   hyprland.enable = true;
-  # };
+  system = {
+    dunst.enable = true;
+  };
 
   fonts = {
     nerd-fonts.enable = true;
