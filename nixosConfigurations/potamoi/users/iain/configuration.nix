@@ -18,7 +18,7 @@ in {
     inputs.self.homeManagerModules.default
   ];
 
-  # Dotfiles
+    # Dotfiles
   home.file = {
     ".config" = {
       source = ./dotfiles;
