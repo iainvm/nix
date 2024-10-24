@@ -18,6 +18,7 @@
       grb = "git rebase";
       gst = "git stash";
       gpuoc = "git push --set-upstream origin \$(git symbolic-ref --short HEAD)";
+      gf = "git fetch --all --prune";
 
       la = "ls -la";
     };
