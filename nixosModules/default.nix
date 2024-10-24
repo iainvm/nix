@@ -1,8 +1,9 @@
 {self, ...}: {
   imports = [
+    ./applications/1password
+    ./applications/thunar
     ./cli/nix-flakes.nix
     ./display-manager/sddm.nix
-    ./file-explorer/thunar
     ./hardware/bluetooth.nix
     ./hardware/network.nix
     ./hardware/nvidia.nix

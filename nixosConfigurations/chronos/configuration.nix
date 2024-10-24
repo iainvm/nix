@@ -16,6 +16,13 @@ in
       ./hardware-configuration.nix
       self.nixosModules.default
       {
+        nixpkgs.config.allowUnfreePredicate = pkg:
+          builtins.elem (nixpkgs.lib.getName pkg) [
+            "nvidia-x11"
+            "nvidia-settings"
+            "1password"
+            "1password-cli"
+          ];
         # Nix
         system.stateVersion = "24.05";
         nix-flakes.enable = true;
@@ -36,7 +43,10 @@ in
         # Environment
         sddm.enable = true;
         hyprland.enable = true;
-        file-explorer.thunar.enable = true;
+        applications = {
+          "1password".enable = true;
+          thunar.enable = true;
+        };
 
         # System Packages
         zsh.enable = true;

@@ -3,8 +3,8 @@
   pkgs,
   ...
 }: {
-  options = {
-    file-explorer.thunar = lib.mkEnableOption "Thunar";
+  options.applications.thunar = {
+    enable = lib.mkEnableOption "Thunar";
   };
   config = {
     services.gvfs = {

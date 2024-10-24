@@ -34,4 +34,4 @@ tasks:
   garbage-collect:
     cmds:
       - silent: true
-        cmd: sudo nix-collect-garbage --delete-older-than 10d
+        cmd: sudo nix-collect-garbage --delete-older-than 3d
