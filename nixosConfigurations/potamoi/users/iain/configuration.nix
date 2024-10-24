@@ -27,7 +27,7 @@ in {
     };
   };
 
-  shells = import ./shell.nix {inherit pkgs lib;};
+  shells.zsh.enable = true;
 
   cli = {
     git = {

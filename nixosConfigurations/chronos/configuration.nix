@@ -38,14 +38,14 @@ in
         hyprland.enable = true;
 
         # System Packages
-        fish.enable = true;
+        zsh.enable = true;
 
         # Users
         simple-users = {
           users = {
             iain = {
               group = "iain";
-              shell = pkgs.fish;
+              shell = pkgs.zsh;
               extraGroups = ["wheel"];
               home-manager = ./users/iain/configuration.nix;
             };

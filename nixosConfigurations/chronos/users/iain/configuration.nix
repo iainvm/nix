@@ -37,15 +37,7 @@ in {
     wofi.enable = true;
   };
 
-  shells = {
-    fish = {
-      enable = true;
-      starship = {
-        enable = true;
-        transientPrompt = true;
-      };
-    };
-  };
+  shells.zsh.enable = true;
 
   cli = {
     git = {
