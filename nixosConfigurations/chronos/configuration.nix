@@ -39,6 +39,9 @@ in
           enable = true;
           hostName = computerName;
         };
+        system = {
+          sound.enable = true;
+        };
 
         # Environment
         sddm.enable = true;

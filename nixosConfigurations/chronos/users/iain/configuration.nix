@@ -13,6 +13,11 @@ in {
     inputs.self.homeManagerModules.default
   ];
 
+  # Environment Variables
+  home.sessionVariables = {
+    GTK_THEME = "Adwaita:dark";
+  };
+
   # Dotfiles
   home.file = {
     ".config" = {

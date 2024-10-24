@@ -12,6 +12,7 @@
     ./shells/fish.nix
     ./shells/zsh.nix
     ./system/plymouth.nix
+    ./system/sound
     ./users/simple-users.nix
     ./window-manager/hyprland.nix
   ];
