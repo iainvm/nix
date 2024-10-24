@@ -8,7 +8,6 @@
     ./cli/dpm
     ./cli/git
     ./fonts/nerd-fonts
-    ./shells/fish
     ./shells/zsh
     ./system/hyprland
   ];

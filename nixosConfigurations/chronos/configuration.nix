@@ -36,6 +36,7 @@ in
         # Environment
         sddm.enable = true;
         hyprland.enable = true;
+        file-explorer.thunar.enable = true;
 
         # System Packages
         zsh.enable = true;

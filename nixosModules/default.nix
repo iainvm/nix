@@ -2,6 +2,7 @@
   imports = [
     ./cli/nix-flakes.nix
     ./display-manager/sddm.nix
+    ./file-explorer/thunar
     ./hardware/bluetooth.nix
     ./hardware/network.nix
     ./hardware/nvidia.nix
