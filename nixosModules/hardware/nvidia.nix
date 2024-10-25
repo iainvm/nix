@@ -1,7 +1,7 @@
 {
   lib,
+  pkgs,
   config,
-  nixpkgs,
   ...
 }: {
   options.nvidia = {
@@ -12,18 +12,16 @@
     boot.kernelParams = ["nvidia_drm.fbdev=1"];
     services.xserver.videoDrivers = ["nvidia"];
 
-    # environment.sessionVariables = rec {
-    #   LIBVA_DRIVER_NAME = "nvidia";
-    #   GBM_BACKEND = "nvidia-drm";
-    #   __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    #   WLR_NO_HARDWARE_CURSORS = "1";
-    # };
+    environment.sessionVariables = rec {
+      LIBVA_DRIVER_NAME = "nvidia";
+      XDG_SESSION_TYPE = "wayland";
+      GBM_BACKEND = "nvidia-drm";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      WLR_NO_HARDWARE_CURSORS = "1";
+    };
 
     hardware = {
-      # graphics = {
-      #   enable = true;
-      # };
-
+      opengl.enable = true;
       nvidia = {
         open = true;
         nvidiaSettings = true;
@@ -34,7 +32,7 @@
           finegrained = false;
         };
 
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
+        package = pkgs.unstable.linuxPackages.nvidiaPackages.latest;
       };
     };
   };

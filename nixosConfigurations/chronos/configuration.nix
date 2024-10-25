@@ -31,6 +31,9 @@ in
       ./hardware-configuration.nix
       self.nixosModules.default
       {
+        # Flatpak
+        services.flatpak.enable = true;
+
         # Nix
         system.stateVersion = "24.05";
         nix-flakes.enable = true;
