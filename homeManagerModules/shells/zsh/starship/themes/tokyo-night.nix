@@ -3,7 +3,7 @@
 
   format = lib.concatStrings [
     "[░▒▓](#a3aed2)"
-    "[$os](bg:#a3aed2 fg:#090c0c)"
+    "[$os ](bg:#a3aed2 fg:#090c0c)"
     "[](bg:#769ff0 fg:#a3aed2)"
     "$directory"
     "[](fg:#769ff0 bg:#394260)"
@@ -53,5 +53,12 @@
   os = {
     format = "$symbol";
     disabled = false;
+    symbols = {
+      NixOS = "󱄅";
+    };
+  };
+
+  nix_shell = {
+    format = " in [](bold blue)";
   };
 }

@@ -47,7 +47,9 @@ in {
     wofi.enable = true;
   };
 
-  shells.zsh.enable = true;
+  shells.zsh = {
+    enable = true;
+  };
 
   cli = {
     git = {
