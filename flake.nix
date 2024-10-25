@@ -45,7 +45,7 @@
         };
         # Potamoi
         potamoi = import ./nixosConfigurations/potamoi/configuration.nix {
-          inherit self inputs;
+          inherit self inputs nixpkgs nixpkgs-unstable;
         };
       };
 
