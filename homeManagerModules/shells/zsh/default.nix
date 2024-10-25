@@ -47,6 +47,8 @@ in {
             initExtra = ''
               bindkey '^[OA' history-substring-search-up
               bindkey '^[OB' history-substring-search-down
+              bindkey "^[[1;5C" forward-word
+              bindkey "^[[1;5D" backward-word
             '';
             plugins = [
               {
@@ -56,16 +58,6 @@ in {
                   repo = "fzf-tab";
                   rev = "v1.1.2";
                   sha256 = "sha256-Qv8zAiMtrr67CbLRrFjGaPzFZcOiMVEFLg1Z+N6VMhg=";
-                };
-              }
-
-              {
-                name = "zsh-history-substring-search";
-                src = pkgs.fetchFromGitHub {
-                  owner = "zsh-users";
-                  repo = "zsh-history-substring-search";
-                  rev = "v1.1.0";
-                  sha256 = "sha256-GSEvgvgWi1rrsgikTzDXokHTROoyPRlU0FVpAoEmXG4=";
                 };
               }
 
@@ -86,6 +78,16 @@ in {
                   repo = "zsh-syntax-highlighting";
                   rev = "0.8.0";
                   sha256 = "sha256-iJdWopZwHpSyYl5/FQXEW7gl/SrKaYDEtTH9cGP7iPo=";
+                };
+              }
+
+              {
+                name = "zsh-history-substring-search";
+                src = pkgs.fetchFromGitHub {
+                  owner = "zsh-users";
+                  repo = "zsh-history-substring-search";
+                  rev = "v1.1.0";
+                  sha256 = "sha256-GSEvgvgWi1rrsgikTzDXokHTROoyPRlU0FVpAoEmXG4=";
                 };
               }
             ];
