@@ -3,18 +3,18 @@
   config,
   ...
 }: {
-  options.network = {
+  options.core.hardware.network = {
     enable = lib.mkEnableOption "enable network";
     hostName = lib.mkOption {
       type = lib.types.str;
-      description = "Domain name of the device";
+      description = "Host name of the device";
     };
   };
 
-  config = lib.mkIf config.network.enable {
+  config = lib.mkIf config.core.hardware.network.enable {
     networking = {
       networkmanager.enable = true;
-      hostName = config.network.hostName;
+      hostName = config.core.hardware.network.hostName;
     };
   };
 }

@@ -1,18 +1,18 @@
 {self, ...}: {
   imports = [
+    ./nix
     ./applications/1password
     ./applications/thunar
-    ./cli/nix-flakes.nix
-    ./display-manager/sddm.nix
-    ./hardware/bluetooth.nix
-    ./hardware/network.nix
-    ./hardware/nvidia.nix
-    ./language/en-gb.nix
-    ./services/vscode-server.nix
+    ./applications/vscode-server
+    ./hardware/bluetooth
+    ./hardware/network
+    ./hardware/nvidia
+    ./hardware/sound
     ./shells/zsh.nix
-    ./system/plymouth.nix
-    ./system/sound
-    ./users/simple-users.nix
-    ./window-manager/hyprland.nix
+    ./system/hyprland
+    ./system/language
+    ./system/plymouth
+    ./system/sddm
+    ./users
   ];
 }

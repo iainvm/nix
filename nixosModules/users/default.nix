@@ -10,7 +10,7 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  options.simple-users = {
+  options.core.users = {
     users = lib.mkOption {
       type = lib.types.attrsOf (lib.types.submodule {
         options = {
@@ -49,14 +49,14 @@
           home = "/home/${name}";
           shell = user.shell;
         })
-        config.simple-users.users;
+        config.core.users.users;
 
       groups =
         lib.mapAttrs (name: user: {
           name = name;
           gid = lib.mkDefault null;
         })
-        config.simple-users.users;
+        config.core.users.users;
     };
 
     home-manager = {
@@ -65,7 +65,7 @@
       extraSpecialArgs = {inherit inputs;};
       users =
         lib.mapAttrs (name: user: import user.home-manager)
-        config.simple-users.users;
+        config.core.users.users;
     };
   };
 }

@@ -5,11 +5,11 @@
   system,
   ...
 }: {
-  options.hyprland = {
+  options.core.system.hyprland = {
     enable = lib.mkEnableOption "enable hyprland";
   };
 
-  config = lib.mkIf config.hyprland.enable {
+  config = lib.mkIf config.core.system.hyprland.enable {
     # Desktop Environment
     services.xserver = {
       enable = true;

@@ -3,11 +3,11 @@
   config,
   ...
 }: {
-  options.en-gb = {
+  options.core.system.language.en-gb = {
     enable = lib.mkEnableOption "enable en-gb";
   };
 
-  config = lib.mkIf config.en-gb.enable {
+  config = lib.mkIf config.core.system.language.en-gb.enable {
     i18n.defaultLocale = "en_GB.UTF-8";
     i18n.extraLocaleSettings = {
       LC_ADDRESS = "en_GB.UTF-8";

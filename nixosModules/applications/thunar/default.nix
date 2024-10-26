@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  options.applications.thunar = {
+  options.core.applications.thunar = {
     enable = lib.mkEnableOption "Thunar";
   };
   config = {

@@ -36,43 +36,53 @@ in
 
         # Nix
         system.stateVersion = "24.05";
-        nix-flakes.enable = true;
 
-        # System
-        plymouth = {
-          enable = true;
-          silent-boot = true;
-        };
-        en-gb.enable = true;
-        nvidia.enable = true;
-        bluetooth.enable = true;
-        network = {
-          enable = true;
-          hostName = computerName;
-        };
-        system = {
-          sound.enable = true;
-        };
+        core = {
+          nix.flakes.enable = true;
 
-        # Environment
-        sddm.enable = true;
-        hyprland.enable = true;
-        applications = {
-          "1password".enable = true;
-          thunar.enable = true;
-        };
+          # Hardware
+          hardware = {
+            network = {
+              enable = true;
+              hostName = computerName;
+            };
+            sound.enable = true;
+            nvidia.enable = true;
+            bluetooth.enable = true;
+          };
 
-        # System Packages
-        zsh.enable = true;
+          # System
+          system = {
+            language.en-gb.enable = true;
+            plymouth = {
+              enable = true;
+              silent-boot = true;
+            };
 
-        # Users
-        simple-users = {
+            # Session Manager
+            sddm.enable = true;
+            # Window Manager
+            hyprland.enable = true;
+          };
+
+          # Applications
+          applications = {
+            thunar.enable = true;
+            _1password.enable = true;
+          };
+
+          # System Packages
+          zsh.enable = true;
+
+          # Users
           users = {
-            iain = {
-              group = "iain";
-              shell = pkgs.zsh;
-              extraGroups = ["wheel"];
-              home-manager = ./users/iain/configuration.nix;
+            users = {
+              iain = {
+                group = "iain";
+                shell = pkgs.zsh;
+                extraGroups = ["wheel"];
+                home-manager = ./users/iain/configuration.nix;
+              };
             };
           };
         };

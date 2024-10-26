@@ -37,10 +37,6 @@ in {
     (lib.mkIf config.shells.zsh.enable
       {
         programs = {
-          fzf = {
-            enable = true;
-          };
-
           zsh = {
             enable = true;
             dotDir = ".config/zsh";
@@ -103,6 +99,10 @@ in {
               gd = "git diff";
               la = "ls -la";
             };
+          };
+
+          fzf = {
+            enable = true;
           };
 
           eza = {

@@ -4,11 +4,11 @@
   config,
   ...
 }: {
-  options.applications."1password" = {
+  options.core.applications._1password = {
     enable = lib.mkEnableOption "1password";
   };
 
-  config = lib.mkIf config.applications."1password".enable {
+  config = lib.mkIf config.core.applications._1password.enable {
     programs = {
       _1password = {
         enable = true;
@@ -21,6 +21,6 @@
       };
     };
 
-    security.pam.services."1password".enableGnomeKeyring = true;
+    security.pam.services._1password.enableGnomeKeyring = true;
   };
 }

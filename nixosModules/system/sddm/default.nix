@@ -6,11 +6,11 @@
   nixpkgs,
   ...
 }: {
-  options.sddm = {
+  options.core.system.sddm = {
     enable = lib.mkEnableOption "enable sddm";
   };
 
-  config = lib.mkIf config.sddm.enable {
+  config = lib.mkIf config.core.system.sddm.enable {
     services.xserver.enable = true;
 
     services.displayManager.enable = true;

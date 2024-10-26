@@ -5,7 +5,7 @@
   system,
   ...
 }: {
-  options.plymouth = {
+  options.core.system.plymouth = {
     enable = lib.mkEnableOption "enable plymouth";
     silent-boot = lib.mkEnableOption "enable silent boot";
   };
@@ -14,7 +14,7 @@
     {}
 
     (
-      lib.mkIf config.plymouth.enable
+      lib.mkIf config.core.system.plymouth.enable
       {
         boot = {
           initrd.verbose = false;
@@ -30,7 +30,7 @@
       }
     )
 
-    (lib.mkIf config.plymouth.silent-boot
+    (lib.mkIf config.core.system.plymouth.silent-boot
       {
         boot = {
           consoleLogLevel = 0;

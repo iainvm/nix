@@ -1,5 +1,5 @@
 set-long-prompt() { PROMPT=$(starship prompt) }
-precmd_functions=(set-long-prompt)
+precmd_functions+=(set-long-prompt)
 
 set-short-prompt() {
   if [[ $PROMPT != '%# ' ]]; then
