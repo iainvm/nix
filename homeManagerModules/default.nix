@@ -4,6 +4,7 @@
     ./applications/firefox
     ./applications/kitty
     ./applications/prism
+    ./applications/stremio
     ./applications/swappy
     ./applications/vscode
     ./applications/wofi

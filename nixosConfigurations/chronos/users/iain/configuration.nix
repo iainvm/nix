@@ -44,6 +44,7 @@ in {
     firefox.enable = true;
     kitty.enable = true;
     prism.enable = true;
+    stremio.enable = true;
     swappy.enable = true;
     vscode.enable = true;
     wofi.enable = true;
