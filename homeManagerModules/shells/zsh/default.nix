@@ -45,10 +45,10 @@ in {
             enable = true;
             dotDir = ".config/zsh";
             initExtra = ''
+              bindkey '^[[1;5C' forward-word
+              bindkey '^[[1;5D' backward-word
               bindkey '^[OA' history-substring-search-up
               bindkey '^[OB' history-substring-search-down
-              bindkey "^[[1;5C" forward-word
-              bindkey "^[[1;5D" backward-word
             '';
             plugins = [
               {
@@ -100,6 +100,7 @@ in {
               gst = "git stash";
               gpuoc = "git push --set-upstream origin \$(git symbolic-ref --short HEAD)";
               gf = "git fetch --all --prune";
+              gd = "git diff";
               la = "ls -la";
             };
           };
