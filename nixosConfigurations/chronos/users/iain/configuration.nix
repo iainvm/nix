@@ -40,6 +40,7 @@ in {
   };
 
   applications = {
+    discord.enable = true;
     firefox.enable = true;
     kitty.enable = true;
     prism.enable = true;

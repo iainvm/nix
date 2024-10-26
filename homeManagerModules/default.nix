@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./applications/discord
     ./applications/firefox
     ./applications/kitty
     ./applications/prism
