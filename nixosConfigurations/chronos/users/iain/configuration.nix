@@ -42,6 +42,7 @@ in {
   applications = {
     firefox.enable = true;
     kitty.enable = true;
+    prism.enable = true;
     swappy.enable = true;
     vscode.enable = true;
     wofi.enable = true;

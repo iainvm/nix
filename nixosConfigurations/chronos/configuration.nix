@@ -67,6 +67,7 @@ in
 
           # Applications
           applications = {
+            steam.enable = true; # Has to be installed system wide for openGL
             thunar.enable = true;
             _1password.enable = true;
           };

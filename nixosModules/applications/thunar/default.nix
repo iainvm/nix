@@ -1,12 +1,13 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: {
   options.core.applications.thunar = {
     enable = lib.mkEnableOption "Thunar";
   };
-  config = {
+  config = lib.mkIf config.core.applications.thunar.enable {
     services.gvfs = {
       enable = true;
     };
