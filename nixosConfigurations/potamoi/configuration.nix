@@ -33,11 +33,10 @@ in
       {
         # Nix
         system.stateVersion = "24.05";
-        nix-flakes.enable = true;
 
         # System
-        boot.kernelModules = [];
         wsl = {
+          defaultUser = "iain";
           enable = true;
           extraBin = [
             {src = inputs.nixpkgs.lib.getExe' pkgs.coreutils "dirname";}
@@ -45,25 +44,36 @@ in
             {src = inputs.nixpkgs.lib.getExe' pkgs.coreutils "uname";}
           ];
         };
-        en-gb.enable = true;
-        network = {
-          enable = true;
-          hostName = computerName;
-        };
 
-        # System Packages
-        zsh.enable = true;
-        vscode-server.enable = true;
+        core = {
+          nix.flakes.enable = true;
 
-        # Users
-        wsl.defaultUser = "iain";
-        simple-users = {
+          hardware = {
+            network = {
+              enable = true;
+              hostName = computerName;
+            };
+          };
+
+          system = {
+            language.en-gb.enable = true;
+          };
+
+          applications = {
+            vscode-server.enable = true;
+          };
+
+          # System Packages
+          zsh.enable = true;
+
           users = {
-            iain = {
-              group = "iain";
-              extraGroups = ["wheel"];
-              shell = pkgs.zsh;
-              home-manager = ./users/iain/configuration.nix;
+            users = {
+              iain = {
+                group = "iain";
+                extraGroups = ["wheel"];
+                shell = pkgs.zsh;
+                home-manager = ./users/iain/configuration.nix;
+              };
             };
           };
         };
