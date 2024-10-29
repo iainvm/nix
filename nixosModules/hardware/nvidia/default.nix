@@ -12,16 +12,8 @@
     boot.kernelParams = ["nvidia_drm.fbdev=1"];
     services.xserver.videoDrivers = ["nvidia"];
 
-    environment.sessionVariables = rec {
-      LIBVA_DRIVER_NAME = "nvidia";
-      XDG_SESSION_TYPE = "wayland";
-      GBM_BACKEND = "nvidia-drm";
-      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-      WLR_NO_HARDWARE_CURSORS = "1";
-    };
-
     hardware = {
-      opengl.enable = true;
+      graphics.enable = true;
       nvidia = {
         open = true;
         nvidiaSettings = true;

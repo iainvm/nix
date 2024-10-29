@@ -8,7 +8,7 @@
   fullName = "Iain Majer";
   email = "iainvm@outlook.com";
 in {
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
   home.username = user;
   home.homeDirectory = "/home/${user}";
   programs.home-manager.enable = true;

@@ -35,7 +35,7 @@ in
         services.flatpak.enable = true;
 
         # Nix
-        system.stateVersion = "24.05";
+        system.stateVersion = "24.11";
 
         core = {
           nix.flakes.enable = true;
