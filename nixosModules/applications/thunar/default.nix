@@ -14,7 +14,12 @@
 
     programs.thunar = {
       enable = true;
-      plugins = [pkgs.xfce.thunar-volman];
+      plugins = with pkgs.xfce; [
+        thunar-volman
+        thunar-archive-plugin
+      ];
     };
+
+    programs.file-roller.enable = true;
   };
 }
