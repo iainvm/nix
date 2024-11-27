@@ -8,6 +8,8 @@
   };
 
   config = lib.mkIf config.core.zsh.enable {
-    programs.zsh.enable = true;
+    programs.zsh = {
+      enable = true;
+    };
   };
 }

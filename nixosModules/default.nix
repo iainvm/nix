@@ -15,6 +15,7 @@
     ./shells/zsh.nix
 
     ./system/hyprland
+    ./system/keyring
     ./system/language
     ./system/plymouth
     ./system/sddm

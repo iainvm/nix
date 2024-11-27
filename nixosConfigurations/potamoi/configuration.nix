@@ -57,6 +57,7 @@ in
 
           system = {
             language.en-gb.enable = true;
+            keyring.enable = true;
           };
 
           applications = {
