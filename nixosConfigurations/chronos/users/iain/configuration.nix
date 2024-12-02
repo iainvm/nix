@@ -40,6 +40,10 @@ in {
   };
 
   applications = {
+    protonme = {
+      pass.enable = true;
+      desktop.enable = false;
+    };
     discord.enable = true;
     firefox.enable = true;
     kitty.enable = true;

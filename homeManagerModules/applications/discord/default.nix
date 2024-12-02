@@ -11,6 +11,7 @@
   config = lib.mkIf config.applications.discord.enable {
     home.packages = with pkgs; [
       discord
+      vesktop
     ];
   };
 }
