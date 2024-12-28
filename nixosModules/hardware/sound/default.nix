@@ -19,6 +19,7 @@
 
     environment.systemPackages = with pkgs; [
       playerctl # Used to control players with media keys
+      pavucontrol
     ];
   };
 }

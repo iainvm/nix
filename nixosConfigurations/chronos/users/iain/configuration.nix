@@ -42,7 +42,7 @@ in {
   applications = {
     protonme = {
       pass.enable = true;
-      desktop.enable = false;
+      desktop.enable = true;
     };
     discord.enable = true;
     firefox.enable = true;
