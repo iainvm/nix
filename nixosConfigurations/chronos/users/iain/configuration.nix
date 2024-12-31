@@ -40,14 +40,15 @@ in {
   };
 
   applications = {
-    protonme = {
-      pass.enable = true;
-      desktop.enable = true;
-    };
+    capacities.enable = true;
     discord.enable = true;
     firefox.enable = true;
     kitty.enable = true;
     prism.enable = true;
+    protonme = {
+      pass.enable = true;
+      desktop.enable = true;
+    };
     stremio.enable = true;
     swappy.enable = true;
     vscode.enable = true;

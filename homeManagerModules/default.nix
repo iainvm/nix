@@ -1,5 +1,6 @@
 {...}: {
   imports = [
+    ./applications/capacities
     ./applications/discord
     ./applications/firefox
     ./applications/kitty
