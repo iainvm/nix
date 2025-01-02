@@ -9,7 +9,7 @@ in {
   default = pkgs.mkShell {
     packages = [
       pkgs.git
-      pkgs-unstable.go-task
+      # pkgs-unstable.go-task
       pkgs.alejandra
     ];
   };

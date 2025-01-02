@@ -35,6 +35,8 @@ tasks:
     cmds:
       - silent: true
         cmd: sudo nix-collect-garbage --delete-older-than 3d
+      - silent: true
+        cmd: nix-collect-garbage --delete-older-than 3d
 
   update-flakes:
     cmds:

@@ -67,5 +67,6 @@ in {
     };
     direnv.enable = true;
     dpm.enable = true;
+    task.enable = true;
   };
 }

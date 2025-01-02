@@ -13,6 +13,7 @@
     ./cli/direnv
     ./cli/dpm
     ./cli/git
+    ./cli/task
     ./fonts/nerd-fonts
     ./shells/zsh
     ./system/dunst
