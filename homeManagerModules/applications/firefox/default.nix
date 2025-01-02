@@ -11,13 +11,21 @@
   config = lib.mkIf config.applications.firefox.enable {
     programs.firefox = {
       enable = true;
+      languagePacks = ["en-GB"];
 
-      package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
-        extraPolicies = {
-          DisableTelemetry = true;
-
-          ExtensionSettings = import ./extensions.nix;
-          Preferences = import ./preferences.nix;
+      policies = {
+        # https://mozilla.github.io/policy-templates/
+        CaptivePortal = false;
+        DisableTelemetry = true;
+        DisableFirefoxStudies = true;
+        DisableFirefoxAccounts = true;
+        DontCheckDefaultBrowser = true;
+        UserMessaging = {
+          FirefoxLabs = false;
+          SkipOnboarding = true;
+          MoreFromMozilla = false;
+          FeatureRecommendations = false;
+          ExtensionRecommendations = false;
         };
       };
 

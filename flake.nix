@@ -20,6 +20,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
@@ -41,7 +46,7 @@
       nixosConfigurations = {
         # Chronos
         chronos = import ./nixosConfigurations/chronos/configuration.nix {
-          inherit self inputs nixpkgs nixpkgs-unstable;
+          inherit self inputs nixpkgs;
         };
         # Potamoi
         potamoi = import ./nixosConfigurations/potamoi/configuration.nix {

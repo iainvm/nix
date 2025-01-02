@@ -2,7 +2,6 @@
   self,
   inputs,
   nixpkgs,
-  nixpkgs-unstable,
   ...
 }: let
   system = "x86_64-linux";
@@ -12,13 +11,14 @@
     config.allowUnfree = true;
     overlays = [
       (final: prev: {
-        unstable = import nixpkgs-unstable {
+        unstable = import inputs.nixpkgs-unstable {
           inherit system;
           config = {
             allowUnfree = true;
           };
         };
       })
+      inputs.nur.overlay
     ];
   };
 in
