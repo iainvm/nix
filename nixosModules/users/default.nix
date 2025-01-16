@@ -45,7 +45,7 @@
         lib.mapAttrs (name: user: {
           isNormalUser = true;
           group = name;
-          extraGroups = user.extraGroups or [];
+          extraGroups = user.extraGroups;
           home = "/home/${name}";
           shell = user.shell;
         })
