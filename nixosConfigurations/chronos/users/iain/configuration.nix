@@ -40,6 +40,7 @@ in {
   };
 
   applications = {
+    anytype.enable = true;
     capacities.enable = true;
     discord.enable = true;
     firefox.enable = true;
