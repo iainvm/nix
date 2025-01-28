@@ -48,6 +48,10 @@
         chronos = import ./nixosConfigurations/chronos/configuration.nix {
           inherit self inputs nixpkgs;
         };
+        # Brokkr
+        brokkr = import ./nixosConfigurations/brokkr/configuration.nix {
+          inherit self inputs nixpkgs;
+        };
         # Potamoi
         potamoi = import ./nixosConfigurations/potamoi/configuration.nix {
           inherit self inputs nixpkgs nixpkgs-unstable;
