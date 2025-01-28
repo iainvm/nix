@@ -23,7 +23,8 @@
   "extensions.screenshots.disabled" = true;
 
   # Tracking
-  "privacy.resistFingerprinting" = true;
+  # Issues with captchas and doesn't pick up system theme
+  # "privacy.resistFingerprinting" = true;
 
   # New Tab Page
   "browser.startup.page" = 3; # On startup restore previous session
