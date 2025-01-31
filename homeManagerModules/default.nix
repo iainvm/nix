@@ -9,6 +9,7 @@
     ./applications/protonme
     ./applications/stremio
     ./applications/swappy
+    ./applications/teams
     ./applications/vscode
     ./applications/wofi
     ./cli/direnv

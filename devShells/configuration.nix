@@ -11,6 +11,7 @@ in {
       pkgs.git
       pkgs-unstable.go-task
       pkgs.alejandra
+      pkgs.go-task
     ];
   };
 }

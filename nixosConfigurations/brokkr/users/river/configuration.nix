@@ -47,6 +47,7 @@ in {
       desktop.enable = true;
     };
     swappy.enable = true;
+    teams.enable = true;
     vscode.enable = true;
     wofi.enable = true;
   };
