@@ -28,6 +28,7 @@ in
     specialArgs = {inherit inputs;};
 
     modules = [
+      inputs.nixos-hardware.nixosModules.dell-xps-15-9500
       ./hardware-configuration.nix
       self.nixosModules.default
       {
