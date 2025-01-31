@@ -73,6 +73,7 @@ in
               enable = true;
               users = ["iain" "river"];
             };
+            global-protect.enable = true;
             thunar.enable = true;
           };
 

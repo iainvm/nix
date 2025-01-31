@@ -3,6 +3,7 @@
     ./nix
 
     ./applications/1password
+    ./applications/global-protect
     ./applications/steam
     ./applications/thunar
     ./applications/vscode-server
