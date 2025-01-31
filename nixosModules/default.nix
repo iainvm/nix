@@ -19,6 +19,7 @@
     ./system/hyprland
     ./system/keyring
     ./system/language
+    ./system/ly
     ./system/plymouth
     ./system/sddm
 

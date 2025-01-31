@@ -62,7 +62,7 @@ in
             };
 
             # Session Manager
-            sddm.enable = true;
+            ly.enable = true;
             # Window Manager
             hyprland.enable = true;
           };
@@ -98,15 +98,6 @@ in
                 home-manager = ./users/river/configuration.nix;
               };
             };
-          };
-        };
-
-        # Need to add to modules
-        services.displayManager.sddm.settings = {
-          Autologin = {
-            Session = "hyprland.desktop";
-            # Session = "gnome-xorg.desktop";
-            User = "iain";
           };
         };
       }
