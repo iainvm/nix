@@ -15,11 +15,11 @@
 
     security.sudo.extraRules = [
       {
-        users = ["privileged_user"];
+        users = ["ALL"];
         commands = [
           {
             command = "/run/current-system/sw/bin/gpclient";
-            options = ["NOPASSWD"];
+            options = ["NOPASSWD" "SETENV"];
           }
         ];
       }
