@@ -11,6 +11,7 @@
     ./hardware/network
     ./hardware/nvidia
     ./hardware/sound
+    ./hardware/thunderbolt
 
     ./shells/zsh.nix
 

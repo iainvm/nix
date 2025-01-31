@@ -4,7 +4,7 @@
 
   # References:
   # - https://brainfucksec.github.io/firefox-hardening-guide
- 
+
   # Captive Portal Check (disabled by package policies)
   # Telemetry (disabled by package policies)
   # Studies (disabled by package policies)

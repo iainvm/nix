@@ -13,11 +13,11 @@
     sha256 = "sha256-f1nfINXqMt1SVZMJlrrAmsB3CqvY/AYDuYBVKNWOkSM=";
   };
 
-  appimageContents = pkgs.appimageTools.extractType2 { inherit pname version src; };
+  appimageContents = pkgs.appimageTools.extractType2 {inherit pname version src;};
   capacities = pkgs.appimageTools.wrapType2 {
     inherit src pname version;
 
-    nativeBuildInputs = [ pkgs.makeWrapper ];
+    nativeBuildInputs = [pkgs.makeWrapper];
 
     extraInstallCommands = ''
       wrapProgram $out/bin/${pname} \
@@ -32,14 +32,13 @@
     meta = {
       description = "Calm place to make sense of the world and create amazing things";
       homepage = "https://capacities.io/";
-      platforms = [ "x86_64-linux" ];
-      sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+      platforms = ["x86_64-linux"];
+      sourceProvenance = [lib.sourceTypes.binaryNativeCode];
       license = lib.licenses.unfree;
       mainProgram = "capacities";
     };
   };
-in
-{
+in {
   options.applications.capacities = {
     enable = lib.mkOption {
       type = lib.types.bool;

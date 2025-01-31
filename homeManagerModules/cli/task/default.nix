@@ -22,9 +22,9 @@
 
     doCheck = false;
 
-    nativeBuildInputs = [ pkgs.installShellFiles ];
+    nativeBuildInputs = [pkgs.installShellFiles];
 
-    subPackages = [ "cmd/task" ];
+    subPackages = ["cmd/task"];
 
     ldflags = [
       "-s"
@@ -49,7 +49,7 @@
         };
       };
 
-      updateScript = pkgs.nix-update-script { };
+      updateScript = pkgs.nix-update-script {};
     };
 
     meta = with lib; {
@@ -57,12 +57,10 @@
       description = "Task runner / simpler Make alternative written in Go";
       changelog = "https://github.com/go-task/task/blob/v${version}/CHANGELOG.md";
       license = licenses.mit;
-      maintainers = with maintainers; [ parasrah ];
+      maintainers = with maintainers; [parasrah];
     };
-
   };
-in
-{
+in {
   options.cli.task = {
     enable = lib.mkOption {
       type = lib.types.bool;

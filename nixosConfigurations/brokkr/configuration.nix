@@ -49,6 +49,7 @@ in
             sound.enable = true;
             nvidia.enable = true;
             bluetooth.enable = true;
+            thunderbolt.enable = true;
           };
 
           # System
