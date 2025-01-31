@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 options='  Poweroff
-  Reboot
-VPN'
+  Reboot'
 # Not implemented yet
 #   Logout
 #   Lock
@@ -26,8 +25,5 @@ case $option in
         ;;
     logout)
         echo "Logout"
-        ;;
-    vpn)
-        sudo -E gpclient connect --browser default vpn.river-island.com
         ;;
 esac
