@@ -68,6 +68,10 @@ in
 
           # Applications
           applications = {
+            _1password = {
+              enable = true;
+              users = ["iain" "river"];
+            };
             thunar.enable = true;
           };
 
@@ -82,6 +86,14 @@ in
                 shell = pkgs.zsh;
                 extraGroups = ["networkmanager" "wheel"];
                 home-manager = ./users/iain/configuration.nix;
+              };
+            };
+            users = {
+              river = {
+                group = "river";
+                shell = pkgs.zsh;
+                extraGroups = ["networkmanager" "wheel"];
+                home-manager = ./users/river/configuration.nix;
               };
             };
           };

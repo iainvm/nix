@@ -1,0 +1,67 @@
+{
+  inputs,
+  system,
+  ...
+}: let
+  user = "river";
+  name = "Iain";
+  fullName = "Iain Majer";
+  email = "iain.majer@river-island.com";
+in {
+  home.stateVersion = "24.11";
+  home.username = user;
+  home.homeDirectory = "/home/${user}";
+  programs.home-manager.enable = true;
+
+  imports = [
+    inputs.self.homeManagerModules.default
+  ];
+
+  # Environment Variables
+  home.sessionVariables = {
+    GTK_THEME = "Adwaita:dark";
+  };
+
+  # Dotfiles
+  home.file = {
+    ".config" = {
+      source = ./dotfiles;
+      target = ".config/";
+      recursive = true;
+    };
+  };
+
+  system = {
+    dunst.enable = true;
+  };
+
+  fonts = {
+    nerd-fonts.enable = true;
+  };
+
+  applications = {
+    firefox.enable = true;
+    kitty.enable = true;
+    protonme = {
+      pass.enable = true;
+      desktop.enable = true;
+    };
+    swappy.enable = true;
+    vscode.enable = true;
+    wofi.enable = true;
+  };
+
+  shells.zsh = {
+    enable = true;
+  };
+
+  cli = {
+    git = {
+      enable = true;
+      name = fullName;
+      email = email;
+    };
+    direnv.enable = true;
+    dpm.enable = true;
+  };
+}

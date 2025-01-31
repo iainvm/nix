@@ -6,6 +6,11 @@
 }: {
   options.core.applications._1password = {
     enable = lib.mkEnableOption "1password";
+    users = lib.mkOption {
+      type = lib.types.listOf lib.types.str;
+      default = ["iain"];
+      description = "A list of users to be added to the polkit policy group.";
+    };
   };
 
   config = lib.mkIf config.core.applications._1password.enable {
@@ -17,7 +22,7 @@
       _1password-gui = {
         enable = true;
         package = pkgs._1password-gui;
-        polkitPolicyOwners = ["iain"]; # TODO: Make this configurable
+        polkitPolicyOwners = config.core.applications._1password.users;
       };
     };
 
