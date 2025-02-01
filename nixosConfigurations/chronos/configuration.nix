@@ -61,6 +61,7 @@ in
 
             # Session Manager
             sddm.enable = true;
+            keyring.enable = true;
             # Window Manager
             hyprland.enable = true;
           };
