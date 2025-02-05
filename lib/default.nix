@@ -1,7 +1,5 @@
 {
-  self,
-  inputs,
-  nixpkgs,
+   inputs,
 }: {
   mkNixOSConfigurations = {
     name,
@@ -10,7 +8,7 @@
     modules ? [],
     overlays ? [],
   }:
-    nixpkgs.lib.nixosSystem {
+    inputs.nixpkgs.lib.nixosSystem {
       system = arch;
       modules =
         [
@@ -23,23 +21,20 @@
         ++ modules;
     };
 
-  # mkHomeConfigurations = {
-  #   host,
-  #   nixpkgs,
-  #   home-manager,
-  #   modules ? [],
-  # }:
-  #   home-manager.lib.homeManagerConfiguration {
-  #     pkgs = import nixpkgs {
-  #       system = arch;
-  #       config = {
-  #         allowUnfree = true;
-  #       };
-  #     };
-  #     modules =
-  #       [
-  #         ./hosts/${host.dir}/home.nix
-  #       ]
-  #       ++ modules;
-  #   };
+  mkHomeConfigurations = {
+    user,
+    host,
+    arch,
+    pkgs,
+    modules ? [],
+    overlays ? [],
+  }:
+    inputs.home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules =
+        [
+          ./homeConfigurations/"${user}@${host}"/home.nix
+        ]
+        ++ modules;
+    };
 }

@@ -24,6 +24,9 @@ in
       ./hardware-configuration.nix
       self.nixosModules.default
       {
+        environment.systemPackages = with pkgs; [
+          home-manager
+        ];
         # Flatpak
         services.flatpak.enable = true;
 
@@ -79,7 +82,7 @@ in
                 group = "iain";
                 shell = pkgs.zsh;
                 extraGroups = ["networkmanager" "wheel"];
-                home-manager = ./users/iain/configuration.nix;
+                home-manager = ../../homeConfigurations/iain-brokkr/home.nix;
               };
             };
             users = {
@@ -87,7 +90,7 @@ in
                 group = "river";
                 shell = pkgs.zsh;
                 extraGroups = ["networkmanager" "wheel"];
-                home-manager = ./users/river/configuration.nix;
+                home-manager = ../../homeConfigurations/river-brokkr/home.nix;
               };
             };
           };

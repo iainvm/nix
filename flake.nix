@@ -40,7 +40,9 @@
     flake-utils,
     home-manager,
     ...
-  } @ inputs:
+  } @ inputs: let
+    lib = import ./lib {inherit inputs;};
+  in
     {
       # Systems
       nixosConfigurations = {
@@ -73,6 +75,16 @@
             { nixpkgs.config.allowUnfree = true; }
             {nixpkgs.overlays = [inputs.nur.overlays.default];}
             ./homeConfigurations/iain/home.nix
+          ];
+        };
+        iain-brokkr = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+          extraSpecialArgs = { inherit self inputs nixpkgs; };
+          modules = [
+            { nixpkgs.config.allowUnfree = true; }
+            {nixpkgs.overlays = [inputs.nur.overlays.default];}
+            ./homeConfigurations/iain-brokkr/home.nix
           ];
         };
       };
