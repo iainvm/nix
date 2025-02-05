@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 options='  Poweroff
-  Reboot'
+  Reboot
+  Logout'
 # Not implemented yet
-#   Logout
-#   Lock
+  Lock
 #   Suspend
 
 # Take the 2nd column of selected option
@@ -24,6 +24,6 @@ case $option in
         echo "Lock"
         ;;
     logout)
-        echo "Logout"
+        hyprctl dispatch exit
         ;;
 esac
