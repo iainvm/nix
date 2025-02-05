@@ -24,7 +24,7 @@
           finegrained = false;
         };
 
-        package = pkgs.unstable.linuxPackages.nvidiaPackages.latest;
+        package = pkgs.linuxPackages.nvidiaPackages.latest;
       };
     };
   };

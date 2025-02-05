@@ -10,14 +10,6 @@
     inherit system;
     config.allowUnfree = true;
     overlays = [
-      (final: prev: {
-        unstable = import inputs.nixpkgs-unstable {
-          inherit system;
-          config = {
-            allowUnfree = true;
-          };
-        };
-      })
       inputs.nur.overlays.default
     ];
   };
@@ -31,6 +23,10 @@ in
       ./hardware-configuration.nix
       self.nixosModules.default
       {
+        environment.systemPackages = with pkgs; [
+          home-manager
+        ];
+
         # Flatpak
         services.flatpak.enable = true;
 
@@ -82,7 +78,7 @@ in
                 group = "iain";
                 shell = pkgs.zsh;
                 extraGroups = ["wheel"];
-                home-manager = ./users/iain/configuration.nix;
+                home-manager = ../../homeConfigurations/iain/home.nix;
               };
             };
           };

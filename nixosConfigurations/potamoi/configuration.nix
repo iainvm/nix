@@ -2,7 +2,6 @@
   self,
   inputs,
   nixpkgs,
-  nixpkgs-unstable,
   ...
 }: let
   computerName = "potamoi";
@@ -10,16 +9,7 @@
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    overlays = [
-      (final: prev: {
-        unstable = import nixpkgs-unstable {
-          inherit system;
-          config = {
-            allowUnfree = true;
-          };
-        };
-      })
-    ];
+    overlays = [];
   };
 in
   nixpkgs.lib.nixosSystem {

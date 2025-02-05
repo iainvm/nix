@@ -7,10 +7,6 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
-    nixpkgs-unstable = {
-      url = "github:NixOS/nixpkgs/nixos-unstable";
-    };
-
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
     };
@@ -41,8 +37,8 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-unstable,
     flake-utils,
+    home-manager,
     ...
   } @ inputs:
     {
@@ -58,13 +54,27 @@
         };
         # Potamoi
         potamoi = import ./nixosConfigurations/potamoi/configuration.nix {
-          inherit self inputs nixpkgs nixpkgs-unstable;
+          inherit self inputs nixpkgs;
         };
       };
 
       # NixOS Modules
       nixosModules = {
         default = import ./nixosModules/default.nix;
+      };
+
+      # Home Configurations
+      homeConfigurations = {
+        iain = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+          extraSpecialArgs = { inherit self inputs nixpkgs; };
+          modules = [
+            { nixpkgs.config.allowUnfree = true; }
+            {nixpkgs.overlays = [inputs.nur.overlays.default];}
+            ./homeConfigurations/iain/home.nix
+          ];
+        };
       };
 
       # Home Manager Modules

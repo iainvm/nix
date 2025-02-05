@@ -1,6 +1,5 @@
 {
   inputs,
-  system,
   ...
 }: let
   user = "iain";
