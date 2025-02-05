@@ -9,9 +9,7 @@
   };
 
   config = lib.mkIf config.core.applications.global-protect.enable {
-    environment.systemPackages = with pkgs; [
-      gpclient
-    ];
+    services.globalprotect.enable = true;
 
     security.sudo.extraRules = [
       {
