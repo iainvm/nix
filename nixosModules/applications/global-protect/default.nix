@@ -10,6 +10,7 @@
 
   config = lib.mkIf config.core.applications.global-protect.enable {
     environment.systemPackages = with pkgs; [
+      globalprotect-openconnect
       gpclient
     ];
 
