@@ -14,6 +14,10 @@
     users = lib.mkOption {
       type = lib.types.attrsOf (lib.types.submodule {
         options = {
+          host = lib.mkOption {
+            type = lib.types.str;
+            description = "The maching name the user is on.";
+          };
           group = lib.mkOption {
             type = lib.types.str;
             description = "The primary group of the user.";
@@ -27,11 +31,6 @@
             type = lib.types.nullOr (lib.types.either lib.types.shellPackage (lib.types.passwdEntry lib.types.path));
             default = pkgs.bash;
             description = "The shell of the user.";
-          };
-
-          home-manager = lib.mkOption {
-            type = lib.types.path;
-            description = "The home-manager configuration for the user.";
           };
         };
       });
@@ -65,7 +64,9 @@
       useUserPackages = true;
       extraSpecialArgs = {inherit inputs;};
       users =
-        lib.mapAttrs (name: user: import user.home-manager)
+        lib.mapAttrs (name: user: let 
+          hmDir = "${name}@${user.host}";
+        in import ../../homeConfigurations/${hmDir}/home.nix)
         config.core.users.users;
     };
   };

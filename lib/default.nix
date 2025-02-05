@@ -1,5 +1,7 @@
 {
-   inputs,
+  self,
+  inputs,
+  nixpkgs,
 }: {
   mkNixOSConfigurations = {
     name,
@@ -22,19 +24,21 @@
     };
 
   mkHomeConfigurations = {
-    user,
-    host,
-    arch,
+    dir,
     pkgs,
     modules ? [],
     overlays ? [],
-  }:
-    inputs.home-manager.lib.homeManagerConfiguration {
+  }:{
+    "${dir}" = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
+      extraSpecialArgs = { inherit self inputs nixpkgs; };
       modules =
         [
-          ./homeConfigurations/"${user}@${host}"/home.nix
+          { nixpkgs.config.allowUnfree = true; }
+          {nixpkgs.overlays = [inputs.nur.overlays.default];}
+          ../homeConfigurations/${dir}/home.nix
         ]
         ++ modules;
     };
+  };
 }

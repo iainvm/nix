@@ -41,7 +41,7 @@
     home-manager,
     ...
   } @ inputs: let
-    lib = import ./lib {inherit inputs;};
+    lib = import ./lib {inherit self inputs nixpkgs;};
   in
     {
       # Systems
@@ -66,27 +66,15 @@
       };
 
       # Home Configurations
-      homeConfigurations = {
-        iain = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-
-          extraSpecialArgs = { inherit self inputs nixpkgs; };
-          modules = [
-            { nixpkgs.config.allowUnfree = true; }
-            {nixpkgs.overlays = [inputs.nur.overlays.default];}
-            ./homeConfigurations/iain/home.nix
-          ];
-        };
-        iain-brokkr = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-
-          extraSpecialArgs = { inherit self inputs nixpkgs; };
-          modules = [
-            { nixpkgs.config.allowUnfree = true; }
-            {nixpkgs.overlays = [inputs.nur.overlays.default];}
-            ./homeConfigurations/iain-brokkr/home.nix
-          ];
-        };
+      homeConfigurations = lib.mkHomeConfigurations {
+        dir = "iain@chronos";
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      } // lib.mkHomeConfigurations {
+        dir = "iain@brokkr";
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      } // lib.mkHomeConfigurations {
+        dir = "river@brokkr";
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
       };
 
       # Home Manager Modules

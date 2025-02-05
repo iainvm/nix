@@ -1,5 +1,11 @@
 version: "3"
 
+vars:
+  user:
+    sh: whoami
+  hostname:
+    sh: hostname
+
 tasks:
   show:
     cmds:
@@ -19,7 +25,12 @@ tasks:
   switch:
     cmds:
       - silent: true
-        cmd: sudo nixos-rebuild switch --flake .
+        cmd: sudo nixos-rebuild switch --flake .#{{.hostname}}
+
+  hm-switch:
+    cmds:
+      - silent: true
+        cmd: home-manager switch --flake .#{{.user}}@{{.hostname}}
 
   switch-to:
     cmds:

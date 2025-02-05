@@ -79,18 +79,18 @@ in
           users = {
             users = {
               iain = {
+                host = "brokkr";
                 group = "iain";
                 shell = pkgs.zsh;
                 extraGroups = ["networkmanager" "wheel"];
-                home-manager = ../../homeConfigurations/iain-brokkr/home.nix;
               };
             };
             users = {
               river = {
+                host = "brokkr";
                 group = "river";
                 shell = pkgs.zsh;
                 extraGroups = ["networkmanager" "wheel"];
-                home-manager = ../../homeConfigurations/river-brokkr/home.nix;
               };
             };
           };
