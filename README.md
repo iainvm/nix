@@ -9,21 +9,21 @@ The layout for this repo goes as follows
 ```sh
 # Development
 devShells/
-    configuration.nix  # stores the nix shell config used for managing this repo
+    configuration.nix   # stores the nix shell config used for managing this repo
 
-# Custom Modules
-nixosModules/        # Many nix modules wrapped with options for system level packages
-homeManagerModules/  # Many home manager modules wrapped with options for user level packages
+# Home Manager Configs
+homeManagerModules/     # Many home manager modules wrapped with options for user level packages
+homeConfigurations/     # Configs for each user, allows user to use `home-manager switch` without root to update their config
+    "${user}@${host}"/
+        dotfiles        # Usually mapped into `~/.config`
+        home.nix
 
 # System Configs
+nixosModules/           # Many nix modules wrapped with options for system level packages
 nixosConfigurations/
     hostname/
         configuration.nix           # stores the system configurations this repo is used to manage
         hardware-configuration.nix
-        users/
-            username/
-                dotfiles/           # Dotfiles (usually just mapped into `~/.config`)
-                configuration.nix   # Home Manager configuration for the user
 ```
 
 ## First Execution

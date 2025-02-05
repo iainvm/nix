@@ -60,10 +60,10 @@ in
           users = {
             users = {
               iain = {
+                host = "potamoi";
                 group = "iain";
                 extraGroups = ["wheel"];
                 shell = pkgs.zsh;
-                home-manager = ./users/iain/configuration.nix;
               };
             };
           };

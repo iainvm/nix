@@ -75,10 +75,10 @@ in
           users = {
             users = {
               iain = {
+                host = "chronos";
                 group = "iain";
                 shell = pkgs.zsh;
                 extraGroups = ["wheel"];
-                home-manager = ../../homeConfigurations/iain/home.nix;
               };
             };
           };
