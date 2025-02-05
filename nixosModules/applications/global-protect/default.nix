@@ -9,7 +9,12 @@
   };
 
   config = lib.mkIf config.core.applications.global-protect.enable {
-    services.globalprotect.enable = true;
+    services.globalprotect = {
+      enable = true;
+      settings = {
+        "vpn.google.com" = {};
+      };
+    };
 
     security.sudo.extraRules = [
       {

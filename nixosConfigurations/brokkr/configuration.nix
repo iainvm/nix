@@ -90,7 +90,7 @@ in
                 host = "brokkr";
                 group = "river";
                 shell = pkgs.zsh;
-                extraGroups = ["networkmanager"];
+                extraGroups = ["networkmanager" "wheel"];
               };
             };
           };
