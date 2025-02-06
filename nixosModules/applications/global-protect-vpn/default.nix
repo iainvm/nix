@@ -4,17 +4,15 @@
   config,
   ...
 }: {
-  options.core.applications.global-protect = {
-    enable = lib.mkEnableOption "global-protect";
+  options.core.applications.global-protect-vpn = {
+    enable = lib.mkEnableOption "enable global-protect-vpn";
   };
 
-  config = lib.mkIf config.core.applications.global-protect.enable {
-    services.globalprotect = {
-      enable = true;
-      settings = {
-        "vpn.google.com" = {};
-      };
-    };
+  config = lib.mkIf config.core.applications.global-protect-vpn.enable {
+    environment.systemPackages = with pkgs; [
+      gpauth
+      gpclient
+    ];
 
     security.sudo.extraRules = [
       {

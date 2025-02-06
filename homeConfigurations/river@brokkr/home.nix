@@ -35,6 +35,10 @@ in {
     dunst.enable = true;
   };
 
+  network = {
+    ri-vpn.enable = true;
+  };
+
   fonts = {
     nerd-fonts.enable = true;
   };

@@ -17,6 +17,7 @@
     ./cli/git
     ./cli/task
     ./fonts/nerd-fonts
+    ./network/ri-vpn
     ./shells/zsh
     ./system/dunst
     ./system/hyprland
