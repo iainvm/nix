@@ -15,11 +15,6 @@
   };
 in 
 {
-  #imports [
-  #  inputs.nixos-hardware.nixosModules.dell-xps-15-9500
-  #  ./hardware-configuration.nix
-  #  self.nixosModules.default
-  #];
   environment.systemPackages = with pkgs; [
     home-manager
   ];

@@ -10,6 +10,7 @@
     proton-pass
     ublock-origin
     privacy-badger
+    onepassword-password-manager
   ];
 
   settings = import ./settings.nix;
