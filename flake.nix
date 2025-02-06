@@ -46,17 +46,20 @@
     {
       # Systems
       nixosConfigurations = {
-        # Chronos
-        chronos = import ./nixosConfigurations/chronos/configuration.nix {
-          inherit self inputs nixpkgs;
+        "chronos" = lib.mkNixosConfigurations {
+          name = "chronos";
+          arch = "x86_64-linux";
+          overlays = [inputs.nur.overlays.default];
         };
-        # Brokkr
-        brokkr = import ./nixosConfigurations/brokkr/configuration.nix {
-          inherit self inputs nixpkgs;
+        "brokkr" = lib.mkNixosConfigurations {
+          name = "brokkr";
+          arch = "x86_64-linux";
+          overlays = [inputs.nur.overlays.default];
         };
-        # Potamoi
-        potamoi = import ./nixosConfigurations/potamoi/configuration.nix {
-          inherit self inputs nixpkgs;
+        "potamoi" = lib.mkNixosConfigurations {
+          name = "potamoi";
+          arch = "x86_64-linux";
+          overlays = [inputs.nur.overlays.default];
         };
       };
 
@@ -66,20 +69,27 @@
       };
 
       # Home Configurations
-      homeConfigurations = lib.mkHomeConfigurations {
-        dir = "iain@chronos";
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      } // lib.mkHomeConfigurations {
-        dir = "iain@brokkr";
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      } // lib.mkHomeConfigurations {
-        dir = "river@brokkr";
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      homeConfigurations = {
+        "iain@chronos" = lib.mkHomeConfigurations {
+          dir = "iain@chronos";
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          overlays = [inputs.nur.overlays.default];
+        };
+        "iain@brokkr" = lib.mkHomeConfigurations {
+          dir = "iain@brokkr";
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          overlays = [inputs.nur.overlays.default];
+        };
+        "river@brokkr" = lib.mkHomeConfigurations {
+          dir = "river@brokkr";
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          overlays = [inputs.nur.overlays.default];
+        };
       };
 
       # Home Manager Modules
-      homeManagerModules = {
-        default = import ./homeManagerModules/default.nix;
+      homeModules = {
+        default = import ./homeModules/default.nix;
       };
     }
     # Dev Shell for updating the flake

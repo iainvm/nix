@@ -1,9 +1,11 @@
 {
   lib,
+  self,
   pkgs,
   config,
   system,
   inputs,
+  nixpkgs,
   ...
 }: {
   imports = [
@@ -61,8 +63,7 @@
     home-manager = {
       backupFileExtension = "bkp";
       useGlobalPkgs = true;
-      useUserPackages = true;
-      extraSpecialArgs = {inherit inputs;};
+      extraSpecialArgs = {inherit self inputs nixpkgs;};
       users =
         lib.mapAttrs (name: user: let 
           hmDir = "${name}@${user.host}";

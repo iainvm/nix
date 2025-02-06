@@ -12,7 +12,7 @@ devShells/
     configuration.nix   # stores the nix shell config used for managing this repo
 
 # Home Manager Configs
-homeManagerModules/     # Many home manager modules wrapped with options for user level packages
+homeModules/     # Many home manager modules wrapped with options for user level packages
 homeConfigurations/     # Configs for each user, allows user to use `home-manager switch` without root to update their config
     "${user}@${host}"/
         dotfiles        # Usually mapped into `~/.config`

@@ -3,22 +3,22 @@
   inputs,
   nixpkgs,
 }: {
-  mkNixOSConfigurations = {
+  mkNixosConfigurations = {
     name,
     arch,
-    users,
     modules ? [],
     overlays ? [],
   }:
     inputs.nixpkgs.lib.nixosSystem {
       system = arch;
+      specialArgs = { inherit self inputs nixpkgs; };
       modules =
         [
+          { nixpkgs.config.allowUnfree = true; }
           {nixpkgs.overlays = overlays;}
-          self.nixosModules.default
-          import
-          ./nixosConfigurations/${name}/configuration.nix
-          {inherit self inputs nixpkgs;}
+          inputs.self.nixosModules.default
+          ../nixosConfigurations/${name}/hardware-configuration.nix
+          ../nixosConfigurations/${name}/configuration.nix
         ]
         ++ modules;
     };
@@ -28,17 +28,17 @@
     pkgs,
     modules ? [],
     overlays ? [],
-  }:{
-    "${dir}" = inputs.home-manager.lib.homeManagerConfiguration {
+  }: 
+    inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = { inherit self inputs nixpkgs; };
       modules =
         [
           { nixpkgs.config.allowUnfree = true; }
-          {nixpkgs.overlays = [inputs.nur.overlays.default];}
+          {nixpkgs.overlays = overlays;}
+          inputs.self.homeModules.default
           ../homeConfigurations/${dir}/home.nix
         ]
         ++ modules;
     };
-  };
 }

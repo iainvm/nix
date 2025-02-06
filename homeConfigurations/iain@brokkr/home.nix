@@ -1,6 +1,5 @@
 {
   inputs,
-  system,
   ...
 }: let
   user = "iain";
@@ -8,14 +7,14 @@
   fullName = "Iain Majer";
   email = "iainvm@outlook.com";
 in {
+  imports = [
+    inputs.self.homeModules.default
+  ];
+
   home.stateVersion = "24.11";
   home.username = user;
   home.homeDirectory = "/home/${user}";
   programs.home-manager.enable = true;
-
-  imports = [
-    inputs.self.homeManagerModules.default
-  ];
 
   # Environment Variables
   home.sessionVariables = {

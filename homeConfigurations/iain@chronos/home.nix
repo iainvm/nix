@@ -13,7 +13,7 @@ in {
   programs.home-manager.enable = true;
 
   imports = [
-    inputs.self.homeManagerModules.default
+    inputs.self.homeModules.default
   ];
 
   # Environment Variables
