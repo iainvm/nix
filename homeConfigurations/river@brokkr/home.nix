@@ -50,6 +50,7 @@ in {
       pass.enable = true;
       desktop.enable = true;
     };
+    stremio.enable = true;
     swappy.enable = true;
     teams.enable = true;
     vscode.enable = true;
