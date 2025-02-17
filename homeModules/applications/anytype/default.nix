@@ -4,10 +4,16 @@
   config,
   ...
 }: let
-  # Wrapping to scope the TMP files, since if multiple users install the `/tmp/go-graphviz` collides with user permissions
-  wrapped = pkgs.writeShellScriptBin "anytype" ''
-    TMP="/tmp/$USER-anytype" TMPDIR="/tmp/$USER-anytype" ${pkgs.anytype}/bin/anytype
-  '';
+  # Wrap the binary to ensure different users have different tmp files
+  # Without this I was having problems with `tmp/go-graphviz` and 1 user owning the folder
+  wrapped = pkgs.symlinkJoin {
+    name = "anytype";
+    paths = [ pkgs.anytype ];
+    buildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/anytype --run 'export TMP="/tmp/$USER-anytype"' --run  'export TMPDIR="/tmp/$USER-anytype"'
+    '';
+  };
 in {
   options.applications.anytype = {
     enable = lib.mkEnableOption "anytype";
