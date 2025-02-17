@@ -2,6 +2,7 @@
   imports = [
     ./applications/anytype
     ./applications/capacities
+    ./applications/datagrip
     ./applications/discord
     ./applications/firefox
     ./applications/kitty

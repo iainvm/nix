@@ -44,6 +44,9 @@ in {
   };
 
   applications = {
+    anytype.enable = true;
+    capacities.enable = true;
+    datagrip.enable = true;
     firefox.enable = true;
     kitty.enable = true;
     protonme = {
