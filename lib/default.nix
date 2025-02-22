@@ -11,10 +11,10 @@
   }:
     inputs.nixpkgs.lib.nixosSystem {
       system = arch;
-      specialArgs = { inherit self inputs nixpkgs; };
+      specialArgs = {inherit self inputs nixpkgs;};
       modules =
         [
-          { nixpkgs.config.allowUnfree = true; }
+          {nixpkgs.config.allowUnfree = true;}
           {nixpkgs.overlays = overlays;}
           inputs.self.nixosModules.default
           ../nixosConfigurations/${name}/hardware-configuration.nix
@@ -28,13 +28,13 @@
     pkgs,
     modules ? [],
     overlays ? [],
-  }: 
+  }:
     inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = { inherit self inputs nixpkgs; };
+      extraSpecialArgs = {inherit self inputs nixpkgs;};
       modules =
         [
-          { nixpkgs.config.allowUnfree = true; }
+          {nixpkgs.config.allowUnfree = true;}
           {nixpkgs.overlays = overlays;}
           inputs.self.homeModules.default
           ../homeConfigurations/${dir}/home.nix

@@ -64,11 +64,11 @@
       backupFileExtension = "bkp";
       useGlobalPkgs = true;
       extraSpecialArgs = {inherit self inputs nixpkgs;};
-      users =
-        lib.mapAttrs (name: user: let 
-          hmDir = "${name}@${user.host}";
-        in import ../../homeConfigurations/${hmDir}/home.nix)
-        config.core.users.users;
+      users = lib.mapAttrs (name: user: let
+        hmDir = "${name}@${user.host}";
+      in
+        import ../../homeConfigurations/${hmDir}/home.nix)
+      config.core.users.users;
     };
   };
 }

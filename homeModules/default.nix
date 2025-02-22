@@ -24,7 +24,7 @@
     ./network/ri-vpn
 
     ./shells/zsh
-    
+
     ./system/dunst
     ./system/hyprland
   ];

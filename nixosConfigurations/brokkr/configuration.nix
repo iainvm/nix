@@ -13,8 +13,7 @@
       inputs.nur.overlays.default
     ];
   };
-in 
-{
+in {
   environment.systemPackages = with pkgs; [
     home-manager
   ];
@@ -49,6 +48,7 @@ in
 
       # Session Manager
       ly.enable = true;
+      keyring.enable = true;
       # Window Manager
       hyprland.enable = true;
     };
