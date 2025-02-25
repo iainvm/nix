@@ -5,5 +5,6 @@
     "files.insertFinalNewline": true,
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "window.menuBarVisibility": "toggle",
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none"
 }
