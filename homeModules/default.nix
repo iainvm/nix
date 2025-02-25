@@ -11,8 +11,10 @@
     ./applications/stremio
     ./applications/swappy
     ./applications/teams
+    ./applications/vesktop
     ./applications/vscode
     ./applications/wofi
+    ./applications/zen
 
     ./cli/direnv
     ./cli/dpm

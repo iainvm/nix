@@ -48,8 +48,10 @@ in {
     };
     stremio.enable = true;
     swappy.enable = true;
+    vesktop.enable = true;
     vscode.enable = true;
     wofi.enable = true;
+    zen.enable = true;
   };
 
   shells.zsh = {
