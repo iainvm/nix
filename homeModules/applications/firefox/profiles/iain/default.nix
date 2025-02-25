@@ -4,7 +4,7 @@
   name = "iain"; # name as listed in about:profiles
   isDefault = true; # can be omitted; true if profile ID is 0
 
-  extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+  extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
     vimium
     sidebery
     proton-pass
