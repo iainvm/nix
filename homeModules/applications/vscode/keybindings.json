@@ -1,0 +1,12 @@
+[
+    {
+        "key": "ctrl+f2",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus"
+    },
+    {
+        "key": "ctrl+shift+f2",
+        "command": "explorer.newFolder",
+        "when": "filesExplorerFocus"
+    }
+]

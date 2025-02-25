@@ -98,6 +98,7 @@ in {
               gf = "git fetch --all --prune";
               gd = "git diff";
               la = "ls -la";
+              code = "codium";
             };
           };
 

@@ -1,4 +1,5 @@
 {
+  lib,
   inputs,
   system,
   ...
@@ -56,8 +57,13 @@ in {
     stremio.enable = true;
     swappy.enable = true;
     teams.enable = true;
-    vscode.enable = true;
     wofi.enable = true;
+
+    vscode = {
+      enable = true;
+      # settings = lib.importJSON ./vscodium-settings.json;
+      # keybindings = lib.importJSON ./vscodium-keybindings.json;
+    };
   };
 
   shells.zsh = {

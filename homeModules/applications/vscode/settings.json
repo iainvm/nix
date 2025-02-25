@@ -1,0 +1,9 @@
+{
+    "$schema": "vscode://schemas/settings/user",
+    "editor.autoSurround": "quotes",
+    "editor.renderWhitespace": "trailing",
+    "files.insertFinalNewline": true,
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "window.menuBarVisibility": "toggle",
+    "workbench.sideBar.location": "right"
+}
