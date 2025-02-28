@@ -17,7 +17,7 @@
         WantedBy = [];
       };
       Service = {
-        ExecStart = "/run/wrappers/bin/sudo gpclient connect vpn.river-island.com";
+        ExecStart = "/run/wrappers/bin/sudo gpclient --fix-openssl connect vpn.river-island.com";
       };
     };
   };
