@@ -4,13 +4,13 @@
   config,
   ...
 }: {
-  options.applications.vesktop = {
-    enable = lib.mkEnableOption "vesktop";
+  options.applications.discord = {
+    enable = lib.mkEnableOption "discord";
   };
 
-  config = lib.mkIf config.applications.vesktop.enable {
+  config = lib.mkIf config.applications.discord.enable {
     home.packages = with pkgs; [
-      vesktop
+      discord
     ];
   };
 }
