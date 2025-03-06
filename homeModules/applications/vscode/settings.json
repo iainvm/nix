@@ -6,5 +6,16 @@
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "window.menuBarVisibility": "toggle",
     "workbench.sideBar.location": "right",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "explorer.confirmDragAndDrop": false,
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "go.testFlags": [
+        "-v"
+    ]
 }
