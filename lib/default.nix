@@ -2,7 +2,12 @@
   self,
   inputs,
   nixpkgs,
-}: {
+}: let
+  defaultOverlays = [
+    inputs.nur.overlays.default
+    inputs.nix-vscode-extensions.overlays.default
+  ];
+in {
   mkNixosConfigurations = {
     name,
     arch,
@@ -14,8 +19,12 @@
       specialArgs = {inherit self inputs nixpkgs;};
       modules =
         [
-          {nixpkgs.config.allowUnfree = true;}
-          {nixpkgs.overlays = overlays;}
+          {
+            nixpkgs = {
+              config.allowUnfree = true;
+              overlays = defaultOverlays ++ overlays;
+            };
+          }
           inputs.self.nixosModules.default
           ../nixosConfigurations/${name}/hardware-configuration.nix
           ../nixosConfigurations/${name}/configuration.nix
@@ -25,17 +34,17 @@
 
   mkHomeConfigurations = {
     dir,
-    pkgs,
+    arch,
     modules ? [],
     overlays ? [],
   }:
     inputs.home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+      pkgs = inputs.nixpkgs.legacyPackages."${arch}";
       extraSpecialArgs = {inherit self inputs nixpkgs;};
       modules =
         [
           {nixpkgs.config.allowUnfree = true;}
-          {nixpkgs.overlays = overlays;}
+          {nixpkgs.overlays = defaultOverlays ++ overlays;}
           inputs.self.homeModules.default
           ../homeConfigurations/${dir}/home.nix
         ]

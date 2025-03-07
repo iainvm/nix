@@ -37,6 +37,9 @@
       url = "github:0xc000022070/zen-browser-flake";
     };
 
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions/1fc267a10f46200e32f0850caa396bd1ba4ba08e";
+    };
   };
 
   outputs = {
@@ -54,17 +57,14 @@
         "chronos" = lib.mkNixosConfigurations {
           name = "chronos";
           arch = "x86_64-linux";
-          overlays = [inputs.nur.overlays.default];
         };
         "brokkr" = lib.mkNixosConfigurations {
           name = "brokkr";
           arch = "x86_64-linux";
-          overlays = [inputs.nur.overlays.default];
         };
         "potamoi" = lib.mkNixosConfigurations {
           name = "potamoi";
           arch = "x86_64-linux";
-          overlays = [inputs.nur.overlays.default];
         };
       };
 
@@ -77,18 +77,15 @@
       homeConfigurations = {
         "iain@chronos" = lib.mkHomeConfigurations {
           dir = "iain@chronos";
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          overlays = [inputs.nur.overlays.default];
+          arch = "x86_64-linux";
         };
         "iain@brokkr" = lib.mkHomeConfigurations {
           dir = "iain@brokkr";
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          overlays = [inputs.nur.overlays.default];
+          arch = "x86_64-linux";
         };
         "river@brokkr" = lib.mkHomeConfigurations {
           dir = "river@brokkr";
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          overlays = [inputs.nur.overlays.default];
+          arch = "x86_64-linux";
         };
       };
 

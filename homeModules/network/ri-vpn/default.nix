@@ -22,22 +22,7 @@
     };
 
     home.packages = with pkgs; [
-      (writeScriptBin "rivpn" ''
-        case "$1" in
-          start)
-            systemctl --user start ri-vpn.service
-            ;;
-          stop)
-            systemctl --user stop ri-vpn.service
-            ;;
-          status)
-            systemctl --user status ri-vpn.service
-            ;;
-          *)
-            echo "Usage: rivpn {start|stop|status}"
-            ;;
-        esac
-      '')
+      (writeScriptBin "rivpn" (builtins.readFile ./rivpn.sh))
     ];
   };
 }

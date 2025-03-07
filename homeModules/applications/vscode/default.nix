@@ -30,11 +30,13 @@
             (config.applications.vscode.settings)
           ];
 
-          extensions = with pkgs.vscode-extensions; [
+          extensions = with pkgs.open-vsx; [
             bbenoist.nix
             mkhl.direnv
             bierner.markdown-mermaid
             golang.go
+            qufiwefefwoyn.inline-sql-syntax
+            streetsidesoftware.code-spell-checker
           ];
 
           keybindings = lib.mkMerge [

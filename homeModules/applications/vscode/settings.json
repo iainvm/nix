@@ -15,7 +15,20 @@
             "source.organizeImports": "explicit"
         }
     },
+    "go.testEnvFile": "~/dev/go-test.env",
+    "go.testOnSave" : true,
     "go.testFlags": [
         "-v"
+    ],
+    "cSpell.userWords": [
+        "iain",
+        "brokkr",
+        "chronos",
+        "potamoi",
+        "pkgs",
+        "nixpkgs",
+        "nixos",
+        "Nixos",
+        "direnv"
     ]
 }

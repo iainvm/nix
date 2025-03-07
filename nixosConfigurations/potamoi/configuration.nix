@@ -6,11 +6,7 @@
 }: let
   computerName = "potamoi";
   system = "x86_64-linux";
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-    overlays = [];
-  };
+  pkgs = import nixpkgs {inherit system;};
 in
   nixpkgs.lib.nixosSystem {
     inherit pkgs;

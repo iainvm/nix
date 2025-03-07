@@ -4,15 +4,9 @@
   nixpkgs,
   ...
 }: let
-  system = "x86_64-linux";
   computerName = "chronos";
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-    overlays = [
-      inputs.nur.overlays.default
-    ];
-  };
+  system = "x86_64-linux";
+  pkgs = import nixpkgs {inherit system;};
 in {
   environment.systemPackages = with pkgs; [
     home-manager
