@@ -3,7 +3,7 @@ case "$1" in
     start)
         systemctl --user start ri-vpn.service
         echo "Attempting to resolve $testURL"
-        until curl --silent --head --output /dev/null --fail "$testURL"; do
+        until curl --silent --head --output /dev/null "$testURL"; do
             echo "Waiting for $testURL to resolve..."
             sleep 2  # Wait for 2 seconds before trying again
         done
