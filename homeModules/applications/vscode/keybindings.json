@@ -8,5 +8,12 @@
         "key": "ctrl+shift+f2",
         "command": "explorer.newFolder",
         "when": "filesExplorerFocus"
+    },
+    {
+        "key": "ctrl+shift+'",
+        "command": "workbench.action.terminal.newWithCwd",
+        "args": {
+            "cwd": "${fileDirname}"
+        }
     }
 ]

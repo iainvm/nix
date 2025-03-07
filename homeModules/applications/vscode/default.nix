@@ -37,6 +37,7 @@
             golang.go
             qufiwefefwoyn.inline-sql-syntax
             streetsidesoftware.code-spell-checker
+            timonwong.shellcheck
           ];
 
           keybindings = lib.mkMerge [
