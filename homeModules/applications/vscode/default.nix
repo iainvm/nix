@@ -3,7 +3,10 @@
   pkgs,
   config,
   ...
-}: {
+}: let
+  defaultSettingsFile = ./vscode-settings.json;
+  defaultKeybindingsFile = ./vscode-keybindings.json;
+in {
   options.applications.vscode = {
     enable = lib.mkEnableOption "enable vscode";
     settings = lib.mkOption {
@@ -26,7 +29,7 @@
       profiles = {
         default = {
           userSettings = lib.mkMerge [
-            (lib.importJSON ./settings.json)
+            (lib.importJSON defaultSettingsFile)
             (config.applications.vscode.settings)
           ];
 
@@ -41,7 +44,7 @@
           ];
 
           keybindings = lib.mkMerge [
-            (lib.importJSON ./keybindings.json)
+            (lib.importJSON defaultKeybindingsFile)
             (config.applications.vscode.keybindings)
           ];
         };

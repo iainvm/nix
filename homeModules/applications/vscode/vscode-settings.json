@@ -1,5 +1,4 @@
 {
-    "$schema": "vscode://schemas/settings/user",
     "editor.autoSurround": "quotes",
     "editor.renderWhitespace": "trailing",
     "files.insertFinalNewline": true,
@@ -30,5 +29,19 @@
         "nixos",
         "Nixos",
         "direnv"
+    ],
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "vscode-keybindings.json"
+            ],
+            "url": "vscode://schemas/keybindings"
+        },
+        {
+            "fileMatch": [
+                "vscode-settings.json"
+            ],
+            "url": "vscode://schemas/settings/user"
+        }
     ]
 }
