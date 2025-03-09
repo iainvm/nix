@@ -10,13 +10,12 @@
 in {
   mkNixosConfigurations = {
     name,
-    arch,
+    system,
     modules ? [],
     overlays ? [],
   }:
     inputs.nixpkgs.lib.nixosSystem {
-      system = arch;
-      specialArgs = {inherit self inputs nixpkgs;};
+      specialArgs = {inherit self system inputs nixpkgs;};
       modules =
         [
           {
@@ -34,13 +33,13 @@ in {
 
   mkHomeConfigurations = {
     dir,
-    arch,
+    system,
     modules ? [],
     overlays ? [],
   }:
     inputs.home-manager.lib.homeManagerConfiguration {
-      pkgs = inputs.nixpkgs.legacyPackages."${arch}";
-      extraSpecialArgs = {inherit self inputs nixpkgs;};
+      pkgs = inputs.nixpkgs.legacyPackages."${system}";
+      extraSpecialArgs = {inherit self system inputs nixpkgs;};
       modules =
         [
           {nixpkgs.config.allowUnfree = true;}

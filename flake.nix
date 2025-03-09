@@ -56,15 +56,15 @@
       nixosConfigurations = {
         "chronos" = lib.mkNixosConfigurations {
           name = "chronos";
-          arch = "x86_64-linux";
+          system = "x86_64-linux";
         };
         "brokkr" = lib.mkNixosConfigurations {
           name = "brokkr";
-          arch = "x86_64-linux";
+          system = "x86_64-linux";
         };
         "potamoi" = lib.mkNixosConfigurations {
           name = "potamoi";
-          arch = "x86_64-linux";
+          system = "x86_64-linux";
         };
       };
 
@@ -77,15 +77,15 @@
       homeConfigurations = {
         "iain@chronos" = lib.mkHomeConfigurations {
           dir = "iain@chronos";
-          arch = "x86_64-linux";
+          system = "x86_64-linux";
         };
         "iain@brokkr" = lib.mkHomeConfigurations {
           dir = "iain@brokkr";
-          arch = "x86_64-linux";
+          system = "x86_64-linux";
         };
         "river@brokkr" = lib.mkHomeConfigurations {
           dir = "river@brokkr";
-          arch = "x86_64-linux";
+          system = "x86_64-linux";
         };
       };
 

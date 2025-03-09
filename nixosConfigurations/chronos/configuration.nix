@@ -1,11 +1,11 @@
 {
   self,
+  system,
   inputs,
   nixpkgs,
   ...
 }: let
   computerName = "chronos";
-  system = "x86_64-linux";
   pkgs = import nixpkgs {inherit system;};
 in {
   environment.systemPackages = with pkgs; [

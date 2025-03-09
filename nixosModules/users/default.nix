@@ -63,7 +63,7 @@
     home-manager = {
       backupFileExtension = "bkp";
       useGlobalPkgs = true;
-      extraSpecialArgs = {inherit self inputs nixpkgs;};
+      extraSpecialArgs = {inherit self system inputs nixpkgs;};
       users = lib.mapAttrs (name: user: let
         hmDir = "${name}@${user.host}";
       in
