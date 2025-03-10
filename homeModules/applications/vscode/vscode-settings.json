@@ -28,7 +28,8 @@
         "nixpkgs",
         "nixos",
         "Nixos",
-        "direnv"
+        "direnv",
+        "envconfig"
     ],
     "json.schemas": [
         {
