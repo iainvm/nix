@@ -10,14 +10,14 @@ in {
   options.applications.vscode = {
     enable = lib.mkEnableOption "enable vscode";
     settings = lib.mkOption {
-        type = lib.types.attrs;
-        default = {};
-        description = "Path to additional user settings";
+      type = lib.types.attrs;
+      default = {};
+      description = "Path to additional user settings";
     };
     keybindings = lib.mkOption {
-        type = lib.types.listOf lib.types.attrs;
-        default = [];
-        description = "Path to additional keybindings";
+      type = lib.types.listOf lib.types.attrs;
+      default = [];
+      description = "Path to additional keybindings";
     };
   };
 

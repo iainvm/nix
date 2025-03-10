@@ -1,19 +1,42 @@
 {
   lib,
+  pkgs,
   config,
-  inputs,
   system,
+  inputs,
   ...
 }: let
-  zen-browser = inputs.zen-browser.packages."${system}".default;
+  zen-browser = inputs.zen-browser.packages."${system}".zen-browser-unwrapped;
 in {
   options.applications.zen = {
     enable = lib.mkEnableOption "enable zen";
   };
 
   config = lib.mkIf config.applications.zen.enable {
-    home.packages = [
-      zen-browser
-    ];
+    xdg.mimeApps.defaultApplications = {
+      "text/html" = ["zen.desktop"];
+      "x-scheme-handler/http" = ["zen.desktop"];
+      "x-scheme-handler/https" = ["zen.desktop"];
+      "x-scheme-handler/about" = ["zen.desktop"];
+      "x-scheme-handler/unknown" = ["zen.desktop"];
+    };
+
+    programs.firefox = {
+      enable = true;
+      package = pkgs.wrapFirefox zen-browser {};
+      languagePacks = ["en-GB"];
+      configPath = ".zen";
+
+      policies = {
+        # https://mozilla.github.io/policy-templates/
+        DontCheckDefaultBrowser = true;
+        PasswordManagerEnabled = false;
+        DisableAppUpdate = true;
+      };
+
+      # profiles = {
+      #   iain = import ./profiles/iain/default.nix {inherit pkgs;};
+      # };
+    };
   };
 }

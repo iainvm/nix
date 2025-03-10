@@ -39,7 +39,6 @@ in {
     anytype.enable = true;
     capacities.enable = true;
     discord.enable = true;
-    firefox.enable = true;
     kitty.enable = true;
     prism.enable = true;
     protonme = {
