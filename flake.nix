@@ -34,12 +34,11 @@
     };
 
     zen-browser = {
-      # url = "github:0xc000022070/zen-browser-flake";
       url = "github:youwen5/zen-browser-flake";
     };
 
     nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions/1fc267a10f46200e32f0850caa396bd1ba4ba08e";
+      url = "github:nix-community/nix-vscode-extensions";
     };
   };
 

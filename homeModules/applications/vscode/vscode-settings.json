@@ -29,7 +29,8 @@
         "nixos",
         "Nixos",
         "direnv",
-        "envconfig"
+        "envconfig",
+        "taskfile"
     ],
     "json.schemas": [
         {
