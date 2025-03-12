@@ -8,48 +8,47 @@ vars:
 
 tasks:
   show:
+    silent: true
     cmds:
-      - silent: true
-        cmd: nix flake show
+      - cmd: nix flake show
 
   check:
+    silent: true
     cmds:
-      - silent: true
-        cmd: nix flake check
+      - cmd: nix flake check
 
   format:
+    silent: true
     cmds:
-      - silent: true
-        cmd: alejandra . --quiet
+      - cmd: alejandra . --quiet
 
   switch:
+    silent: true
     cmds:
-      - silent: true
-        cmd: sudo nixos-rebuild switch --flake .#{{.hostname}}
+      - cmd: sudo nixos-rebuild switch --flake .#{{.hostname}}
 
   hm-switch:
+    silent: true
     cmds:
-      - silent: true
-        cmd: home-manager switch --flake .#{{.user}}@{{.hostname}}
+      - cmd: home-manager switch --flake .#{{.user}}@{{.hostname}}
 
   switch-to:
+    silent: true
     cmds:
-      - silent: true
-        cmd: sudo nixos-rebuild switch --flake .#{{ .CLI_ARGS }}
+      - cmd: sudo nixos-rebuild switch --flake .#{{ .CLI_ARGS }}
 
   test-switch:
+    silent: true
     cmds:
-      - silent: true
-        cmd: sudo nixos-rebuild test --flake .
+      - cmd: sudo nixos-rebuild test --flake .
 
   garbage-collect:
+    silent: true
     cmds:
-      - silent: true
-        cmd: sudo nix-collect-garbage --delete-older-than 1d
-      - silent: true
-        cmd: nix-collect-garbage --delete-older-than 1d
+      - cmd: sudo nix-collect-garbage --delete-older-than 1d
+      - cmd: nix-collect-garbage --delete-older-than 1d
 
   update-flakes:
+    silent: true
     cmds:
-      - silent: true
-        cmd: nix flake update
+      - cmd: nix flake update

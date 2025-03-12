@@ -1,21 +1,21 @@
 {
-    "editor.autoSurround": "quotes",
-    "editor.renderWhitespace": "trailing",
-    "files.insertFinalNewline": true,
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "window.menuBarVisibility": "toggle",
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
     "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "files.insertFinalNewline": true,
+    "editor.autoSurround": "quotes",
+    "editor.renderWhitespace": "trailing",
+    "editor.formatOnSave": true,
     "[go]": {
         "editor.insertSpaces": false,
-        "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         }
     },
     "go.testEnvFile": "~/dev/go-test.env",
-    "go.testOnSave" : true,
+    "go.testOnSave": true,
     "go.testFlags": [
         "-v"
     ],
@@ -45,5 +45,11 @@
             ],
             "url": "vscode://schemas/settings/user"
         }
-    ]
+    ],
+    "yaml.schemas": {
+        "https://taskfile.dev/schema.json": [
+            "Taskfile.yml"
+        ]
+    },
+    "redhat.telemetry.enabled": false
 }

@@ -41,6 +41,8 @@ in {
             qufiwefefwoyn.inline-sql-syntax
             streetsidesoftware.code-spell-checker
             timonwong.shellcheck
+            redhat.vscode-yaml
+            task.vscode-task
           ];
 
           keybindings = lib.mkMerge [
