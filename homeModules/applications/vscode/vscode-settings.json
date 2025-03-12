@@ -42,6 +42,13 @@
         ".vscode-insiders",
         ".direnv"
     ],
+    "go.formatTool": "gofumpt",
+    "go.testEnvFile": "~/dev/go-test.env",
+    "go.testOnSave": true,
+    "go.lintTool": "golangci-lint",
+    "go.testFlags": [
+        "-v"
+    ],
     "json.schemas": [
         {
             "fileMatch": [
