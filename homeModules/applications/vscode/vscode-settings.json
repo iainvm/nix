@@ -4,7 +4,17 @@
     "workbench.startupEditor": "none",
     "explorer.confirmDragAndDrop": false,
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "workbench.panel.defaultLocation": "right",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        "*.go": "${capture}.go, ${capture}_test.go, ${capture}_internal_test.go, ",
+        "flake.nix": "flake.lock, .envrc"
+    },
     "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/.direnv": true
+    },
     "editor.autoSurround": "quotes",
     "editor.renderWhitespace": "trailing",
     "editor.formatOnSave": true,
