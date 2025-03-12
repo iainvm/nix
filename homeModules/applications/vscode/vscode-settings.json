@@ -46,6 +46,7 @@
     "go.testEnvFile": "~/dev/go-test.env",
     "go.testOnSave": true,
     "go.lintTool": "golangci-lint",
+    "go.lintOnSave": "workspace",
     "go.testFlags": [
         "-v"
     ],
