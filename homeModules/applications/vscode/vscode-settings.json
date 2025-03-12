@@ -8,18 +8,7 @@
     "editor.autoSurround": "quotes",
     "editor.renderWhitespace": "trailing",
     "editor.formatOnSave": true,
-    "[go]": {
-        "editor.insertSpaces": false,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": "explicit"
-        }
-    },
-    "go.formatTool": "gofumpt",
-    "go.testEnvFile": "~/dev/go-test.env",
-    "go.testOnSave": true,
-    "go.testFlags": [
-        "-v"
-    ],
+    "cSpell.language": "en-GB",
     "cSpell.userWords": [
         "iain",
         "brokkr",
@@ -32,6 +21,16 @@
         "envconfig",
         "taskfile",
         "gofumpt"
+    ],
+    "cSpell.ignorePaths": [
+        "package-lock.json",
+        "node_modules",
+        "vscode-extension",
+        ".git/{info,lfs,logs,refs,objects}/**",
+        ".git/{index,*refs,*HEAD}",
+        ".vscode",
+        ".vscode-insiders",
+        ".direnv"
     ],
     "json.schemas": [
         {
