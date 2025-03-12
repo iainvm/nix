@@ -14,6 +14,7 @@
             "source.organizeImports": "explicit"
         }
     },
+    "go.formatTool": "gofumpt",
     "go.testEnvFile": "~/dev/go-test.env",
     "go.testOnSave": true,
     "go.testFlags": [
@@ -27,10 +28,10 @@
         "pkgs",
         "nixpkgs",
         "nixos",
-        "Nixos",
         "direnv",
         "envconfig",
-        "taskfile"
+        "taskfile",
+        "gofumpt"
     ],
     "json.schemas": [
         {
