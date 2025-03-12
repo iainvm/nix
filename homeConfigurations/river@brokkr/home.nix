@@ -2,6 +2,7 @@
   lib,
   inputs,
   system,
+  config,
   ...
 }: let
   user = "river";
@@ -30,6 +31,13 @@ in {
       target = ".config/";
       recursive = true;
     };
+    # I want to manage this in the dotfiles
+    # Would need to use `--impure` to execute the `flake.nix` cause it's a symlink
+    # "dev/github.com/River-Island" = {
+    #   source = ./files/ri-direnv;
+    #   target = "dev/github.com/River-Island/";
+    #   recursive = true;
+    # };
   };
 
   system = {
