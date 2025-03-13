@@ -13,7 +13,8 @@
     },
     "files.insertFinalNewline": true,
     "files.exclude": {
-        "**/.direnv": true
+        "**/.direnv": true,
+        "**/.task": true
     },
     "editor.autoSurround": "quotes",
     "editor.renderWhitespace": "trailing",
@@ -30,7 +31,9 @@
         "direnv",
         "envconfig",
         "taskfile",
-        "gofumpt"
+        "gofumpt",
+        "gopls",
+        "golangci"
     ],
     "cSpell.ignorePaths": [
         "package-lock.json",
@@ -47,18 +50,24 @@
     "go.testOnSave": true,
     "go.lintTool": "golangci-lint",
     "go.lintOnSave": "workspace",
+    "go.useLanguageServer": true,
+    "gopls": {
+        "formatting.gofumpt": true
+    },
     "go.testFlags": [
         "-v"
     ],
     "json.schemas": [
         {
             "fileMatch": [
+                "vscode/keybindings.json",
                 "vscode-keybindings.json"
             ],
             "url": "vscode://schemas/keybindings"
         },
         {
             "fileMatch": [
+                "vscode/settings.json",
                 "vscode-settings.json"
             ],
             "url": "vscode://schemas/settings/user"
@@ -69,5 +78,6 @@
             "Taskfile.yml"
         ]
     },
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "markdown.validate.enabled": true
 }

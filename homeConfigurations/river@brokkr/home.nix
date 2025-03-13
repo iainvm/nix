@@ -70,8 +70,8 @@ in {
 
     vscode = {
       enable = true;
-      # settings = lib.importJSON ./vscodium-settings.json;
-      # keybindings = lib.importJSON ./vscodium-keybindings.json;
+      settings = lib.importJSON ./files/vscode/settings.json;
+      # keybindings = lib.importJSON ./files/vscode/keybindings.json;
     };
   };
 
