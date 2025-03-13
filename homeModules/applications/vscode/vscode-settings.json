@@ -16,7 +16,6 @@
         "**/.direnv": true,
         "**/.task": true
     },
-    "editor.autoSurround": "quotes",
     "editor.renderWhitespace": "trailing",
     "editor.formatOnSave": true,
     "cSpell.language": "en-GB",
