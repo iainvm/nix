@@ -22,6 +22,7 @@
     "cSpell.language": "en-GB",
     "cSpell.userWords": [
         "iain",
+        "majer",
         "brokkr",
         "chronos",
         "potamoi",
@@ -33,7 +34,13 @@
         "taskfile",
         "gofumpt",
         "gopls",
-        "golangci"
+        "golangci",
+        "dunst",
+        "anytype",
+        "wofi",
+        "swappy",
+        "datagrip",
+        "adwaita"
     ],
     "cSpell.ignorePaths": [
         "package-lock.json",
