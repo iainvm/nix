@@ -50,7 +50,8 @@ in {
     vesktop.enable = true;
     vscode.enable = true;
     wofi.enable = true;
-    zen.enable = true;
+    zen.enable = false;
+    firefox.enable = true;
   };
 
   shells.zsh = {
