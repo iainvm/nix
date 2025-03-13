@@ -9,46 +9,57 @@ vars:
 
 tasks:
   show:
+    desc: Show the flakes outputs
     cmds:
-      - cmd: nix flake show
+      - nix flake show
 
   check:
+    desc: Check the current flake
     cmds:
-      - cmd: nix flake check
+      - nix flake check
 
   format:
+    desc: Format the entire project
     cmds:
-      - cmd: alejandra . --quiet
+      - alejandra . --quiet
 
   switch:
+    desc: Switch system configuration, will use the current hostname of the machine
     cmds:
-      - cmd: sudo nixos-rebuild switch --flake .#{{.HOSTNAME}}
+      - sudo nixos-rebuild switch --flake .#{{.HOSTNAME}}
 
   hm-switch:
+    desc: Switch the Home Manager configuration through home-manager (doesn't need root permissions)
     cmds:
-      - cmd: home-manager switch --flake .#{{.USER}}@{{.HOSTNAME}}
+      - home-manager switch --flake .#{{.USER}}@{{.HOSTNAME}}
 
   switch-to:
+    desc: Switch system configuration to a specific host (e.g. `task switch-to -- brokkr`)
     cmds:
-      - cmd: sudo nixos-rebuild switch --flake .#{{ .CLI_ARGS }}
+      - sudo nixos-rebuild switch --flake .#{{ .CLI_ARGS }}
 
   test-switch:
+    desc: Switch system configuration without building a generation, will use the current hostname of the machine
     cmds:
-      - cmd: sudo nixos-rebuild test --flake .
+      - sudo nixos-rebuild test --flake .#{{.HOSTNAME}}
 
   garbage-collect:
+    desc: Clean up Nix store and generation data
     cmds:
-      - cmd: sudo nix-collect-garbage --delete-older-than 1d
-      - cmd: nix-collect-garbage --delete-older-than 1d
+      - sudo nix-collect-garbage --delete-older-than 1d
+      # - nix-collect-garbage --delete-older-than 1d
 
   update-flakes:
+    desc: Update the flakes current flake inputs
     cmds:
-      - cmd: nix flake update
+      - nix flake update
 
   vscode-settings:
+    desc: Output the current users VSCode settings
     cmds:
       - nix eval --json --impure .#homeConfigurations."{{.USER}}@{{.HOSTNAME}}".config.programs.vscode.profiles.default.userSettings
 
   repl:
+    desc: Start a REPL with `user` pointing at the current users homeConfiguration, and `host` pointing at the current hosts nixosConfiguration
     cmds:
       - nix repl --expr '{user = (builtins.getFlake (toString ./.)).homeConfigurations."{{.USER}}@{{.HOSTNAME}}";host = (builtins.getFlake (toString ./.)).nixosConfigurations.{{.HOSTNAME}};}'
