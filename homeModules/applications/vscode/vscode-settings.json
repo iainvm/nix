@@ -18,6 +18,24 @@
     },
     "editor.renderWhitespace": "trailing",
     "editor.formatOnSave": true,
+    "nix.formatterPath": "alejandra",
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nixd",
+    "nix.serverSettings": {
+        "nixd": {
+            "diagnostics": {
+                "ignored": [
+                    "unused_binding",
+                    "unused_with"
+                ]
+            },
+            "formatting": {
+                "command": [
+                    "alejandra"
+                ]
+            }
+        }
+    },
     "cSpell.language": "en-GB",
     "cSpell.userWords": [
         "adwaita",
@@ -34,10 +52,12 @@
         "gopls",
         "iain",
         "majer",
+        "nixd",
         "nixos",
         "nixpkgs",
         "pkgs",
         "potamoi",
+        "shellcheck",
         "swappy",
         "taskfile",
         "vars",

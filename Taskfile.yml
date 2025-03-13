@@ -1,60 +1,54 @@
 version: "3"
+silent: true
 
 vars:
-  user:
+  USER:
     sh: whoami
-  hostname:
+  HOSTNAME:
     sh: hostname
 
 tasks:
   show:
-    silent: true
     cmds:
       - cmd: nix flake show
 
   check:
-    silent: true
     cmds:
       - cmd: nix flake check
 
   format:
-    silent: true
     cmds:
       - cmd: alejandra . --quiet
 
   switch:
-    silent: true
     cmds:
-      - cmd: sudo nixos-rebuild switch --flake .#{{.hostname}}
+      - cmd: sudo nixos-rebuild switch --flake .#{{.HOSTNAME}}
 
   hm-switch:
-    silent: true
     cmds:
-      - cmd: home-manager switch --flake .#{{.user}}@{{.hostname}}
+      - cmd: home-manager switch --flake .#{{.USER}}@{{.HOSTNAME}}
 
   switch-to:
-    silent: true
     cmds:
       - cmd: sudo nixos-rebuild switch --flake .#{{ .CLI_ARGS }}
 
   test-switch:
-    silent: true
     cmds:
       - cmd: sudo nixos-rebuild test --flake .
 
   garbage-collect:
-    silent: true
     cmds:
       - cmd: sudo nix-collect-garbage --delete-older-than 1d
       - cmd: nix-collect-garbage --delete-older-than 1d
 
   update-flakes:
-    silent: true
     cmds:
       - cmd: nix flake update
 
   vscode-settings:
-    vars:
-      HOME_CONFIG: river@brokkr
     cmds:
-      - nix eval --json --impure .#homeConfigurations."{{.HOME_CONFIG}}".config.programs.vscode.profiles.default.userSettings
+      - nix eval --json --impure .#homeConfigurations."{{.USER}}@{{.HOSTNAME}}".config.programs.vscode.profiles.default.userSettings
+
+  repl:
+    cmds:
+      - nix repl --expr '{user = (builtins.getFlake (toString ./.)).homeConfigurations."{{.USER}}@{{.HOSTNAME}}";host = (builtins.getFlake (toString ./.)).nixosConfigurations.{{.HOSTNAME}};}'

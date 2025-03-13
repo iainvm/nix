@@ -6,11 +6,17 @@
   pkgs = inputs.nixpkgs.legacyPackages.${system};
 in {
   default = pkgs.mkShell {
-    packages = [
-      pkgs.git
-      pkgs.go-task
-      pkgs.alejandra
-      pkgs.go-task
+    packages = with pkgs; [
+      # Git
+      git
+
+      # Nix LSP
+      nixd
+      # Nix Formatter
+      alejandra
+
+      # Taskfile
+      go-task
     ];
   };
 }

@@ -34,7 +34,7 @@ in {
           ];
 
           extensions = with pkgs.open-vsx; [
-            bbenoist.nix
+            jnoortheen.nix-ide
             mkhl.direnv
             bierner.markdown-mermaid
             golang.go

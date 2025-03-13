@@ -22,9 +22,10 @@
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-          "terraform"
-        ];
+        config.allowUnfreePredicate = pkg:
+          builtins.elem (pkgs.lib.getName pkg) [
+            "terraform"
+          ];
       };
     in {
       devShells = {
@@ -36,7 +37,7 @@
           '';
 
           # Required for debugging Go
-          hardeningDisable = [ "fortify" ];
+          hardeningDisable = ["fortify"];
 
           packages = with pkgs; [
             # Tools for editing nix flake
