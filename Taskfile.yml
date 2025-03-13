@@ -52,3 +52,9 @@ tasks:
     silent: true
     cmds:
       - cmd: nix flake update
+
+  vscode-settings:
+    vars:
+      HOME_CONFIG: river@brokkr
+    cmds:
+      - nix eval --json --impure .#homeConfigurations."{{.HOME_CONFIG}}".config.programs.vscode.profiles.default.userSettings
