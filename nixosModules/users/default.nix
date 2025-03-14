@@ -18,7 +18,7 @@
         options = {
           host = lib.mkOption {
             type = lib.types.str;
-            description = "The maching name the user is on.";
+            description = "The machine name the user is on.";
           };
           group = lib.mkOption {
             type = lib.types.str;

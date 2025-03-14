@@ -25,6 +25,8 @@
 
     ./network/ri-vpn
 
+    ./shared/dictionary
+
     ./shells/zsh
 
     ./system/dunst

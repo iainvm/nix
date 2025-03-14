@@ -77,7 +77,7 @@
   # Styling
   "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # Allows userChrome.css
   "browser.toolbars.bookmarks.visibility" = "never"; # Don't show bookmark bar, even on new tabs
-  "findbar.highlightAll" = true; # When finding always highlight all occurances
+  "findbar.highlightAll" = true; # When finding always highlight all occurrences
   "sidebar.position_start" = false; # Sidebery on right hand side
 
   # Top bar layout

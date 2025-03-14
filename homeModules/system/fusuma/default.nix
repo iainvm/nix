@@ -8,6 +8,7 @@
   };
 
   config = lib.mkIf config.system.fusuma.enable {
+    # Multitouch gestures with libinput
     services.fusuma = {
       enable = true;
     };

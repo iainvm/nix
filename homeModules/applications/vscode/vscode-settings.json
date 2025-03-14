@@ -37,32 +37,14 @@
         }
     },
     "cSpell.language": "en-GB",
-    "cSpell.userWords": [
-        "adwaita",
-        "anytype",
-        "brokkr",
-        "chronos",
-        "datagrip",
-        "direnv",
-        "dunst",
-        "envconfig",
-        "envrc",
-        "gofumpt",
-        "golangci",
-        "gopls",
-        "iain",
-        "majer",
-        "nixd",
-        "nixos",
-        "nixpkgs",
-        "pkgs",
-        "potamoi",
-        "shellcheck",
-        "swappy",
-        "taskfile",
-        "vars",
-        "wofi"
-    ],
+    "cSpell.customDictionaries": {
+        "userDictionary": {
+            "name": "userDictionary",
+            "path": "~/.config/dictionary.txt",
+            "scope": "user",
+            "addWords": true
+        }
+    },
     "cSpell.ignorePaths": [
         "package-lock.json",
         "node_modules",

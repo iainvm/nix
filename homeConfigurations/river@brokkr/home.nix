@@ -52,6 +52,10 @@ in {
     nerd-fonts.enable = true;
   };
 
+  shared = {
+    dictionary.enable = true;
+  };
+
   applications = {
     anytype.enable = true;
     capacities.enable = true;
