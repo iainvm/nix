@@ -2,9 +2,8 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
-  config,
   lib,
-  pkgs,
+  config,
   modulesPath,
   ...
 }: {
@@ -13,7 +12,7 @@
   ];
 
   boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc"];
-  boot.initrd.kernelModules = [];
+  boot.initrd.kernelModules = ["i915" "nvidia" "nvidia_drm" "nvidia_uvm" "nvidia_modeset"];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
