@@ -2,9 +2,9 @@
     "window.menuBarVisibility": "toggle",
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
-    "explorer.confirmDragAndDrop": false,
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "workbench.panel.defaultLocation": "right",
+    "explorer.confirmDragAndDrop": false,
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
@@ -36,6 +36,7 @@
             }
         }
     },
+    "task.checkForUpdates": false,
     "cSpell.language": "en-GB",
     "cSpell.customDictionaries": {
         "userDictionary": {

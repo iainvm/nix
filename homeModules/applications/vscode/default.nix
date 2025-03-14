@@ -43,6 +43,7 @@ in {
             timonwong.shellcheck
             redhat.vscode-yaml
             task.vscode-task
+            takumii.markdowntable
           ];
 
           keybindings = lib.mkMerge [
