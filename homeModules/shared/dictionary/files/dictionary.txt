@@ -13,6 +13,7 @@ blueman
 bootloaders
 brokkr
 chronos
+color
 coreutils
 datagrip
 direnv
