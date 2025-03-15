@@ -44,6 +44,7 @@ in {
             redhat.vscode-yaml
             task.vscode-task
             takumii.markdowntable
+            file-icons.file-icons
           ];
 
           keybindings = lib.mkMerge [

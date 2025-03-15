@@ -2,6 +2,7 @@
     "window.menuBarVisibility": "toggle",
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
+    "workbench.iconTheme": "file-icons",
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "workbench.panel.defaultLocation": "right",
     "extensions.autoUpdate": false,
