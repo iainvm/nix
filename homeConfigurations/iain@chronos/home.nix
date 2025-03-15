@@ -1,6 +1,9 @@
-{inputs, ...}: let
+{
+  lib,
+  inputs,
+  ...
+}: let
   user = "iain";
-  name = "Iain";
   fullName = "Iain Majer";
   email = "iainvm@outlook.com";
 in {
@@ -35,6 +38,10 @@ in {
     nerd-fonts.enable = true;
   };
 
+  shared = {
+    dictionary.enable = true;
+  };
+
   applications = {
     anytype.enable = true;
     capacities.enable = true;
@@ -48,10 +55,15 @@ in {
     stremio.enable = true;
     swappy.enable = true;
     vesktop.enable = true;
-    vscode.enable = true;
     wofi.enable = true;
     zen.enable = false;
     firefox.enable = true;
+
+    vscode = {
+      enable = true;
+      settings = lib.importJSON ./files/vscode/settings.json;
+      # keybindings = lib.importJSON ./files/vscode/keybindings.json;
+    };
   };
 
   shells.zsh = {

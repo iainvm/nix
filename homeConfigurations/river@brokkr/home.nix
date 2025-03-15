@@ -1,12 +1,9 @@
 {
   lib,
   inputs,
-  system,
-  config,
   ...
 }: let
   user = "river";
-  name = "Iain";
   fullName = "Iain Majer";
   email = "iain.majer@river-island.com";
 in {
