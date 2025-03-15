@@ -4,6 +4,8 @@
     "workbench.startupEditor": "none",
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "workbench.panel.defaultLocation": "right",
+    "extensions.autoUpdate": false,
+    "extensions.autoCheckUpdates": true,
     "explorer.confirmDragAndDrop": false,
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,

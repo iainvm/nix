@@ -40,13 +40,16 @@
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
     };
+
+    dpm = {
+      url = "github:iainvm/dpm";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     flake-utils,
-    home-manager,
     ...
   } @ inputs: let
     lib = import ./lib {inherit self inputs nixpkgs;};
