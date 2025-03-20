@@ -21,6 +21,7 @@
     },
     "editor.renderWhitespace": "trailing",
     "editor.formatOnSave": true,
+    "direnv.restart.automatic": true,
     "nix.formatterPath": "alejandra",
     "nix.enableLanguageServer": true,
     "nix.serverPath": "nixd",

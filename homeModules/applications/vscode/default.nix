@@ -45,6 +45,7 @@ in {
             task.vscode-task
             takumii.markdowntable
             file-icons.file-icons
+            nicolasvuillamy.vscode-groovy-lint
           ];
 
           keybindings = lib.mkMerge [
