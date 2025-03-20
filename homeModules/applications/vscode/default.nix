@@ -19,6 +19,11 @@ in {
       default = [];
       description = "Path to additional keybindings";
     };
+    extensions = lib.mkOption {
+      type = lib.types.listOf lib.types.package;
+      default = [];
+      description = "Additional extensions to install";
+    };
   };
 
   config = lib.mkIf config.applications.vscode.enable {
@@ -33,20 +38,21 @@ in {
             (config.applications.vscode.settings)
           ];
 
-          extensions = with pkgs.open-vsx; [
-            jnoortheen.nix-ide
-            mkhl.direnv
-            bierner.markdown-mermaid
-            golang.go
-            qufiwefefwoyn.inline-sql-syntax
-            streetsidesoftware.code-spell-checker
-            timonwong.shellcheck
-            redhat.vscode-yaml
-            task.vscode-task
-            takumii.markdowntable
-            file-icons.file-icons
-            nicolasvuillamy.vscode-groovy-lint
-          ];
+          extensions = with pkgs.open-vsx;
+            [
+              jnoortheen.nix-ide
+              mkhl.direnv
+              bierner.markdown-mermaid
+              golang.go
+              qufiwefefwoyn.inline-sql-syntax
+              streetsidesoftware.code-spell-checker
+              timonwong.shellcheck
+              redhat.vscode-yaml
+              task.vscode-task
+              takumii.markdowntable
+              file-icons.file-icons
+            ]
+            ++ config.applications.vscode.extensions;
 
           keybindings = lib.mkMerge [
             (lib.importJSON defaultKeybindingsFile)

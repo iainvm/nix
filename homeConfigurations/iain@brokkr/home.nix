@@ -1,6 +1,5 @@
 {inputs, ...}: let
   user = "iain";
-  name = "Iain";
   fullName = "Iain Majer";
   email = "iainvm@outlook.com";
 in {
@@ -48,8 +47,10 @@ in {
     };
     stremio.enable = true;
     swappy.enable = true;
-    vscode.enable = true;
     wofi.enable = true;
+    vscode = {
+      enable = true;
+    };
   };
 
   shells.zsh = {

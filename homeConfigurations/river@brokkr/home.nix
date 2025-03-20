@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   inputs,
   ...
 }: let
@@ -73,6 +74,9 @@ in {
       enable = true;
       settings = lib.importJSON ./files/vscode/settings.json;
       # keybindings = lib.importJSON ./files/vscode/keybindings.json;
+      extensions = with pkgs.open-vsx; [
+        nicolasvuillamy.vscode-groovy-lint
+      ];
     };
   };
 
