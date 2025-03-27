@@ -62,6 +62,7 @@
     ],
     "go.formatTool": "gofumpt",
     "go.testEnvFile": "~/dev/go-test.env",
+    "go.testTimeout": "5m",
     "go.testOnSave": true,
     "go.lintTool": "golangci-lint",
     "go.lintOnSave": "workspace",
