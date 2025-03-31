@@ -12,6 +12,7 @@
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
         "*.go": "${capture}.go, ${capture}_test.go, ${capture}_internal_test.go, ",
+        "go.mod": "go.sum",
         "flake.nix": "flake.lock, .envrc"
     },
     "files.insertFinalNewline": true,
@@ -64,8 +65,16 @@
     "go.testEnvFile": "~/dev/go-test.env",
     "go.testTimeout": "5m",
     "go.testOnSave": true,
-    "go.lintTool": "golangci-lint",
+    "go.lintTool": "golangci-lint-v2",
     "go.lintOnSave": "workspace",
+    "go.lintFlags": [
+        "run",
+        "--issues-exit-code=0",
+        "--output.text.colors=true",
+        "--output.text.path=stdout",
+        "--output.text.print-issued-lines=false",
+        "--show-stats=false"
+    ],
     "go.useLanguageServer": true,
     "gopls": {
         "formatting.gofumpt": true
