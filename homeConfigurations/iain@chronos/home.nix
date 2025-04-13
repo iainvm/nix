@@ -45,7 +45,7 @@ in {
 
   applications = {
     anytype.enable = true;
-    capacities.enable = true;
+    capacities.enable = false;
     discord.enable = true;
     kitty.enable = true;
     prism.enable = true;

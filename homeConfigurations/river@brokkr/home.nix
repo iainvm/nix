@@ -56,7 +56,7 @@ in {
 
   applications = {
     anytype.enable = true;
-    capacities.enable = true;
+    capacities.enable = false;
     discord.enable = true;
     datagrip.enable = true;
     firefox.enable = true;

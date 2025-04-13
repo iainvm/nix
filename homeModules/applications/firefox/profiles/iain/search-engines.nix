@@ -7,11 +7,11 @@ in {
   default = "Kagi";
 
   engines = {
-    "Bing" = hidden;
-    "eBay" = hidden;
-    "Google" = hidden;
-    "DuckDuckGo" = hidden;
-    "Wikipedia (en)" = hidden;
+    "bing" = hidden;
+    "ebay" = hidden;
+    "google" = hidden;
+    "ddg" = hidden;
+    "wikipedia" = hidden;
 
     "Kagi" = {
       urls = [
