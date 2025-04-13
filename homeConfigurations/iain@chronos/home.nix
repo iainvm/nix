@@ -57,8 +57,8 @@ in {
     swappy.enable = true;
     vesktop.enable = true;
     wofi.enable = true;
-    zen.enable = false;
     firefox.enable = true;
+    zen.enable = true;
 
     vscode = {
       enable = true;

@@ -6,7 +6,8 @@
   inputs,
   ...
 }: let
-  zen-browser = inputs.zen-browser.packages."${system}".zen-browser-unwrapped;
+  # zen-browser = inputs.zen-browser.packages."${system}".zen-browser-unwrapped;
+  zen-browser = inputs.zen-browser.packages."${system}".default;
 in {
   options.applications.zen = {
     enable = lib.mkEnableOption "enable zen";
@@ -20,23 +21,26 @@ in {
       "x-scheme-handler/about" = ["zen.desktop"];
       "x-scheme-handler/unknown" = ["zen.desktop"];
     };
+    home.packages = [
+      zen-browser
+    ];
 
-    programs.firefox = {
-      enable = true;
-      package = pkgs.wrapFirefox zen-browser {};
-      languagePacks = ["en-GB"];
-      configPath = ".zen";
+    # programs.firefox = {
+    #   enable = true;
+    #   package = pkgs.wrapFirefox zen-browser {};
+    #   languagePacks = ["en-GB"];
+    #   configPath = ".zen";
 
-      policies = {
-        # https://mozilla.github.io/policy-templates/
-        DontCheckDefaultBrowser = true;
-        PasswordManagerEnabled = false;
-        DisableAppUpdate = true;
-      };
+    #   policies = {
+    #     # https://mozilla.github.io/policy-templates/
+    #     DontCheckDefaultBrowser = true;
+    #     PasswordManagerEnabled = false;
+    #     DisableAppUpdate = true;
+    #   };
 
-      # profiles = {
-      #   iain = import ./profiles/iain/default.nix {inherit pkgs;};
-      # };
-    };
+    #   # profiles = {
+    #   #   iain = import ./profiles/iain/default.nix {inherit pkgs;};
+    #   # };
+    # };
   };
 }
