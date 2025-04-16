@@ -61,5 +61,10 @@ in {
         };
       };
     };
+
+    home.file.".vscode-oss/argv.json".text = builtins.toJSON {
+      enable-crash-reporter = false;
+      password-store = "gnome-libsecret";
+    };
   };
 }

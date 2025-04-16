@@ -76,6 +76,7 @@ in {
       # keybindings = lib.importJSON ./files/vscode/keybindings.json;
       extensions = with pkgs.open-vsx; [
         nicolasvuillamy.vscode-groovy-lint
+        saoudrizwan.claude-dev
       ];
     };
   };

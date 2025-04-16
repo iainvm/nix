@@ -15,5 +15,12 @@
         "args": {
             "cwd": "${fileDirname}"
         }
+    },
+    {
+        "key": "ctrl+'",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "args": {
+            "cwd": "${fileDirname}"
+        }
     }
 ]

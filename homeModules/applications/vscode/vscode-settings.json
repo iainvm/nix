@@ -1,5 +1,7 @@
 {
     "window.menuBarVisibility": "toggle",
+    "chat.commandCenter.enabled": false,
+    "workbench.layoutControl.enabled": false,
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
     "workbench.iconTheme": "file-icons",
