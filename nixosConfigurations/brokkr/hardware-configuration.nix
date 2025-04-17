@@ -2,8 +2,9 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 {
-  lib,
   config,
+  lib,
+  pkgs,
   modulesPath,
   ...
 }: {
@@ -11,26 +12,26 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" "rtsx_pci_sdmmc"];
-  boot.initrd.kernelModules = ["i915" "nvidia" "nvidia_drm" "nvidia_uvm" "nvidia_modeset"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
+  boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/f0046f71-f653-411c-972e-9ac3d6f9cdf2";
+    device = "/dev/disk/by-uuid/9a8fb7ac-3b87-4822-96fb-3e0cfb79b799";
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."luks-1a524723-0255-4f2b-8fd7-96f1a317afcf".device = "/dev/disk/by-uuid/1a524723-0255-4f2b-8fd7-96f1a317afcf";
+  boot.initrd.luks.devices."luks-84bea0bc-1e9f-4e88-9b68-62ad3e8cb878".device = "/dev/disk/by-uuid/84bea0bc-1e9f-4e88-9b68-62ad3e8cb878";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/6D50-6B7B";
+    device = "/dev/disk/by-uuid/28D6-A7B3";
     fsType = "vfat";
     options = ["fmask=0077" "dmask=0077"];
   };
 
   swapDevices = [
-    {device = "/dev/disk/by-uuid/b9aafb76-cdc0-4d75-9084-73e73a1f0f19";}
+    {device = "/dev/disk/by-uuid/6e9f2fc5-f24e-4c31-861e-73c56a61a22b";}
   ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -38,14 +39,12 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp59s0u2u4.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."luks-acd7754b-2c2a-4b18-81a6-baf3bb29265b".device = "/dev/disk/by-uuid/acd7754b-2c2a-4b18-81a6-baf3bb29265b";
+  boot.initrd.luks.devices."luks-e48c1be2-93a9-44ab-b589-392e3b949080".device = "/dev/disk/by-uuid/e48c1be2-93a9-44ab-b589-392e3b949080";
 }
