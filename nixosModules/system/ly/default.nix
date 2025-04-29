@@ -1,9 +1,6 @@
 {
   lib,
-  pkgs,
   config,
-  system,
-  nixpkgs,
   ...
 }: {
   options.core.system.ly = {
@@ -14,5 +11,6 @@
     services.displayManager.ly = {
       enable = true;
     };
+    security.pam.services.ly.enableGnomeKeyring = true;
   };
 }
