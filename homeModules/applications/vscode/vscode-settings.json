@@ -64,19 +64,10 @@
         ".direnv"
     ],
     "go.formatTool": "gofumpt",
-    "go.testEnvFile": "~/dev/go-test.env",
     "go.testTimeout": "5m",
     "go.testOnSave": true,
-    "go.lintTool": "golangci-lint-v2",
+    "go.lintTool": "golangci-lint",
     "go.lintOnSave": "workspace",
-    "go.lintFlags": [
-        "run",
-        "--issues-exit-code=0",
-        "--output.text.colors=true",
-        "--output.text.path=stdout",
-        "--output.text.print-issued-lines=false",
-        "--show-stats=false"
-    ],
     "go.useLanguageServer": true,
     "gopls": {
         "formatting.gofumpt": true
