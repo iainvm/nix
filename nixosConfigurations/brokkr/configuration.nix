@@ -19,7 +19,7 @@ in {
 
   core = {
     nix.flakes.enable = true;
-    display-manager.ly.enable = true;
+    display-manager.cosmic-greeter.enable = true;
 
     # Hardware
     hardware = {
