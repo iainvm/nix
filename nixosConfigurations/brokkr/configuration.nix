@@ -19,6 +19,7 @@ in {
 
   core = {
     nix.flakes.enable = true;
+    display-manager.ly.enable = true;
 
     # Hardware
     hardware = {
@@ -41,7 +42,6 @@ in {
       };
 
       # Session Manager
-      ly.enable = true;
       keyring.enable = true;
       # Window Manager
       hyprland.enable = true;

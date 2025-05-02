@@ -3,14 +3,13 @@
   config,
   ...
 }: {
-  options.core.system.ly = {
+  options.core.display-manager.ly = {
     enable = lib.mkEnableOption "enable ly";
   };
 
-  config = lib.mkIf config.core.system.ly.enable {
+  config = lib.mkIf config.core.display-manager.ly.enable {
     services.displayManager.ly = {
       enable = true;
     };
-    security.pam.services.ly.enableGnomeKeyring = true;
   };
 }

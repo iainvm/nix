@@ -1,4 +1,4 @@
-{self, ...}: {
+{...}: {
   imports = [
     ./nix
 
@@ -7,6 +7,10 @@
     ./applications/steam
     ./applications/thunar
     ./applications/vscode-server
+
+    ./display-managers/cosmic-greeter
+    ./display-managers/ly
+    ./display-managers/sddm
 
     ./hardware/bluetooth
     ./hardware/network
@@ -19,9 +23,7 @@
     ./system/hyprland
     ./system/keyring
     ./system/language
-    ./system/ly
     ./system/plymouth
-    ./system/sddm
 
     ./users
   ];

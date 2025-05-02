@@ -10,7 +10,7 @@ in {
   options.shells.zsh = {
     enable = lib.mkEnableOption "enable zsh";
     plugins = zshModule.options.programs.zsh.plugins;
-    initExtra = zshModule.options.programs.zsh.initExtra;
+    initContent = zshModule.options.programs.zsh.initContent;
     aliases = zshModule.options.programs.zsh.shellAliases;
 
     starship = {
@@ -40,7 +40,7 @@ in {
           zsh = {
             enable = true;
             dotDir = ".config/zsh";
-            initExtra = ''
+            initContent = ''
               bindkey '^[[1;5C' forward-word
               bindkey '^[[1;5D' backward-word
               bindkey '^[OA' history-substring-search-up
@@ -116,7 +116,7 @@ in {
       {
         programs = {
           zsh = {
-            initExtra = lib.mkIf config.shells.zsh.starship.transientPrompt (builtins.readFile ./starship/transient.zsh);
+            initContent = lib.mkIf config.shells.zsh.starship.transientPrompt (builtins.readFile ./starship/transient.zsh);
           };
 
           starship = {
