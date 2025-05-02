@@ -9,6 +9,7 @@
     ./applications/prism
     ./applications/protonme
     ./applications/stremio
+    ./applications/stylix
     ./applications/swappy
     ./applications/teams
     ./applications/vesktop

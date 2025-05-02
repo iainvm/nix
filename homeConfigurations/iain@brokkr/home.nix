@@ -12,11 +12,6 @@ in {
   home.homeDirectory = "/home/${user}";
   programs.home-manager.enable = true;
 
-  # Environment Variables
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita:dark";
-  };
-
   # Dotfiles
   home.file = {
     ".config" = {

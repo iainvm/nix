@@ -18,9 +18,7 @@ in {
   ];
 
   # Environment Variables
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita:dark";
-  };
+  applications.stylix.enable = true;
 
   # Dotfiles
   home.file = {

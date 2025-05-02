@@ -42,9 +42,12 @@ in {
       extraSpecialArgs = {inherit self system inputs nixpkgs;};
       modules =
         [
-          {nixpkgs.config.allowUnfree = true;}
-          {nixpkgs.overlays = defaultOverlays ++ overlays;}
-          inputs.self.homeModules.default
+          {
+            nixpkgs = {
+              config.allowUnfree = true;
+              overlays = defaultOverlays ++ overlays;
+            };
+          }
           ../homeConfigurations/${dir}/home.nix
         ]
         ++ modules;

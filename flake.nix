@@ -7,10 +7,6 @@
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
 
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/main";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,28 +17,36 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-utils = {
-      url = "github:numtide/flake-utils";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
     };
 
-    vscode-server = {
-      url = "github:nix-community/nixos-vscode-server";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
     };
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
     };
 
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/main";
     };
 
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
+    vscode-server = {
+      url = "github:nix-community/nixos-vscode-server";
     };
 
     dpm = {
       url = "github:iainvm/dpm";
+    };
+
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+    };
+
+    stylix = {
+      url = "github:danth/stylix";
     };
   };
 
