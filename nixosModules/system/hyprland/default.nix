@@ -2,7 +2,6 @@
   lib,
   pkgs,
   config,
-  system,
   ...
 }: {
   options.core.system.hyprland = {
@@ -17,6 +16,7 @@
 
     environment.systemPackages = with pkgs; [
       xdg-desktop-portal-hyprland
+      nordzy-cursor-theme
     ];
 
     programs.hyprland = {
