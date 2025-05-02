@@ -103,6 +103,7 @@ shortcutes
 signon
 signons
 stremio
+stylix
 subresource
 swappy
 taskfile
