@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   inputs,
   ...
 }: let
@@ -12,15 +11,11 @@ in {
   home.username = user;
   home.homeDirectory = "/home/${user}";
   programs.home-manager.enable = true;
+  applications.stylix.enable = true;
 
   imports = [
     inputs.self.homeModules.default
   ];
-
-  # Environment Variables
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita:dark";
-  };
 
   # Dotfiles
   home.file = {
@@ -63,8 +58,6 @@ in {
     vscode = {
       enable = true;
       settings = lib.importJSON ./files/vscode/settings.json;
-      # keybindings = lib.importJSON ./files/vscode/keybindings.json;
-      # extensions = with pkgs.open-vsx; [];
     };
   };
 

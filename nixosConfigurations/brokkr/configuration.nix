@@ -1,7 +1,5 @@
 {
-  self,
   system,
-  inputs,
   nixpkgs,
   ...
 }: let

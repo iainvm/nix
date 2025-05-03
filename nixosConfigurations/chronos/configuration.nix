@@ -1,26 +1,21 @@
 {
-  self,
   system,
-  inputs,
   nixpkgs,
   ...
 }: let
   computerName = "chronos";
   pkgs = import nixpkgs {inherit system;};
 in {
+  # Nix
+  system.stateVersion = "24.11";
+
   environment.systemPackages = with pkgs; [
     home-manager
   ];
 
-  # Flatpak
-  services.flatpak.enable = true;
-
-  # Nix
-  system.stateVersion = "24.11";
-
   core = {
     nix.flakes.enable = true;
-    display-manager.ly.enable = true;
+    display-manager.sddm.enable = true;
 
     # Hardware
     hardware = {

@@ -12,13 +12,11 @@ in {
   home.username = user;
   home.homeDirectory = "/home/${user}";
   programs.home-manager.enable = true;
+  applications.stylix.enable = true;
 
   imports = [
     inputs.self.homeModules.default
   ];
-
-  # Environment Variables
-  applications.stylix.enable = true;
 
   # Dotfiles
   home.file = {

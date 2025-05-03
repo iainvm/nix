@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: {
@@ -8,14 +9,24 @@
   };
 
   config = lib.mkIf config.core.display-manager.sddm.enable {
-    services.xserver.enable = true;
-
-    services.displayManager.enable = true;
     services.displayManager.sddm = {
       enable = true;
+      package = pkgs.kdePackages.sddm;
       wayland.enable = true;
       autoNumlock = true;
+      theme = "sddm-astronaut-theme";
+      extraPackages = with pkgs; [
+        kdePackages.qtsvg
+        kdePackages.qtmultimedia
+        kdePackages.qtvirtualkeyboard
+      ];
     };
+
+    environment.systemPackages = with pkgs; [
+      (sddm-astronaut.override {
+        embeddedTheme = "astronaut";
+      })
+    ];
 
     security.pam.services.sddm.enableGnomeKeyring = true;
 
