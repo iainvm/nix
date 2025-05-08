@@ -6,18 +6,15 @@
   computerName = "brokkr";
   pkgs = import nixpkgs {inherit system;};
 in {
-  environment.systemPackages = with pkgs; [
-    home-manager
-  ];
-  # Flatpak
-  services.flatpak.enable = true;
-
   # Nix
   system.stateVersion = "24.11";
 
   core = {
     nix.flakes.enable = true;
-    display-manager.cosmic-greeter.enable = true;
+    display-manager.sddm = {
+      enable = true;
+      disabled-displays = ["eDP-1" "DP-6"];
+    };
 
     # Hardware
     hardware = {
