@@ -34,7 +34,6 @@ in {
   };
 
   config = lib.mkIf config.core.display-manager.sddm.enable {
-    security.pam.services.sddm.enableGnomeKeyring = true;
     services.displayManager.sddm = {
       enable = true;
       package = pkgs.kdePackages.sddm;
@@ -61,5 +60,6 @@ in {
     ];
 
     core.system.keyring.enable = true;
+    security.pam.services.sddm.enableGnomeKeyring = true;
   };
 }

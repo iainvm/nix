@@ -2,8 +2,6 @@
   lib,
   pkgs,
   config,
-  system,
-  nixpkgs,
   ...
 }: {
   options.core.system.keyring = {
@@ -11,8 +9,11 @@
   };
 
   config = lib.mkIf config.core.system.keyring.enable {
-    programs.gnupg.agent = {
-      enable = true;
+    services.gnome.gnome-keyring.enable = true;
+
+    programs = {
+      seahorse.enable = true;
+      gnupg.agent.enable = true;
     };
 
     # Keyring stuff
@@ -21,7 +22,5 @@
       libsecret
       pass
     ];
-    services.gnome.gnome-keyring.enable = true;
-    programs.seahorse.enable = true;
   };
 }
