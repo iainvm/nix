@@ -72,10 +72,6 @@
             inputs.nixos-hardware.nixosModules.dell-xps-15-9500-nvidia
           ];
         };
-        "potamoi" = lib.mkNixosConfigurations {
-          name = "potamoi";
-          system = "x86_64-linux";
-        };
       };
 
       # NixOS Modules
