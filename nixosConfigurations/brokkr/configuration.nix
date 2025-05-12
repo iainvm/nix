@@ -48,6 +48,7 @@ in {
         enable = true;
         users = ["iain" "river"];
       };
+      fwupd.enable = true;
       global-protect-vpn.enable = true;
       thunar.enable = true;
     };

@@ -3,6 +3,7 @@
     ./nix
 
     ./applications/1password
+    ./applications/fwupd
     ./applications/global-protect-vpn
     ./applications/steam
     ./applications/thunar

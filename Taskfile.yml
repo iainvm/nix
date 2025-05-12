@@ -63,3 +63,8 @@ tasks:
     desc: Start a REPL with `user` pointing at the current users homeConfiguration, and `host` pointing at the current hosts nixosConfiguration
     cmds:
       - nix repl --expr '{user = (builtins.getFlake (toString ./.)).homeConfigurations."{{.USER}}@{{.HOSTNAME}}";host = (builtins.getFlake (toString ./.)).nixosConfigurations.{{.HOSTNAME}};}'
+
+  verify-store:
+    desc: Verify nix store
+    cmds:
+      - nix-store --verify --check-contents --repair
