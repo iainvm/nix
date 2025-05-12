@@ -29,14 +29,6 @@
       url = "github:NixOS/nixos-hardware/master";
     };
 
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/main";
-    };
-
-    vscode-server = {
-      url = "github:nix-community/nixos-vscode-server";
-    };
-
     dpm = {
       url = "github:iainvm/dpm";
     };

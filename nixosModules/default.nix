@@ -7,7 +7,6 @@
     ./applications/global-protect-vpn
     ./applications/steam
     ./applications/thunar
-    ./applications/vscode-server
 
     ./display-managers/cosmic-greeter
     ./display-managers/ly
