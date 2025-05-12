@@ -68,6 +68,9 @@
         "brokkr" = lib.mkNixosConfigurations {
           name = "brokkr";
           system = "x86_64-linux";
+          modules = [
+            inputs.nixos-hardware.nixosModules.dell-xps-15-9500-nvidia
+          ];
         };
         "potamoi" = lib.mkNixosConfigurations {
           name = "potamoi";
