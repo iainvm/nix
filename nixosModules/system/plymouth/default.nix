@@ -2,7 +2,6 @@
   lib,
   pkgs,
   config,
-  system,
   ...
 }: {
   options.core.system.plymouth = {
