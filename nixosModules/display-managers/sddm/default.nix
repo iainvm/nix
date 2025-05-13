@@ -3,27 +3,7 @@
   pkgs,
   config,
   ...
-}: let
-  cfgFile = pkgs.writeText "weston.ini" (builtins.concatStringsSep "\n\n" (
-    [
-      ''
-        [keyboard]
-        keymap_options=terminate:ctrl_alt_bksp
-        keymap_variant=
-
-        [libinput]
-        enable-tap=true
-        left-handed=false
-      ''
-    ]
-    ++ (map (id: ''
-        [output]
-        name=${id}
-        mode=off
-      '')
-      config.core.display-manager.sddm.disabled-displays)
-  ));
-in {
+}: {
   options.core.display-manager.sddm = {
     enable = lib.mkEnableOption "enable sddm";
     disabled-displays = lib.mkOption {
@@ -36,21 +16,17 @@ in {
   config = lib.mkIf config.core.display-manager.sddm.enable {
     services.displayManager.sddm = {
       enable = true;
-      package = pkgs.kdePackages.sddm;
-      wayland.enable = true;
       autoNumlock = true;
+
+      # wayland.enable = true;
+
       theme = "sddm-astronaut-theme";
+      package = pkgs.kdePackages.sddm;
       extraPackages = with pkgs; [
         kdePackages.qtsvg
         kdePackages.qtmultimedia
         kdePackages.qtvirtualkeyboard
       ];
-
-      settings = {
-        Wayland = {
-          CompositorCommand = "${pkgs.weston}/bin/weston --shell=kiosk -c ${cfgFile}";
-        };
-      };
     };
 
     environment.systemPackages = with pkgs; [
