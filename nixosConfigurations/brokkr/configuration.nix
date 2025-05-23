@@ -20,7 +20,7 @@ in {
         hostName = computerName;
       };
       sound.enable = true;
-      nvidia.enable = true;
+      nvidia.enable = false;
       bluetooth.enable = true;
       thunderbolt.enable = true;
     };
