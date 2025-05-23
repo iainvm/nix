@@ -11,10 +11,7 @@ in {
 
   core = {
     nix.flakes.enable = true;
-    display-manager.sddm = {
-      enable = true;
-      disabled-displays = ["eDP-1" "DP-6"];
-    };
+    display-manager.ly.enable = true;
 
     # Hardware
     hardware = {

@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   options.cli.git = {
@@ -22,6 +23,10 @@
   };
 
   config = lib.mkIf config.cli.git.enable {
+    home.packages = with pkgs; [
+      delta
+    ];
+
     programs.git = {
       enable = true;
 
@@ -29,6 +34,23 @@
       userEmail = config.cli.git.email;
 
       extraConfig = {
+        core = {
+          pager = "delta";
+        };
+
+        interactive = {
+          diffFilter = "delta == color-only";
+        };
+
+        delta = {
+          navigation = true;
+          dark = true;
+        };
+
+        merge = {
+          conflictstyle = "zdiff3";
+        };
+
         init = {
           defaultBranch = "main";
           templatedir = "~/.config/git/init";
