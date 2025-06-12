@@ -1,31 +1,42 @@
 #!/bin/sh
 
 # Get list of all paired devices
-paired=$(bluetoothctl devices Paired)
+# Format "$mac $name"
+# paired="$(printf '%s\n%s' "AA:AA:AA:AA:AA:AA test-device" "AC:80:0A:29:DA:D3 WF-1000XM5")"
+paired=$(bluetoothctl devices Paired | awk '{print $2, $3}')
 
-# Get list of currently connected devices
-connected=$(bluetoothctl info | grep "Device" | awk '{print $2}')
+# Get list connected devices
+# Format "$mac"
+# connected="$(printf '%s\n%s' "AA:AA:AA:AA:AA:AA" "AC:80:0A:29:DA:D3")"
+connected=$(bluetoothctl info | grep "^Device" | awk '{print $2}')
 
-# Build device list with [MAC] and connected status
-device_list=""
-while read -r line; do
-    mac=$(echo "$line" | awk '{print $2}')
-    name=$(echo "$line" | cut -d ' ' -f 3-)
+# Build list of devices for selection
+# For each paired device
+while read -r device; do
+    # Separate out the device info
+    mac=$(echo "$device" | awk '{print $1}')
+    name=$(echo "$device" | awk '{print $2}')
 
+    # Add an icon if an entry is connected
     if echo "$connected" | grep -q "$mac"; then
         entry="$name [$mac] ✓"
     else
         entry="$name [$mac]"
     fi
 
-    device_list="${device_list}${entry}"
+    # Add the entry to the device list
+    # Only append if it's not the first value
+    if [ -z "${device_list+x}" ]; then
+        device_list="$entry"
+    else
+        device_list="$(printf '%s\n%s' "$device_list" "$entry")"
+    fi
 done << EOF
 $paired
 EOF
 
-# Show in Wofi (trim trailing newline to prevent blank option)
-selection=$(printf '%s' "$device_list" | sed '/^\s*$/d' | sort | wofi -i --dmenu -p "Bluetooth Devices")
-
+# Show in Wofi
+selection=$(printf '%s' "$device_list" | sort | wofi -i --dmenu -p "Bluetooth Devices")
 
 # Extract MAC address from selection
 mac=$(echo "$selection" | grep -oE '([A-F0-9]{2}:){5}[A-F0-9]{2}')
@@ -36,8 +47,10 @@ is_connected=$(bluetoothctl info "$mac" | grep -q "Connected: yes" && echo "yes"
 # Toggle connection
 if [ -n "$mac" ]; then
     if [ "$is_connected" = "yes" ]; then
+        # echo "disconnect: $mac"
         bluetoothctl disconnect "$mac"
     else
+        # echo "connect $mac"
         bluetoothctl connect "$mac"
     fi
 fi
