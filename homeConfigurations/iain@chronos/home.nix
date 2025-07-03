@@ -39,7 +39,7 @@ in {
   };
 
   applications = {
-    anytype.enable = true;
+    anytype.enable = false;
     capacities.enable = false;
     discord.enable = true;
     kitty.enable = true;

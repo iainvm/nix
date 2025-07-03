@@ -1,56 +1,88 @@
 #!/bin/sh
 
-# Get list of all paired devices
-# Format "$mac $name"
-# paired="$(printf '%s\n%s' "AA:AA:AA:AA:AA:AA test-device" "AC:80:0A:29:DA:D3 WF-1000XM5")"
-paired=$(bluetoothctl devices Paired | awk '{print $2, $3}')
+connected_icon=✓
+battery_icon=🔋
+nickname_list="OpenRun Pro 2 by Shokz|OpenRun Pro 2"
 
-# Get list connected devices
-# Format "$mac"
-# connected="$(printf '%s\n%s' "AA:AA:AA:AA:AA:AA" "AC:80:0A:29:DA:D3")"
-connected=$(bluetoothctl info | grep "^Device" | awk '{print $2}')
 
-# Build list of devices for selection
-# For each paired device
-while read -r device; do
-    # Separate out the device info
-    mac=$(echo "$device" | awk '{print $1}')
-    name=$(echo "$device" | awk '{print $2}')
+# Get list of paired mac addresses
+get_paired_devices() {
+    bluetoothctl devices Paired | awk '{print $2}'
+}
 
-    # Add an icon if an entry is connected
-    if echo "$connected" | grep -q "$mac"; then
-        entry="$name [$mac] ✓"
-    else
-        entry="$name [$mac]"
-    fi
+# Get the name of the device and process any nicknames
+device_name() {
+    mac="$1"
+    name=$(bluetoothctl info "$mac" | awk -F': ' '/Name:/ {print $2}')
 
-    # Add the entry to the device list
-    # Only append if it's not the first value
-    if [ -z "${device_list+x}" ]; then
-        device_list="$entry"
-    else
-        device_list="$(printf '%s\n%s' "$device_list" "$entry")"
-    fi
-done << EOF
-$paired
+    found=""
+    while IFS='|' read -r full nickname; do
+        if [ "$name" = "$full" ]; then
+            found="$nickname"
+            break
+        fi
+    done <<EOF
+$nickname_list
 EOF
 
+    if [ -n "$found" ]; then
+        echo "$found"
+    else
+        echo "$name"
+    fi
+}
+
+# Check if device is connected
+device_connected() {
+    mac="$1"
+    if bluetoothctl devices Connected | grep -q "$mac"; then
+        echo $connected_icon
+    fi
+}
+
+# Returns the battery percentage of the given device
+device_battery() {
+    mac="$1"
+    percentage=$(bluetoothctl info "$mac" | awk -F '[()]' '/Battery Percentage:/ {print $2}')
+
+    if [ -n "$percentage" ]; then
+        echo "$battery_icon$percentage"
+    else
+        echo ""
+    fi
+}
+
+create_list() {
+    device_list=""
+
+    while read -r device; do
+        # entry="[$device] $(device_name "$device") $(device_connected "$device") $(device_battery "$device")"
+        entry="[$device] $(device_name "$device") $(device_battery "$device")"
+
+        if [ -z "$device_list" ]; then
+            device_list="$entry"
+        else
+            device_list="$(printf '%s\n%s' "$device_list" "$entry")"
+        fi
+    done <<EOF
+$(get_paired_devices)
+EOF
+
+    echo "$device_list"
+}
+
 # Show in Wofi
-selection=$(printf '%s' "$device_list" | sort | wofi -i --dmenu -p "Bluetooth Devices")
+selection=$(printf '%s' "$(create_list)" | sort | wofi -i --dmenu -p "Bluetooth Devices")
 
 # Extract MAC address from selection
 mac=$(echo "$selection" | grep -oE '([A-F0-9]{2}:){5}[A-F0-9]{2}')
 
-# Determine if device is currently connected
-is_connected=$(bluetoothctl info "$mac" | grep -q "Connected: yes" && echo "yes")
-
-# Toggle connection
-if [ -n "$mac" ]; then
-    if [ "$is_connected" = "yes" ]; then
-        # echo "disconnect: $mac"
+# Make sure we have a selection to action
+if [ -n "$selection" ]; then
+    # Toggle connect/disconnect the device
+    if bluetoothctl devices Connected | grep -q "$mac"; then
         bluetoothctl disconnect "$mac"
     else
-        # echo "connect $mac"
         bluetoothctl connect "$mac"
     fi
 fi
