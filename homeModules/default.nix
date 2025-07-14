@@ -13,6 +13,7 @@
     ./applications/swappy
     ./applications/teams
     ./applications/vesktop
+    ./applications/vlc
     ./applications/vscode
     ./applications/wofi
     ./applications/zen

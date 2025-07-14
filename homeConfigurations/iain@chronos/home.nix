@@ -51,6 +51,7 @@ in {
     stremio.enable = true;
     swappy.enable = true;
     vesktop.enable = true;
+    vlc.enable = true;
     wofi.enable = true;
     firefox.enable = true;
     zen.enable = true;
