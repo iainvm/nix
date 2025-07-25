@@ -95,7 +95,7 @@ in {
               grb = "git rebase";
               gst = "git stash";
               gpuoc = "git push --set-upstream origin \$(git symbolic-ref --short HEAD)";
-              gpr = ''xdg-open "https://github.com/$(git remote get-url origin | sed -E 's/git@github.com:(.+)\.git/\1/')/new/pull/$(git rev-parse --abbrev-ref HEAD)"'';
+              gpr = ''xdg-open "https://github.com/$(git remote get-url origin | sed -E 's/git@github.com:(.+)\.git/\1/')/pull/new/$(git rev-parse --abbrev-ref HEAD)"'';
               gf = "git fetch --all --prune";
               gd = "git diff";
               la = "ls -la";
