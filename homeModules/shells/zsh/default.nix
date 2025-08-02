@@ -2,16 +2,22 @@
   lib,
   pkgs,
   config,
-  inputs,
   ...
-}: let
-  zshModule = import "${inputs.home-manager}/modules/programs/zsh.nix" {inherit pkgs lib config;};
-in {
+}: {
   options.shells.zsh = {
     enable = lib.mkEnableOption "enable zsh";
-    plugins = zshModule.options.programs.zsh.plugins;
-    initContent = zshModule.options.programs.zsh.initContent;
-    aliases = zshModule.options.programs.zsh.shellAliases;
+
+    plugins = lib.mkOption {
+      type = lib.types.listOf lib.types.attrs;
+    };
+
+    initContent = lib.mkOption {
+      type = lib.types.str;
+    };
+
+    aliases = lib.mkOption {
+      type = lib.types.attrs;
+    };
 
     starship = {
       enable = lib.mkOption {
@@ -39,7 +45,7 @@ in {
         programs = {
           zsh = {
             enable = true;
-            dotDir = ".config/zsh";
+            dotDir = "${config.home.homeDirectory}/.config/zsh";
             initContent = ''
               bindkey '^[[1;5C' forward-word
               bindkey '^[[1;5D' backward-word
