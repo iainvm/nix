@@ -7,7 +7,7 @@ nickname_list="OpenRun Pro 2 by Shokz|OpenRun Pro 2"
 
 # Get list of paired mac addresses
 get_paired_devices() {
-    bluetoothctl devices Paired | awk '{print $2}'
+    bluetoothctl devices Paired | grep "Device" | awk '{print $2}'
 }
 
 # Get the name of the device and process any nicknames
