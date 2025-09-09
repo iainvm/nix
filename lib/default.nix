@@ -13,6 +13,7 @@ in {
     system,
     modules ? [],
     overlays ? [],
+    permitInsecure ? [],
   }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {inherit self system inputs nixpkgs;};
@@ -20,7 +21,10 @@ in {
         [
           {
             nixpkgs = {
-              config.allowUnfree = true;
+              config = {
+                allowUnfree = true;
+                permittedInsecurePackages = permitInsecure;
+              };
               overlays = defaultOverlays ++ overlays;
             };
           }
@@ -36,6 +40,7 @@ in {
     system,
     modules ? [],
     overlays ? [],
+    permitInsecure ? [],
   }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = inputs.nixpkgs.legacyPackages."${system}";
@@ -44,7 +49,10 @@ in {
         [
           {
             nixpkgs = {
-              config.allowUnfree = true;
+              config = {
+                allowUnfree = true;
+                permittedInsecurePackages = permitInsecure;
+              };
               overlays = defaultOverlays ++ overlays;
             };
           }
