@@ -30,6 +30,7 @@ in {
     programs.vscode = {
       enable = true;
       package = pkgs.vscodium;
+      mutableExtensionsDir = false;
 
       profiles = {
         default = {
@@ -51,6 +52,7 @@ in {
               task.vscode-task
               takumii.markdowntable
               file-icons.file-icons
+              dendron.dendron
             ]
             ++ config.applications.vscode.extensions;
 
