@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-grim -g "$(slurp)" - | swappy -f -
+grim -g "$(slurp -d)" - | wl-copy
