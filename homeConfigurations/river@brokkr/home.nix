@@ -34,6 +34,10 @@ in {
     # };
   };
 
+  home.packages = with pkgs; [
+    postman
+  ];
+
   system = {
     dunst.enable = true;
   };
@@ -61,6 +65,7 @@ in {
       pass.enable = true;
       desktop.enable = true;
     };
+    sql-developer.enable = true;
     stremio.enable = true;
     swappy.enable = true;
     teams.enable = true;
