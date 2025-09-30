@@ -53,6 +53,7 @@ in {
               takumii.markdowntable
               file-icons.file-icons
               dendron.dendron
+              eamodio.gitlens
             ]
             ++ config.applications.vscode.extensions;
 
