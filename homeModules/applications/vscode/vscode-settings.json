@@ -113,5 +113,6 @@
     "screencastMode.fontSize": 64.0,
     "terminal.integrated.fontSize": 16.0,
     "workbench.colorTheme": "Stylix",
-    "workbench.iconTheme": "file-icons"
+    "workbench.iconTheme": "file-icons",
+    "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
