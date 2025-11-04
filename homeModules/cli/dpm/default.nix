@@ -1,11 +1,11 @@
 {
   lib,
+  pkgs,
   config,
   inputs,
-  system,
   ...
 }: let
-  dpm = inputs.dpm.packages."${system}".default;
+  dpm = inputs.dpm.packages."${pkgs.stdevn.hostPlatform.system}".default;
 in {
   options.cli.dpm = {
     enable = lib.mkOption {

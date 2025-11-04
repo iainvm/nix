@@ -51,7 +51,7 @@
     lib = import ./lib {inherit self inputs nixpkgs;};
   in
     {
-      # Systems
+      # NixOs Configurations
       nixosConfigurations = {
         "chronos" = lib.mkNixosConfigurations {
           name = "chronos";

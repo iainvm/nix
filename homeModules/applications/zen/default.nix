@@ -2,12 +2,10 @@
   lib,
   pkgs,
   config,
-  system,
   inputs,
   ...
 }: let
-  # zen-browser = inputs.zen-browser.packages."${system}".zen-browser-unwrapped;
-  zen-browser = inputs.zen-browser.packages."${system}".default;
+  zen-browser = inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default;
 in {
   options.applications.zen = {
     enable = lib.mkEnableOption "enable zen";

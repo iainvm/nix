@@ -30,10 +30,12 @@
     programs.git = {
       enable = true;
 
-      userName = config.cli.git.name;
-      userEmail = config.cli.git.email;
+      settings = {
+        user = {
+          name = config.cli.git.name;
+          email = config.cli.git.email;
+        };
 
-      extraConfig = {
         core = {
           pager = "delta";
         };
