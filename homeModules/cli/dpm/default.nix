@@ -5,7 +5,7 @@
   inputs,
   ...
 }: let
-  dpm = inputs.dpm.packages."${pkgs.stdevn.hostPlatform.system}".default;
+  dpm = inputs.dpm.packages."${pkgs.stdenv.hostPlatform.system}".default;
 in {
   options.cli.dpm = {
     enable = lib.mkOption {
