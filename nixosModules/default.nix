@@ -24,6 +24,7 @@
     ./system/keyring
     ./system/language
     ./system/plymouth
+    ./system/virtualization
 
     ./users
   ];
