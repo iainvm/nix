@@ -36,6 +36,7 @@ in {
 
   home.packages = with pkgs; [
     postman
+    rustdesk-flutter
   ];
 
   system = {

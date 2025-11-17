@@ -37,8 +37,6 @@ in {
       keyring.enable = true;
       # Window Manager
       hyprland.enable = true;
-
-      virtualization.enable = true;
     };
 
     # Applications
@@ -70,7 +68,7 @@ in {
           host = "brokkr";
           group = "river";
           shell = pkgs.zsh;
-          extraGroups = ["networkmanager" "wheel" "libvirtd" "kvm"];
+          extraGroups = ["networkmanager" "wheel"];
         };
       };
     };
