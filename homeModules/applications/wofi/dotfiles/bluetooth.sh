@@ -83,6 +83,16 @@ if [ -n "$selection" ]; then
     if bluetoothctl devices Connected | grep -q "$mac"; then
         bluetoothctl disconnect "$mac"
     else
-        bluetoothctl connect "$mac"
+        i=1
+        while [ "${i}" -le 5 ]; do
+            if bluetoothctl connect "$mac"; then
+                echo "Connected on attempt $i"
+                break
+            else
+                echo "Attempt $i failed"
+                sleep 2
+            fi
+            i=$((i + 1))
+        done
     fi
 fi
