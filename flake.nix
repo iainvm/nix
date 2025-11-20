@@ -61,7 +61,6 @@
         "brokkr" = lib.mkNixosConfigurations {
           name = "brokkr";
           system = "x86_64-linux";
-          permitInsecure = ["qtwebengine-5.15.19"];
           modules = [
             inputs.nixos-hardware.nixosModules.dell-xps-15-9500-nvidia
           ];
@@ -83,12 +82,10 @@
         "iain@brokkr" = lib.mkHomeConfigurations {
           dir = "iain@brokkr";
           system = "x86_64-linux";
-          permitInsecure = ["qtwebengine-5.15.19"];
         };
         "river@brokkr" = lib.mkHomeConfigurations {
           dir = "river@brokkr";
           system = "x86_64-linux";
-          permitInsecure = ["qtwebengine-5.15.19"];
         };
       };
 

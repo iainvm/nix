@@ -23,7 +23,5 @@
         thunar-archive-plugin
       ];
     };
-
-    programs.file-roller.enable = true;
   };
 }

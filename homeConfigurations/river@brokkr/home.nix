@@ -67,7 +67,7 @@ in {
       desktop.enable = true;
     };
     sql-developer.enable = true;
-    stremio.enable = true;
+    stremio.enable = false;
     swappy.enable = true;
     teams.enable = true;
     wofi.enable = true;

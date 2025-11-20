@@ -40,7 +40,7 @@ in {
       pass.enable = true;
       desktop.enable = true;
     };
-    stremio.enable = true;
+    stremio.enable = false;
     swappy.enable = true;
     wofi.enable = true;
     vscode = {
