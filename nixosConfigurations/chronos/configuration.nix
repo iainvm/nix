@@ -17,6 +17,8 @@ in {
     home-manager
   ];
 
+  hardware.keyboard.zsa.enable = true;
+
   core = {
     nix.flakes.enable = true;
     display-manager.sddm = {

@@ -9,6 +9,8 @@ in {
   # Nix
   system.stateVersion = "24.11";
 
+  hardware.keyboard.zsa.enable = true;
+
   core = {
     nix.flakes.enable = true;
     display-manager.ly.enable = true;
