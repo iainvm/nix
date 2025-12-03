@@ -12,7 +12,7 @@
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
-        "*.go": "${capture}.go, ${capture}_test.go, ${capture}_internal_test.go, ",
+        "*.go": "${capture}.go, ${capture}_test.go, ${capture}_internal_test.go, ${capture}_mock.go",
         "go.mod": "go.sum",
         "flake.nix": "flake.lock, .envrc"
     },
