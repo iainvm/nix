@@ -114,5 +114,7 @@
     "terminal.integrated.fontSize": 16.0,
     "workbench.colorTheme": "Stylix",
     "workbench.iconTheme": "file-icons",
-    "workbench.secondarySideBar.defaultVisibility": "hidden"
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "terminal.integrated.stickyScroll.enabled": false,
+    "git.openRepositoryInParentFolders": "never"
 }
