@@ -62,15 +62,19 @@
         ".vscode-insiders",
         ".direnv"
     ],
-    "go.formatTool": "gofumpt",
+    "go.alternateTools": {
+        "customFormatter": "golangci-lint"
+    },
+    "go.formatTool": "custom",
+    "go.formatFlags": [
+        "fmt",
+        "--stdin"
+    ],
     "go.testTimeout": "5m",
     "go.testOnSave": true,
     "go.lintTool": "golangci-lint",
     "go.lintOnSave": "workspace",
     "go.useLanguageServer": true,
-    "gopls": {
-        "formatting.gofumpt": true
-    },
     "go.testFlags": [
         "-v"
     ],
