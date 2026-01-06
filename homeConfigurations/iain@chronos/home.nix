@@ -49,9 +49,7 @@ in {
       desktop.enable = true;
       vpn.enable = true;
     };
-    stremio.enable = true;
     swappy.enable = true;
-    vesktop.enable = true;
     vintagestory.enable = true;
     vlc.enable = true;
     wofi.enable = true;
