@@ -1,55 +1,13 @@
 {
-    "window.menuBarVisibility": "toggle",
     "chat.commandCenter.enabled": false,
-    "workbench.layoutControl.enabled": false,
-    "workbench.sideBar.location": "right",
-    "workbench.startupEditor": "none",
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-    "workbench.panel.defaultLocation": "right",
-    "extensions.autoUpdate": false,
-    "extensions.autoCheckUpdates": true,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.fileNesting.enabled": true,
-    "explorer.fileNesting.expand": false,
-    "explorer.fileNesting.patterns": {
-        "*.go": "${capture}.go, ${capture}_test.go, ${capture}_internal_test.go, ${capture}_mock.go, ${capture}_mocks.go",
-        "go.mod": "go.sum",
-        "flake.nix": "flake.lock, .envrc"
-    },
-    "files.insertFinalNewline": true,
-    "files.exclude": {
-        "**/.direnv": true,
-        "**/.task": true
-    },
-    "editor.renderWhitespace": "trailing",
-    "editor.formatOnSave": true,
-    "direnv.restart.automatic": true,
-    "nix.formatterPath": "alejandra",
-    "nix.enableLanguageServer": true,
-    "nix.serverPath": "nixd",
-    "nix.serverSettings": {
-        "nixd": {
-            "diagnostics": {
-                "ignored": [
-                    "unused_binding",
-                    "unused_with"
-                ]
-            },
-            "formatting": {
-                "command": [
-                    "alejandra"
-                ]
-            }
-        }
-    },
-    "task.checkForUpdates": false,
-    "cSpell.language": "en-GB",
+    "chat.editor.fontFamily": "DejaVu Sans Mono",
+    "chat.editor.fontSize": 16.0,
     "cSpell.customDictionaries": {
         "userDictionary": {
+            "addWords": true,
             "name": "userDictionary",
             "path": "~/.config/dictionary.txt",
-            "scope": "user",
-            "addWords": true
+            "scope": "user"
         }
     },
     "cSpell.ignorePaths": [
@@ -62,22 +20,50 @@
         ".vscode-insiders",
         ".direnv"
     ],
+    "cSpell.language": "en-GB",
+    "debug.console.fontFamily": "DejaVu Sans Mono",
+    "debug.console.fontSize": 16.0,
+    "direnv.restart.automatic": true,
+    "editor.fontFamily": "DejaVu Sans Mono",
+    "editor.fontSize": 16.0,
+    "editor.formatOnSave": true,
+    "editor.inlayHints.fontFamily": "DejaVu Sans Mono",
+    "editor.inlineSuggest.fontFamily": "DejaVu Sans Mono",
+    "editor.minimap.sectionHeaderFontSize": 10.285714285714286,
+    "editor.renderWhitespace": "trailing",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": false,
+    "explorer.fileNesting.patterns": {
+        "*.go": "${capture}.go, ${capture}_test.go, ${capture}_internal_test.go, ${capture}_mock.go, ${capture}_mocks.go",
+        "flake.nix": "flake.lock, .envrc",
+        "go.mod": "go.sum"
+    },
+    "extensions.autoCheckUpdates": true,
+    "extensions.autoUpdate": false,
+    "files.exclude": {
+        "**/.direnv": true,
+        "**/.task": true
+    },
+    "files.insertFinalNewline": true,
+    "git.openRepositoryInParentFolders": "never",
     "go.alternateTools": {
         "customFormatter": "golangci-lint"
     },
-    "go.formatTool": "custom",
     "go.formatFlags": [
         "fmt",
         "--stdin"
     ],
-    "go.testTimeout": "5m",
-    "go.testOnSave": true,
-    "go.lintTool": "golangci-lint",
+    "go.formatTool": "custom",
     "go.lintOnSave": "workspace",
-    "go.useLanguageServer": true,
+    "go.lintTool": "golangci-lint",
+    "go.survey.prompt": false,
     "go.testFlags": [
         "-v"
     ],
+    "go.testOnSave": true,
+    "go.testTimeout": "5m",
+    "go.useLanguageServer": true,
     "json.schemas": [
         {
             "fileMatch": [
@@ -94,31 +80,46 @@
             "url": "vscode://schemas/settings/user"
         }
     ],
+    "markdown.preview.fontFamily": "DejaVu Sans",
+    "markdown.preview.fontSize": 16.0,
+    "markdown.validate.enabled": true,
+    "nix.enableLanguageServer": true,
+    "nix.formatterPath": "alejandra",
+    "nix.serverPath": "nixd",
+    "nix.serverSettings": {
+        "nixd": {
+            "diagnostics": {
+                "ignored": [
+                    "unused_binding",
+                    "unused_with"
+                ]
+            },
+            "formatting": {
+                "command": [
+                    "alejandra"
+                ]
+            }
+        }
+    },
+    "redhat.telemetry.enabled": false,
+    "scm.inputFontFamily": "DejaVu Sans Mono",
+    "scm.inputFontSize": 14.857142857142858,
+    "screencastMode.fontSize": 64.0,
+    "task.checkForUpdates": false,
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "terminal.integrated.fontSize": 16.0,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Stylix",
+    "workbench.iconTheme": "file-icons",
+    "workbench.layoutControl.enabled": false,
+    "workbench.panel.defaultLocation": "right",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none",
     "yaml.schemas": {
         "https://taskfile.dev/schema.json": [
             "Taskfile.yml"
         ]
-    },
-    "redhat.telemetry.enabled": false,
-    "markdown.validate.enabled": true,
-    "chat.editor.fontFamily": "DejaVu Sans Mono",
-    "chat.editor.fontSize": 16.0,
-    "debug.console.fontFamily": "DejaVu Sans Mono",
-    "debug.console.fontSize": 16.0,
-    "editor.fontFamily": "DejaVu Sans Mono",
-    "editor.fontSize": 16.0,
-    "editor.inlayHints.fontFamily": "DejaVu Sans Mono",
-    "editor.inlineSuggest.fontFamily": "DejaVu Sans Mono",
-    "editor.minimap.sectionHeaderFontSize": 10.285714285714286,
-    "markdown.preview.fontFamily": "DejaVu Sans",
-    "markdown.preview.fontSize": 16.0,
-    "scm.inputFontFamily": "DejaVu Sans Mono",
-    "scm.inputFontSize": 14.857142857142858,
-    "screencastMode.fontSize": 64.0,
-    "terminal.integrated.fontSize": 16.0,
-    "workbench.colorTheme": "Stylix",
-    "workbench.iconTheme": "file-icons",
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "terminal.integrated.stickyScroll.enabled": false,
-    "git.openRepositoryInParentFolders": "never"
+    }
 }
