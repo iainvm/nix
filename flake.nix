@@ -56,7 +56,6 @@
         "chronos" = lib.mkNixosConfigurations {
           name = "chronos";
           system = "x86_64-linux";
-          permitInsecure = ["qtwebengine-5.15.19"];
         };
         "brokkr" = lib.mkNixosConfigurations {
           name = "brokkr";
@@ -77,7 +76,6 @@
         "iain@chronos" = lib.mkHomeConfigurations {
           dir = "iain@chronos";
           system = "x86_64-linux";
-          permitInsecure = ["qtwebengine-5.15.19"];
         };
         "iain@brokkr" = lib.mkHomeConfigurations {
           dir = "iain@brokkr";

@@ -9,6 +9,10 @@ in {
   # Nix
   system.stateVersion = "24.11";
 
+  services.flatpak = {
+    enable = true;
+  };
+
   imports = [
     ./hardware-extra.nix
   ];
