@@ -28,6 +28,9 @@ in {
 
   system = {
     dunst.enable = true;
+    hyprland = {
+      enable = true;
+    };
   };
 
   fonts = {
