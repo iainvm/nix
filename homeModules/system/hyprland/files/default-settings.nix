@@ -4,7 +4,7 @@ let
   active_colour = "rgba(4CAF50F2) rgba(00FF99EE) 45deg";
   inactive_colour = "rgba(595959aa)";
 in {
-  "$mod" = "SUPER";
+  "$mainMod" = "SUPER";
 
   ecosystem = {
     no_update_news = true;
@@ -23,13 +23,13 @@ in {
 
   general = {
     # Border
-    border_size = 1;
+    border_size = 2;
     "col.active_border" = active_colour;
     "col.inactive_border" = inactive_colour;
 
     # Gaps
     gaps_in = 5;
-    gaps_out = 20;
+    gaps_out = 10;
 
     # Layout
     layout = "dwindle";
@@ -86,8 +86,9 @@ in {
   };
 
   bindm = [
-    "$mainMod, mouse_down, workspace, e+1"
-    "$mainMod, mouse_up, workspace, e-1"
+    # Move and resize with mouse
+    "$mainMod, mouse:272, movewindow"
+    "$mainMod, mouse:273, resizewindow"
   ];
 
   bind = [
@@ -105,8 +106,6 @@ in {
     "$mainMod, down, movefocus, d"
 
     # Resize windows
-    "$mainMod, mouse:272, movewindow"
-    "$mainMod, mouse:273, resizewindow"
     "$mainMod SHIFT, left, resizeactive, -20 0"
     "$mainMod SHIFT, right, resizeactive, 20 0"
     "$mainMod SHIFT, up, resizeactive, 0 -20"
@@ -124,6 +123,9 @@ in {
     "$mainMod, 9, workspace, 9"
     "$mainMod, 0, workspace, 10"
     "$mainMod, S, togglespecialworkspace, magic"
+    # Scroll Workspaces
+    "$mainMod, mouse_down, workspace, e+1"
+    "$mainMod, mouse_up, workspace, e-1"
 
     # Move window to workspace
     "$mainMod SHIFT, 1, movetoworkspace, 1"

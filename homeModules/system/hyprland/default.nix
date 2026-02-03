@@ -2,7 +2,9 @@
   lib,
   config,
   ...
-}: {
+}: let
+  default-settings = import ./files/default-settings.nix;
+in {
   options.system.hyprland = {
     enable = lib.mkEnableOption "enable hyprland";
     settings = lib.mkOption {
@@ -15,8 +17,7 @@
   config = lib.mkIf config.system.hyprland.enable {
     wayland.windowManager.hyprland = {
       enable = true;
-
-      # settings = import ./default-settings.nix;
+      settings = lib.mkMerge [default-settings config.system.hyprland.settings];
     };
   };
 }
