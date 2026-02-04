@@ -55,11 +55,9 @@
       nixosConfigurations = {
         "chronos" = lib.mkNixosConfigurations {
           name = "chronos";
-          system = "x86_64-linux";
         };
         "brokkr" = lib.mkNixosConfigurations {
           name = "brokkr";
-          system = "x86_64-linux";
           modules = [
             inputs.nixos-hardware.nixosModules.dell-xps-15-9500-nvidia
           ];
@@ -73,18 +71,10 @@
 
       # Home Configurations
       homeConfigurations = {
-        "iain@chronos" = lib.mkHomeConfigurations {
-          dir = "iain@chronos";
-          system = "x86_64-linux";
-        };
-        "iain@brokkr" = lib.mkHomeConfigurations {
-          dir = "iain@brokkr";
-          system = "x86_64-linux";
-        };
-        "river@brokkr" = lib.mkHomeConfigurations {
-          dir = "river@brokkr";
-          system = "x86_64-linux";
-        };
+        "iain@chronos" = self.nixosConfigurations.chronos.config.home-manager.users.iain.home;
+
+        "river@brokkr" = self.nixosConfigurations.brokkr.config.home-manager.users.river.home;
+        "iain@brokkr" = self.nixosConfigurations.brokkr.config.home-manager.users.iain.home;
       };
 
       # Home Manager Modules

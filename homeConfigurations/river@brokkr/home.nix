@@ -11,7 +11,6 @@ in {
   home.stateVersion = "24.11";
   home.username = user;
   home.homeDirectory = "/home/${user}";
-  programs.home-manager.enable = true;
   applications.stylix.enable = true;
 
   imports = [
@@ -25,13 +24,6 @@ in {
       target = ".config/";
       recursive = true;
     };
-    # I want to manage this in the dotfiles
-    # Would need to use `--impure` to execute the `flake.nix` cause it's a symlink
-    # "dev/github.com/River-Island" = {
-    #   source = ./files/ri-direnv;
-    #   target = "dev/github.com/River-Island/";
-    #   recursive = true;
-    # };
   };
 
   home.packages = with pkgs; [
