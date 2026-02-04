@@ -11,11 +11,13 @@ bindkey
 bindm
 blueman
 bootloaders
+borderangle
 brokkr
 chronos
 color
 coreutils
 datagrip
+dialog
 direnv
 displaylink
 distro
@@ -55,6 +57,7 @@ iainvm
 jetpack
 kagi
 keybinds
+killactive
 libinput
 libsecret
 linters
@@ -65,6 +68,9 @@ meslo
 mockgen
 modeset
 modesetting
+movefocus
+movetoworkspace
+movewindow
 networkd
 nixd
 nixos
@@ -93,6 +99,8 @@ protonme
 pseudotile
 pseudotiling
 readlink
+resizeactive
+resizewindow
 rgba
 rivpn
 rtkit
@@ -110,6 +118,9 @@ taskfile
 templatedir
 terragrunt
 thunar
+togglefloating
+togglespecialworkspace
+togglesplit
 topsites
 topstories
 ublock
@@ -122,6 +133,7 @@ vesktop
 vfat
 vimium
 volman
+windowrule
 windowrulev
 wofi
 wpctl

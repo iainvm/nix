@@ -41,6 +41,10 @@ in {
 
   system = {
     dunst.enable = true;
+    hyprland = {
+      enable = true;
+      settings = import ./files/hyprland/hyprland.nix;
+    };
   };
 
   network = {

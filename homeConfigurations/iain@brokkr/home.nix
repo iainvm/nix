@@ -12,17 +12,12 @@ in {
   home.homeDirectory = "/home/${user}";
   programs.home-manager.enable = true;
 
-  # Dotfiles
-  home.file = {
-    ".config" = {
-      source = ./dotfiles;
-      target = ".config/";
-      recursive = true;
-    };
-  };
-
   system = {
     dunst.enable = true;
+    hyprland = {
+      enable = true;
+      settings = import ./files/hyprland/hyprland.nix;
+    };
   };
 
   fonts = {
