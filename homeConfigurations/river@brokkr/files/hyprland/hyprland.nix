@@ -32,7 +32,7 @@
   ];
 
   windowrule = [
-    "workspace 2, match:class teams"
-    "workspace 2, match:class discord"
+    "workspace 3, match:class teams-for-linux"
+    "workspace 3, match:class discord"
   ];
 }
