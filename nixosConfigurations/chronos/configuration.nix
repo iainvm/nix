@@ -1,10 +1,6 @@
-{
-  system,
-  nixpkgs,
-  ...
-}: let
+{nixpkgs, ...}: let
   computerName = "chronos";
-  pkgs = import nixpkgs {inherit system;};
+  pkgs = nixpkgs.legacyPackages."x86_64-linux";
 in {
   # Nix
   system.stateVersion = "24.11";
