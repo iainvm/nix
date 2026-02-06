@@ -109,6 +109,7 @@
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "terminal.integrated.fontSize": 16.0,
     "terminal.integrated.stickyScroll.enabled": false,
+    "terminal.integrated.shellIntegration.enabled": false,
     "window.menuBarVisibility": "toggle",
     "workbench.colorTheme": "Stylix",
     "workbench.iconTheme": "file-icons",
@@ -118,8 +119,6 @@
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
     "yaml.schemas": {
-        "https://taskfile.dev/schema.json": [
-            "Taskfile.yml"
-        ]
+        "https://taskfile.dev/schema.json": "Taskfile.yml"
     }
 }
