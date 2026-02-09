@@ -25,7 +25,5 @@
         polkitPolicyOwners = config.core.applications._1password.users;
       };
     };
-
-    security.pam.services._1password.enableGnomeKeyring = true;
   };
 }
