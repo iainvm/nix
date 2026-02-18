@@ -4,10 +4,11 @@ binary='rivpn'
 service='ri-vpn.service'
 
 url='https://jenkins.prod.awscentral.ri-tech.io/'
-timeout=30
+timeout=5
 
 testConnection() {
     echo "Attempting to resolve $url"
+    sleep 2
     until curl --max-time "$timeout" --silent --head --output /dev/null "$url"; do
         echo "Timed out request, trying again"
     done

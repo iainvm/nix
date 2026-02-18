@@ -15,7 +15,7 @@
     "$mainMod, x, exec, $configs/wofi/powermenu.sh"
     "$mainMod, b, exec, $configs/wofi/bluetooth.sh"
     "$mainMod, l, exec, sleep 1 && hyprctl -i 0 dispatch dpms standby"
-    ", Print, exec, /home/iain/.config/swappy/screenshot.sh"
+    ", Print, exec, $configs/swappy/screenshot.sh"
     "SHIFT, Print, exec, $configs/swappy/edit-clipboard.sh"
   ];
 

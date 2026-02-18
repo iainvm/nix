@@ -8,8 +8,11 @@
   };
 
   config = lib.mkIf config.core.display-manager.ly.enable {
-    services.displayManager.ly = {
+    services.displayManager = {
       enable = true;
+      ly = {
+        enable = true;
+      };
     };
 
     security.pam.services.ly.enableGnomeKeyring = true;
