@@ -21,6 +21,19 @@
     services.xserver = {
       enable = true;
       videoDrivers = ["modesetting" "displaylink"];
+      # https://github.com/nixos/nixpkgs/issues/491861
+      drivers = [
+        {
+          name = "displaylink";
+          enableTearFree = true;
+          # The X driver is not displaylink.
+          driverName = "modesetting";
+          display = true;
+          deviceSection = ''
+            Option "AccelMethod" "none"
+          '';
+        }
+      ];
     };
   };
 }
