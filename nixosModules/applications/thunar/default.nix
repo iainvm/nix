@@ -12,8 +12,14 @@
       "inode/directory" = ["thunar.desktop"];
     };
 
-    services.gvfs = {
-      enable = true;
+    programs.xfconf.enable = true; # Needed to save preferences
+    environment.systemPackages = with pkgs; [
+      file-roller
+    ];
+
+    services = {
+      gvfs.enable = true;
+      tumbler.enable = true;
     };
 
     programs.thunar = {
