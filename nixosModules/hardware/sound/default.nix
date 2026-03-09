@@ -79,7 +79,7 @@
             RestartSec = 3;
           };
 
-          wantedBy = [];
+          wantedBy = ["default.target"];
         };
       }
     )
