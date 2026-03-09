@@ -75,6 +75,7 @@ networkd
 nixd
 nixos
 nixpkgs
+noisetorch
 nopasswd
 ntfs
 numlock

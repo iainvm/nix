@@ -17,7 +17,14 @@ in {
         enable = true;
         hostName = computerName;
       };
-      sound.enable = true;
+      sound = {
+        enable = true;
+        noisetorch = {
+          enable = true;
+          device-unit = ''sys-devices-pci0000:00-0000:00:1c.0-0000:02:00.0-0000:03:04.0-0000:39:00.0-0000:3a:00.0-0000:3b:00.0-usb5-5\x2d1-5\x2d1.1-5\x2d1.1.2-5\x2d1.1.2:1.0-sound-card1-controlC1.device'';
+          device-id = "alsa_input.usb-SteelSeries_Arctis_Nova_7-00.mono-fallback";
+        };
+      };
       nvidia.enable = false;
       bluetooth.enable = true;
       thunderbolt.enable = true;
