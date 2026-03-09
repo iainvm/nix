@@ -8,6 +8,7 @@
     ./applications/kitty
     ./applications/prism
     ./applications/protonme
+    ./applications/qbittorrent
     ./applications/sql-developer
     ./applications/stremio
     ./applications/stylix
