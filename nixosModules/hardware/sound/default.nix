@@ -43,7 +43,7 @@
 
         environment.systemPackages = with pkgs; [
           playerctl # Used to control players with media keys
-          helvum # Pipewire audio patchbay
+          crosspipe # Pipewire audio patchbay
           pavucontrol # Volume controls
         ];
       }

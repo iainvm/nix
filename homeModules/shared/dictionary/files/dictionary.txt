@@ -49,7 +49,6 @@ gpclient
 gpuoc
 graphviz
 gvfs
-helvum
 hyprctl
 hyprland
 iain
