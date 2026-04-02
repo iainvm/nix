@@ -62,6 +62,12 @@
             inputs.nixos-hardware.nixosModules.dell-xps-15-9500-nvidia
           ];
         };
+        "hephaestus" = lib.mkNixosConfigurations {
+          name = "hephaestus";
+          modules = [
+            inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
+          ];
+        };
       };
 
       # NixOS Modules
@@ -75,6 +81,9 @@
 
         "river@brokkr" = self.nixosConfigurations.brokkr.config.home-manager.users.river.home;
         "iain@brokkr" = self.nixosConfigurations.brokkr.config.home-manager.users.iain.home;
+
+        "river@hephaestus" = self.nixosConfigurations.hephaestus.config.home-manager.users.river.home;
+        "iain@hephaestus" = self.nixosConfigurations.hephaestus.config.home-manager.users.iain.home;
       };
 
       # Home Manager Modules
