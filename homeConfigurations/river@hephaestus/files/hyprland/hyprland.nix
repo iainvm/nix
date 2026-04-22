@@ -21,10 +21,25 @@
     ",XF86MonBrightnessDown,exec,brightnessctl set 10%-"
   ];
 
-  monitor = [
-    "desc:LG Electronics 23MP65 0x0006E8D2,1920x1080@60,0x0,1"
-    "desc:GIGA-BYTE TECHNOLOGY CO. LTD. G34WQC A 21512B002947,3440x1440@100,1920x0,1"
-    "desc:BOE NE135A1M-NY1,2880x1920@120,5360x0,1"
+  monitorv2 = [
+    {
+      output = "desc:LG Electronics 23MP65 0x0006E8D2";
+      mode = "1920x1080@60";
+      position = "0x0";
+      scale = "1";
+    }
+    {
+      output = "desc:GIGA-BYTE TECHNOLOGY CO. LTD. G34WQC A 21512B002947";
+      mode = "3440x1440@100";
+      position = "1920x0";
+      scale = "1";
+    }
+    {
+      output = "desc:BOE NE135A1M-NY1";
+      mode = "2880x1920@120";
+      position = "5360x0";
+      scale = "1.5";
+    }
   ];
 
   workspace = [
