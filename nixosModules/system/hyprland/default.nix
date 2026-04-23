@@ -28,6 +28,8 @@
 
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
+      HYPRCURSOR_THEME = "Nordzy-hyprcursors-catppuccin-frappe-green";
+      HYPRCURSOR_SIZE = "24";
     };
 
     xdg.portal = {
