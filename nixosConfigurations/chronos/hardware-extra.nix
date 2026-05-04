@@ -13,7 +13,7 @@ in {
   boot.initrd.luks.devices."luks-b2ecb7c8-f75e-4c01-adbc-b4ef8bdb79c1".device = "/dev/disk/by-uuid/b2ecb7c8-f75e-4c01-adbc-b4ef8bdb79c1";
   fileSystems = {
     "/mnt/nvme" = {
-      device = "/dev/disk/by-uuid/01c6fcca-175e-4f8c-9335-9fcb085f930e";
+      device = "/dev/disk/by-uuid/19b435ea-7924-42fe-8b1d-56d2e05b0a1e";
       fsType = "ext4";
       options = ["nofail"];
     };
