@@ -41,7 +41,7 @@ in {
 
           extensions = with pkgs.open-vsx;
             [
-              jnoortheen.nix-ide
+              jeff-hykin.better-nix-syntax
               mkhl.direnv
               bierner.markdown-mermaid
               golang.go
@@ -52,7 +52,8 @@ in {
               task.vscode-task
               takumii.markdowntable
               file-icons.file-icons
-              eamodio.gitlens
+              # eamodio.gitlens
+              waderyan.gitblame
             ]
             ++ config.applications.vscode.extensions;
 
