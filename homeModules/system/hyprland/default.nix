@@ -17,6 +17,8 @@ in {
   config = lib.mkIf config.system.hyprland.enable {
     wayland.windowManager.hyprland = {
       enable = true;
+
+      configType = "hyprlang"; # Old config type
       settings = lib.mkMerge [default-settings config.system.hyprland.settings];
     };
   };

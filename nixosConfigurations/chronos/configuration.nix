@@ -2,9 +2,6 @@
   computerName = "chronos";
   pkgs = nixpkgs.legacyPackages."x86_64-linux";
 in {
-  # Nix
-  system.stateVersion = "24.11";
-
   services.flatpak = {
     enable = true;
   };

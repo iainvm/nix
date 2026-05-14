@@ -27,7 +27,7 @@ in {
   };
 
   config = lib.mkIf config.applications.vscode.enable {
-    programs.vscode = {
+    programs.vscodium = {
       enable = true;
       package = pkgs.vscodium;
       mutableExtensionsDir = true;
@@ -64,7 +64,7 @@ in {
       };
     };
 
-    home.file.".vscode-oss/argv.json".text = builtins.toJSON {
+    home.file."/.config/VSCodium/argv.json".text = builtins.toJSON {
       enable-crash-reporter = false;
       password-store = "gnome-libsecret";
     };

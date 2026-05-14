@@ -12,6 +12,7 @@
     programs.firefox = {
       enable = true;
       languagePacks = ["en-GB"];
+      configPath = ".mozilla/firefox"; # Old default config location
 
       policies = {
         # https://mozilla.github.io/policy-templates/

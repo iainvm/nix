@@ -34,7 +34,7 @@
       lib.mkIf config.applications.protonme.vpn.enable
       {
         home.packages = with pkgs; [
-          protonvpn-gui
+          proton-vpn
         ];
       }
     )
