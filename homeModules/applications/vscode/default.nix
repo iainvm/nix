@@ -30,7 +30,7 @@ in {
     programs.vscodium = {
       enable = true;
       package = pkgs.vscodium;
-      mutableExtensionsDir = true;
+      mutableExtensionsDir = false;
 
       profiles = {
         default = {
@@ -52,8 +52,9 @@ in {
               task.vscode-task
               takumii.markdowntable
               file-icons.file-icons
-              # eamodio.gitlens
               waderyan.gitblame
+              sumneko.lua
+              myriad-dreamin.tinymist
             ]
             ++ config.applications.vscode.extensions;
 
