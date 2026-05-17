@@ -30,7 +30,7 @@
     };
 
     dpm = {
-      url = "github:iainvm/dpm";
+      url = "git+ssh://git@github.com/iainvm/dpm";
     };
 
     zen-browser = {

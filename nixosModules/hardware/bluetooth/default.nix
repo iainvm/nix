@@ -9,6 +9,10 @@
 
   config = lib.mkIf config.core.hardware.bluetooth.enable {
     hardware.bluetooth = {
+      # bluetoothctl cli is broken:
+      # Waiting for
+      # https://github.com/NixOS/nixpkgs/blob/staging/pkgs/by-name/bl/blueman/package.nix
+      # to end up of nixos-unstable
       enable = true;
       powerOnBoot = true;
       settings = {
@@ -17,6 +21,9 @@
         };
       };
     };
-    services.blueman.enable = true;
+    services.blueman = {
+      enable = true;
+      withApplet = false; # https://github.com/NixOS/nixpkgs/issues/514705
+    };
   };
 }

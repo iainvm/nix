@@ -52,16 +52,7 @@
     (
       lib.mkIf config.core.hardware.sound.noisetorch.enable
       {
-        environment.systemPackages = with pkgs; [
-          noisetorch # Noise Suppression
-        ];
-
-        security.wrappers.noisetorch = {
-          owner = "root";
-          group = "root";
-          capabilities = "cap_sys_resource+ep";
-          source = "${pkgs.noisetorch}/bin/noisetorch";
-        };
+        programs.noisetorch.enable = true;
 
         # Noisetorch service
         systemd.user.services.noisetorch = {
