@@ -15,6 +15,10 @@ in {
   ];
 
   hardware.keyboard.zsa.enable = true;
+  # Bluetooth hardware
+  hardware.firmware = with pkgs; [
+    linux-firmware
+  ];
 
   core = {
     nix.flakes.enable = true;

@@ -23,7 +23,6 @@
     };
     services.blueman = {
       enable = true;
-      withApplet = false; # https://github.com/NixOS/nixpkgs/issues/514705
     };
   };
 }
