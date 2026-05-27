@@ -30,7 +30,11 @@
     };
 
     dpm = {
-      url = "git+ssh://git@github.com/iainvm/dpm";
+      type = "github";
+      host = "github.com";
+      owner = "iainvm";
+      repo = "dpm";
+      # url = "github.com:iainvm/dpm";
     };
 
     zen-browser = {

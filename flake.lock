@@ -74,17 +74,19 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
+        "host": "github.com",
         "lastModified": 1770050959,
         "narHash": "sha256-veCEPQGOtxh6NKLRqU/VsfT8RNy9dEcWiUb/v9nlWvw=",
-        "ref": "refs/heads/main",
+        "owner": "iainvm",
+        "repo": "dpm",
         "rev": "2d49e5a4edfdcd2cd564dc1eade7b7fb5195e6c3",
-        "revCount": 44,
-        "type": "git",
-        "url": "ssh://git@github.com/iainvm/dpm"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/iainvm/dpm"
+        "host": "github.com",
+        "owner": "iainvm",
+        "repo": "dpm",
+        "type": "github"
       }
     },
     "firefox-gnome-theme": {

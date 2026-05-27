@@ -20,7 +20,7 @@ in {
     dunst.enable = true;
     hyprland = {
       enable = true;
-      settings = import ./files/hyprland/hyprland.nix;
+      settings = ./files/hyprland/hyprland.lua;
     };
   };
 
