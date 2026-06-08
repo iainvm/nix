@@ -24,7 +24,6 @@
   };
 
   config = lib.mkIf config.applications.stylix.enable {
-    gtk.gtk4.theme = null;
     stylix = {
       enable = true;
       autoEnable = false;
@@ -43,6 +42,7 @@
         gnome.enable = true;
         gtk.enable = true;
         kitty.enable = true;
+        vscodium.enable = true;
         wofi.enable = true;
       };
     };

@@ -11,14 +11,6 @@
   bind = [
     "$mainMod, Q, exec, $terminal"
     "$mainMod, E, exec, $fileManager"
-    "$mainMod, space, exec, $configs/wofi/launch.sh"
-    "$mainMod, x, exec, $configs/wofi/powermenu.sh"
-    "$mainMod, b, exec, $configs/wofi/bluetooth.sh"
-    "$mainMod, l, exec, sleep 1 && hyprctl -i 0 dispatch dpms standby"
-    ", Print, exec, $configs/swappy/screenshot.sh"
-    "SHIFT, Print, exec, $configs/swappy/edit-clipboard.sh"
-    ",XF86MonBrightnessUp,exec,brightnessctl set 10%+"
-    ",XF86MonBrightnessDown,exec,brightnessctl set 10%-"
   ];
 
   monitorv2 = [
