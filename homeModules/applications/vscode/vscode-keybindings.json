@@ -22,5 +22,9 @@
         "args": {
             "cwd": "${fileDirname}"
         }
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "workbench.files.action.collapseExplorerFolders"
     }
 ]
