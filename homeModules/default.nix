@@ -5,6 +5,7 @@
     ./applications/datagrip
     ./applications/discord
     ./applications/firefox
+    ./applications/gram
     ./applications/kitty
     ./applications/prism
     ./applications/protonme

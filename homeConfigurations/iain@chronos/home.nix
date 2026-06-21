@@ -36,6 +36,7 @@ in {
     anytype.enable = false;
     capacities.enable = false;
     discord.enable = true;
+    gram.enable = true;
     kitty.enable = true;
     prism.enable = true;
     protonme = {
