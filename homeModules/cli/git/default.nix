@@ -27,6 +27,13 @@
       delta
     ];
 
+    home.file = {
+      ".config/git/ignore" = {
+        source = ./files/ignore;
+        target = ".config/git/ignore";
+      };
+    };
+
     programs.git = {
       enable = true;
 
