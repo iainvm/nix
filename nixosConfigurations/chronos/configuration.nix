@@ -20,6 +20,12 @@ in {
     linux-firmware
   ];
 
+  # TODO: Move to package
+  services.tailscale = {
+    enable = true;
+    authKeyFile = "/run/secrets/tailscale_key";
+  };
+
   core = {
     nix.flakes.enable = true;
     display-manager.sddm = {
