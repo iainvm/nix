@@ -40,7 +40,7 @@
         "go.mod": "go.sum"
     },
     "extensions.autoCheckUpdates": true,
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": "off",
     "files.exclude": {
         "**/.direnv": true,
         "**/.task": true
@@ -59,6 +59,10 @@
     "go.lintOnSave": "workspace",
     "go.lintTool": "golangci-lint",
     "go.survey.prompt": false,
+    "go.testTags": "unit",
+    "go.buildFlags": [
+        "-tags=unit"
+    ],
     "go.testFlags": [
         "-v"
     ],
