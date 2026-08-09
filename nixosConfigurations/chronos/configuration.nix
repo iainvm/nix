@@ -36,8 +36,8 @@ in {
       sound = {
         enable = true;
         noisetorch = {
-          enable = true;
-          device-unit = ''sys-devices-pci0000:00-0000:00:08.3-0000:11:00.0-usb7-7\x2d1-7\x2d1.3-7\x2d1.3:1.0-sound-card0-controlC0.device'';
+          enable = false;
+          device-unit = ''sys-devices-pci0000:00-0000:00:08.3-0000:11:00.0-usb7-7\x2d1-7\x2d1.3-7\x2d1.3:1.0-sound-card3-controlC3.device'';
           device-id = "alsa_input.usb-SteelSeries_Arctis_Nova_Pro_Wireless-00.mono-fallback";
         };
       };

@@ -38,6 +38,7 @@ in {
     discord.enable = true;
     gram.enable = true;
     kitty.enable = true;
+    obsidian.enable = true;
     prism.enable = true;
     protonme = {
       pass.enable = true;

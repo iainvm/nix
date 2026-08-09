@@ -7,6 +7,7 @@
     ./applications/firefox
     ./applications/gram
     ./applications/kitty
+    ./applications/obsidian
     ./applications/prism
     ./applications/protonme
     ./applications/qbittorrent
