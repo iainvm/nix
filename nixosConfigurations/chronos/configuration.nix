@@ -20,12 +20,6 @@ in {
     linux-firmware
   ];
 
-  # TODO: Move to package
-  services.tailscale = {
-    enable = true;
-    authKeyFile = "/run/secrets/tailscale_key";
-  };
-
   core = {
     nix.flakes.enable = true;
     display-manager.sddm = {
@@ -72,6 +66,7 @@ in {
         users = ["iain"];
       };
       steam.enable = true; # Has to be installed system wide for openGL
+      tailscale.enable = true;
       thunar.enable = true;
     };
 

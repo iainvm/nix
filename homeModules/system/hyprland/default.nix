@@ -15,7 +15,6 @@ in {
   };
 
   config = lib.mkIf config.system.hyprland.enable {
-
     home.file = {
       ".config/hypr/animations.lua".source = ./files/animations.lua;
       ".config/hypr/binds.lua".source = ./files/binds.lua;

@@ -6,6 +6,7 @@
     ./applications/fwupd
     ./applications/global-protect-vpn
     ./applications/steam
+    ./applications/tailscale
     ./applications/thunar
 
     ./display-managers/cosmic-greeter
