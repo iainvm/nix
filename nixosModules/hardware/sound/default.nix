@@ -10,6 +10,7 @@
     noisetorch.enable = lib.mkEnableOption "noisetorch";
     noisetorch.device-unit = lib.mkOption {
       type = lib.types.str;
+      # $ systemctl list-units --type=device | grep -i sound | grep 'Arctis'
       description = "systemd device unit of microphone";
     };
     noisetorch.device-id = lib.mkOption {
@@ -35,6 +36,7 @@
           audio.enable = true;
           pulse.enable = true;
           wireplumber.enable = true;
+          extraLadspaPackages = [ pkgs.rnnoise ];
           alsa = {
             enable = true;
             support32Bit = true;
