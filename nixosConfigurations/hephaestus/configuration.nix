@@ -55,6 +55,7 @@ in {
       };
       fwupd.enable = true;
       global-protect-vpn.enable = true;
+      tailscale.enable = true;
       thunar.enable = true;
     };
 
