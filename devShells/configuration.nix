@@ -17,6 +17,8 @@ in {
 
       # Taskfile
       go-task
+
+      sops
     ];
   };
 }

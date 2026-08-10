@@ -28,6 +28,14 @@ in {
             };
           }
           inputs.self.nixosModules.default
+          inputs.sops-nix.nixosModules.sops
+          {
+            sops = {
+              defaultSopsFile = ./secrets/secrets.yaml;
+              defaultSopsFormat = "yaml";
+              age.keyFile = "~/.config/sops/age/keys.txt";
+            };
+          }
           ../nixosConfigurations/${name}/hardware-configuration.nix
           ../nixosConfigurations/${name}/configuration.nix
         ]

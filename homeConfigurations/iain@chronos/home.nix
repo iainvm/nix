@@ -14,7 +14,18 @@ in {
 
   imports = [
     inputs.self.homeModules.default
+    inputs.sops-nix.homeManagerModules.sops
   ];
+
+  sops = {
+    age.keyFile = "/home/${user}/.config/sops/age/keys.txt";
+    defaultSopsFile = ../../secrets/secrets.yaml;
+    secrets = {
+      "chronos/users/iain/ssh_key" = {
+        path = "/home/${user}/.ssh/id_ed25519";
+      };
+    };
+  };
 
   system = {
     dunst.enable = true;

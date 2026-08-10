@@ -68,3 +68,13 @@ tasks:
     desc: Verify nix store
     cmds:
       - sudo nix-store --verify --check-contents --repair
+
+  generate-age-key:
+    desc: Generate a private age key for sops
+    cmds:
+      - nix shell nixpkgs#age -c age-keygen -o ~/.config/sops/age/keys.txt
+
+  generate-public-age-key:
+    desc: Generate a public age key from the private key
+    cmds:
+      - nix shell nixpkgs#age -c age-keygen -y ~/.config/sops/age/keys.txt
