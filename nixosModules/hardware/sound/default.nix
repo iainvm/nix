@@ -36,7 +36,7 @@
           audio.enable = true;
           pulse.enable = true;
           wireplumber.enable = true;
-          extraLadspaPackages = [ pkgs.rnnoise ];
+          extraLadspaPackages = [pkgs.rnnoise];
           alsa = {
             enable = true;
             support32Bit = true;

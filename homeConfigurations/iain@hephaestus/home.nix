@@ -10,6 +10,7 @@ in {
   home.stateVersion = "24.11";
   home.username = user;
   home.homeDirectory = "/home/${user}";
+  applications.stylix.enable = true;
 
   system = {
     dunst.enable = true;
@@ -24,8 +25,6 @@ in {
   };
 
   applications = {
-    anytype.enable = false;
-    capacities.enable = false;
     discord.enable = true;
     firefox.enable = true;
     kitty.enable = true;
@@ -35,7 +34,6 @@ in {
       pass.enable = true;
       desktop.enable = true;
     };
-    stremio.enable = false;
     swappy.enable = true;
     wofi.enable = true;
     vscode = {

@@ -53,8 +53,6 @@ in {
   };
 
   applications = {
-    anytype.enable = false;
-    capacities.enable = false;
     discord.enable = true;
     datagrip.enable = true;
     firefox.enable = true;
@@ -65,7 +63,6 @@ in {
       desktop.enable = true;
     };
     sql-developer.enable = true;
-    stremio.enable = false;
     swappy.enable = true;
     teams.enable = true;
     wofi.enable = true;

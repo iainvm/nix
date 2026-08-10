@@ -66,7 +66,11 @@ hl.bind(
 )
 hl.bind(
     keys(mod, "L"),
-    hl.dsp.exec_cmd("sleep 1 && hyprctl -i 0 dispatch dpms standby"),
+    function()
+        hl.timer(function()
+            hl.dispatch(hl.dsp.dpms({ action = "disable" }))
+        end, { timeout = 500, type = "oneshot" })
+    end,
     { description = "Sleep Monitors" }
 )
 

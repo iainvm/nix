@@ -1,6 +1,0 @@
-{
-    "gopls": {
-        "formatting.local": "github.com/River-Island"
-    },
-    "go.testEnvFile": "/home/river/dev/go-test.env"
-}
