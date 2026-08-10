@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: {
@@ -11,9 +12,26 @@
     programs.obsidian = {
       enable = true;
 
-      defaultSettings.app = {
-        alwaysUpdateLinks = true;
-        spellcheck = true;
+      vaults = {
+        "main" = {
+          enable = true;
+          target = "obsidian/main";
+          settings = {
+            communityPlugins = with pkgs.obsidianPlugins; [
+              {
+                pkg = obsidian-livesync;
+                enable = true;
+              }
+            ];
+          };
+        };
+      };
+
+      defaultSettings = {
+        app = {
+          alwaysUpdateLinks = true;
+          spellcheck = true;
+        };
       };
     };
   };

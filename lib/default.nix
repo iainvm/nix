@@ -6,6 +6,7 @@
   defaultOverlays = [
     inputs.nur.overlays.default
     inputs.nix-vscode-extensions.overlays.default
+    inputs.obsidian-extensions.overlays.default
   ];
 in {
   mkNixosConfigurations = {
