@@ -29,6 +29,7 @@ in {
     discord.enable = true;
     firefox.enable = true;
     kitty.enable = true;
+    obsidian.enable = true;
     prism.enable = true;
     protonme = {
       pass.enable = true;

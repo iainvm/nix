@@ -37,6 +37,7 @@ fmask
 fontconfig
 formfill
 giga
+gitblame
 gnumake
 gofmt
 gofumpt

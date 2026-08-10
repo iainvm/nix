@@ -11,6 +11,7 @@
     ublock-origin
     privacy-badger
     onepassword-password-manager
+    lockedin-yt
   ];
 
   settings = import ./settings.nix;
