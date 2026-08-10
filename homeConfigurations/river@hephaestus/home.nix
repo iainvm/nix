@@ -59,6 +59,7 @@ in {
     datagrip.enable = true;
     firefox.enable = true;
     kitty.enable = true;
+    obsidian.enable = true;
     protonme = {
       pass.enable = true;
       desktop.enable = true;
