@@ -61,6 +61,7 @@ killactive
 libinput
 libsecret
 linters
+livesync
 loglevel
 luks
 majer
