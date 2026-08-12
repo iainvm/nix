@@ -17,6 +17,9 @@
           enable = true;
           target = "obsidian/main";
           settings = {
+
+            # Can find plugins here
+            # https://raw.githubusercontent.com/karaolidis/nix-obsidian-extensions/refs/heads/main/data/plugins.json
             communityPlugins = with pkgs.obsidianPlugins; [
               obsidian-livesync # Backup and Sync Obsidian vault to NAS
               project-manager # Manages projects and tasks, and renders kanban and gantt charts
