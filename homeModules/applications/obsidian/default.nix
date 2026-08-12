@@ -18,10 +18,19 @@
           target = "obsidian/main";
           settings = {
             communityPlugins = with pkgs.obsidianPlugins; [
-              {
-                pkg = obsidian-livesync;
-                enable = true;
-              }
+              obsidian-livesync # Backup and Sync Obsidian vault to NAS
+              project-manager # Manages projects and tasks, and renders kanban and gantt charts
+              obsidian-media-db-plugin # Allows of easy importing of data about various media (movies, shows, boardgames...)
+            ];
+          };
+        };
+
+        "work" = {
+          enable = true;
+          target = "obsidian/work";
+          settings = {
+            communityPlugins = with pkgs.obsidianPlugins; [
+              obsidian-livesync
             ];
           };
         };
