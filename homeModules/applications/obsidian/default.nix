@@ -24,6 +24,7 @@
               obsidian-livesync # Backup and Sync Obsidian vault to NAS
               project-manager # Manages projects and tasks, and renders kanban and gantt charts
               obsidian-media-db-plugin # Allows of easy importing of data about various media (movies, shows, boardgames...)
+              advanced-cursors # Allows for multiline editing
             ];
           };
         };
