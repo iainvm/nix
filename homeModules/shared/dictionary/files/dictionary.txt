@@ -12,6 +12,7 @@ bindm
 blueman
 bootloaders
 borderangle
+brightnessctl
 brokkr
 chronos
 color
@@ -73,6 +74,7 @@ movefocus
 movetoworkspace
 movewindow
 networkd
+nicolasvuillamy
 nixd
 nixos
 nixpkgs
@@ -107,6 +109,7 @@ rgba
 rivpn
 rtkit
 rtsx
+rustdesk
 sdmmc
 shellcheck
 shortcutes
