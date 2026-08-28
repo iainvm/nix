@@ -7,6 +7,15 @@ in {
     inputs.self.homeModules.default
   ];
 
+  # Dotfiles
+  home.file = {
+    ".config" = {
+      source = ./dotfiles;
+      target = ".config/";
+      recursive = true;
+    };
+  };
+
   home.stateVersion = "24.11";
   home.username = user;
   home.homeDirectory = "/home/${user}";
