@@ -24,6 +24,7 @@ displaylink
 distro
 dmask
 dmenu
+dockhand
 dpms
 drun
 dunst
