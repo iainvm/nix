@@ -33,6 +33,10 @@ in {
     nerd-fonts.enable = true;
   };
 
+  shared = {
+    dictionary.enable = true;
+  };
+
   applications = {
     discord.enable = true;
     firefox.enable = true;
