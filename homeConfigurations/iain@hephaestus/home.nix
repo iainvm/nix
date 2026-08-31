@@ -46,6 +46,7 @@ in {
     protonme = {
       pass.enable = true;
       desktop.enable = true;
+      vpn.enable = true;
     };
     swappy.enable = true;
     wofi.enable = true;
