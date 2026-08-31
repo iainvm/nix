@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
@@ -21,6 +22,10 @@ in {
       ".config/hypr/main.lua".source = ./files/main.lua;
       ".config/hypr/user.lua".source = config.system.hyprland.settings;
     };
+
+    home.packages = with pkgs; [
+      brightnessctl
+    ];
 
     wayland.windowManager.hyprland = {
       enable = true;
