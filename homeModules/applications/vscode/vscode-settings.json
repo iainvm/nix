@@ -31,7 +31,7 @@
     "editor.inlineSuggest.fontFamily": "DejaVu Sans Mono",
     "editor.minimap.sectionHeaderFontSize": 10.285714285714286,
     "editor.renderWhitespace": "trailing",
-    "editor.mouseMiddleClickAction": "ctrlLeftClick",
+    "editor.selectionClipboard": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,
