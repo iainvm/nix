@@ -104,6 +104,7 @@ protonmail
 protonme
 pseudotile
 pseudotiling
+qbittorrent
 readlink
 resizeactive
 resizewindow
@@ -139,6 +140,7 @@ vars
 vesktop
 vfat
 vimium
+vintagestory
 volman
 windowrule
 windowrulev
