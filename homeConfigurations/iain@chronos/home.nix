@@ -69,10 +69,6 @@ in {
     };
   };
 
-  shells.zsh = {
-    enable = true;
-  };
-
   cli = {
     git = {
       enable = true;
@@ -82,5 +78,6 @@ in {
     direnv.enable = true;
     dpm.enable = true;
     task.enable = true;
+    zsh.enable = true;
   };
 }

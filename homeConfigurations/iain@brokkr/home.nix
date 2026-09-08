@@ -40,11 +40,6 @@ in {
     vscode = {
       enable = true;
     };
-  };
-
-  shells.zsh = {
-    enable = true;
-  };
 
   cli = {
     git = {
@@ -55,5 +50,6 @@ in {
     direnv.enable = true;
     dpm.enable = true;
     task.enable = true;
+    zsh.enable = true;
   };
 }

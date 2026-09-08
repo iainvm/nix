@@ -4,7 +4,7 @@
   config,
   ...
 }: {
-  options.shells.zsh = {
+  options.cli.zsh = {
     enable = lib.mkEnableOption "enable zsh";
 
     plugins = lib.mkOption {
@@ -40,7 +40,7 @@
   config = lib.mkMerge [
     {}
 
-    (lib.mkIf config.shells.zsh.enable
+    (lib.mkIf config.cli.zsh.enable
       {
         programs = {
           zsh = {
@@ -119,16 +119,16 @@
         };
       })
 
-    (lib.mkIf config.shells.zsh.starship.enable
+    (lib.mkIf config.cli.zsh.starship.enable
       {
         programs = {
           zsh = {
-            initContent = lib.mkIf config.shells.zsh.starship.transientPrompt (builtins.readFile ./starship/transient.zsh);
+            initContent = lib.mkIf config.cli.zsh.starship.transientPrompt (builtins.readFile ./starship/transient.zsh);
           };
 
           starship = {
             enable = true;
-            settings = import ./starship/themes/${config.shells.zsh.starship.theme}.nix {inherit lib;};
+            settings = import ./starship/themes/${config.cli.zsh.starship.theme}.nix {inherit lib;};
           };
         };
       })

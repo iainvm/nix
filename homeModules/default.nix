@@ -27,14 +27,13 @@
     ./cli/dpm
     ./cli/git
     ./cli/task
+    ./cli/zsh
 
     ./fonts/nerd-fonts
 
     ./network/ri-vpn
 
     ./shared/dictionary
-
-    ./shells/zsh
 
     ./system/dunst
     ./system/hyprland
