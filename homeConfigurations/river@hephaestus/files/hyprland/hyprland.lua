@@ -70,6 +70,7 @@ hl.bind(
     { description = "Edit Clipboard Image" }
 )
 
+-- Window Rules --
 hl.window_rule({
     match = {
         class = "discord",
