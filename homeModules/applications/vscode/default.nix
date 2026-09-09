@@ -55,6 +55,10 @@ in {
               waderyan.gitblame
               sumneko.lua
               myriad-dreamin.tinymist
+              theqtcompany.qt-core
+              theqtcompany.qt-qml
+            ] ++ [
+              pkgs.vscode-marketplace.zsol.vscode-glspc
             ]
             ++ config.applications.vscode.extensions;
 

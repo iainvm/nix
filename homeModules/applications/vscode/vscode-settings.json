@@ -124,7 +124,19 @@
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
+    "workbench.editorAssociations": {
+        "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
+        "*.qrc": "qt-core.qrcEditor"
+    },
     "yaml.schemas": {
         "https://taskfile.dev/schema.json": "Taskfile.yml"
-    }
+    },
+    "qt-core.showWelcomePageOnActivation": false,
+    "qt-qml.qmlls.useQmlImportPathEnvVar": true,
+    "qt-qml.qmlls.enabled": false,
+    "glspc.server.command": "qml-language-server",
+    "glspc.server.languageId": [
+        "qml"
+    ],
+    "qt-qml.doNotAskForQmllsDownload": true
 }

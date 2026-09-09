@@ -52,6 +52,7 @@ gpclient
 gpuoc
 graphviz
 gvfs
+hephaestus
 hypr
 hyprctl
 hyprland
@@ -105,6 +106,7 @@ protonme
 pseudotile
 pseudotiling
 qbittorrent
+quickshell
 readlink
 resizeactive
 resizewindow
