@@ -33,6 +33,7 @@
     "editor.renderWhitespace": "trailing",
     "editor.selectionClipboard": false,
     "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": false,
     "explorer.fileNesting.patterns": {
@@ -49,9 +50,16 @@
     "files.insertFinalNewline": true,
     "git.openRepositoryInParentFolders": "never",
     "gitblame.inlineMessageEnabled": true,
+    "glspc.server.command": "qml-language-server",
+    "glspc.server.languageId": [
+        "qml"
+    ],
     "go.alternateTools": {
         "customFormatter": "golangci-lint"
     },
+    "go.buildFlags": [
+        "-tags=unit"
+    ],
     "go.formatFlags": [
         "fmt",
         "--stdin"
@@ -60,14 +68,11 @@
     "go.lintOnSave": "workspace",
     "go.lintTool": "golangci-lint",
     "go.survey.prompt": false,
-    "go.testTags": "unit",
-    "go.buildFlags": [
-        "-tags=unit"
-    ],
     "go.testFlags": [
         "-v"
     ],
     "go.testOnSave": true,
+    "go.testTags": "unit",
     "go.testTimeout": "5m",
     "go.useLanguageServer": true,
     "json.schemas": [
@@ -107,6 +112,10 @@
             }
         }
     },
+    "qt-core.showWelcomePageOnActivation": false,
+    "qt-qml.doNotAskForQmllsDownload": true,
+    "qt-qml.qmlls.enabled": false,
+    "qt-qml.qmlls.useQmlImportPathEnvVar": true,
     "redhat.telemetry.enabled": false,
     "scm.inputFontFamily": "DejaVu Sans Mono",
     "scm.inputFontSize": 14.857142857142858,
@@ -114,29 +123,21 @@
     "task.checkForUpdates": false,
     "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "terminal.integrated.fontSize": 16.0,
-    "terminal.integrated.stickyScroll.enabled": false,
     "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.stickyScroll.enabled": false,
     "window.menuBarVisibility": "toggle",
     "workbench.colorTheme": "Stylix",
+    "workbench.editorAssociations": {
+        "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
+        "*.qrc": "qt-core.qrcEditor"
+    },
     "workbench.iconTheme": "file-icons",
     "workbench.layoutControl.enabled": false,
     "workbench.panel.defaultLocation": "right",
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "workbench.sideBar.location": "right",
     "workbench.startupEditor": "none",
-    "workbench.editorAssociations": {
-        "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
-        "*.qrc": "qt-core.qrcEditor"
-    },
     "yaml.schemas": {
         "https://taskfile.dev/schema.json": "Taskfile.yml"
-    },
-    "qt-core.showWelcomePageOnActivation": false,
-    "qt-qml.qmlls.useQmlImportPathEnvVar": true,
-    "qt-qml.qmlls.enabled": false,
-    "glspc.server.command": "qml-language-server",
-    "glspc.server.languageId": [
-        "qml"
-    ],
-    "qt-qml.doNotAskForQmllsDownload": true
+    }
 }
