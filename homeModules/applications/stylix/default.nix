@@ -28,6 +28,13 @@
       enable = true;
       autoEnable = false;
 
+      fonts = {
+        monospace = {
+          package = pkgs.nerd-fonts.dejavu-sans-mono;
+          name = "DejaVuSansM Nerd Font Mono";
+        };
+      };
+
       polarity = "dark";
       base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.applications.stylix.theme}.yaml";
 

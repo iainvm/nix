@@ -1,6 +1,5 @@
 {
     "chat.commandCenter.enabled": false,
-    "chat.editor.fontFamily": "DejaVu Sans Mono",
     "chat.editor.fontSize": 16.0,
     "cSpell.customDictionaries": {
         "userDictionary": {
@@ -21,14 +20,10 @@
         ".direnv"
     ],
     "cSpell.language": "en-GB",
-    "debug.console.fontFamily": "DejaVu Sans Mono",
     "debug.console.fontSize": 16.0,
     "direnv.restart.automatic": true,
-    "editor.fontFamily": "DejaVu Sans Mono",
     "editor.fontSize": 16.0,
     "editor.formatOnSave": true,
-    "editor.inlayHints.fontFamily": "DejaVu Sans Mono",
-    "editor.inlineSuggest.fontFamily": "DejaVu Sans Mono",
     "editor.minimap.sectionHeaderFontSize": 10.285714285714286,
     "editor.renderWhitespace": "trailing",
     "editor.selectionClipboard": false,
@@ -117,11 +112,9 @@
     "qt-qml.qmlls.enabled": false,
     "qt-qml.qmlls.useQmlImportPathEnvVar": true,
     "redhat.telemetry.enabled": false,
-    "scm.inputFontFamily": "DejaVu Sans Mono",
     "scm.inputFontSize": 14.857142857142858,
     "screencastMode.fontSize": 64.0,
     "task.checkForUpdates": false,
-    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
     "terminal.integrated.fontSize": 16.0,
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.stickyScroll.enabled": false,

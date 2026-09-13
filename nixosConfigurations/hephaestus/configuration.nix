@@ -9,6 +9,13 @@ in {
     ./hardware-extra.nix
   ];
 
+  services = {
+    upower = {
+      enable = true;
+      noPollBatteries = true;
+    };
+  };
+
   hardware.keyboard.zsa.enable = true;
 
   core = {
