@@ -52,6 +52,7 @@ in {
   };
 
   applications = {
+    bruno.enable = true;
     discord.enable = true;
     datagrip.enable = true;
     firefox.enable = true;

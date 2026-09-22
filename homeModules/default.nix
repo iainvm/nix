@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./applications/anytype
+    ./applications/bruno
     ./applications/capacities
     ./applications/datagrip
     ./applications/discord
