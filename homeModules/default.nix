@@ -3,6 +3,7 @@
     ./applications/anytype
     ./applications/bruno
     ./applications/capacities
+    ./applications/crush
     ./applications/datagrip
     ./applications/discord
     ./applications/firefox

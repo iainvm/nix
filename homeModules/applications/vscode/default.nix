@@ -57,6 +57,7 @@ in {
               myriad-dreamin.tinymist
               theqtcompany.qt-core
               theqtcompany.qt-qml
+              fcrespo82.markdown-table-formatter
             ] ++ [
               pkgs.vscode-marketplace.zsol.vscode-glspc
             ]

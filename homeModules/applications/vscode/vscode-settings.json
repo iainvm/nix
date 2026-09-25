@@ -70,6 +70,16 @@
     "go.testTags": "unit",
     "go.testTimeout": "5m",
     "go.useLanguageServer": true,
+    "json.schemaDownload.trustedDomains": {
+        "https://charm.land/crush.json": true,
+        "https://developer.microsoft.com/json-schemas/": true,
+        "https://json-schema.org/": true,
+        "https://json.schemastore.org/": true,
+        "https://raw.githubusercontent.com/devcontainers/spec/": true,
+        "https://raw.githubusercontent.com/microsoft/vscode/": true,
+        "https://schemastore.azurewebsites.net/": true,
+        "https://www.schemastore.org/": true
+    },
     "json.schemas": [
         {
             "fileMatch": [
