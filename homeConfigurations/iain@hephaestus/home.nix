@@ -5,7 +5,10 @@
 in {
   imports = [
     inputs.self.homeModules.default
+    inputs.myshell.homeManagerModules.default
   ];
+
+  myshell.enable = true;
 
   # Dotfiles
   home.file = {

@@ -54,10 +54,15 @@ hl.bind(
     hl.dsp.exec_cmd(config .. "wofi/powermenu.sh"),
     { description = "Launch Power Menu" }
 )
+-- hl.bind(
+--     keys(mod, "B"),
+--     hl.dsp.exec_cmd(config .. "wofi/bluetooth.sh"),
+--     { description = "Launch Bluetooth Menu" }
+-- )
 hl.bind(
     keys(mod, "B"),
-    hl.dsp.exec_cmd(config .. "wofi/bluetooth.sh"),
-    { description = "Launch Bluetooth Menu" }
+    hl.dsp.global("quickshell:openBluetoothSettings"),
+    { description = "Open the Bluetooth setting" }
 )
 hl.bind(
     keys("Print"),

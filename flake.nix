@@ -37,6 +37,7 @@
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     dpm = {
@@ -53,6 +54,12 @@
 
     stylix = {
       url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    myshell = {
+      url = "github:iainvm/myshell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
