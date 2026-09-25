@@ -14,6 +14,7 @@
       pkgs.nerd-fonts.hack
       pkgs.nerd-fonts.meslo-lg
       pkgs.nerd-fonts.dejavu-sans-mono
+      pkgs.material-symbols
     ];
   };
 }

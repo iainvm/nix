@@ -38,6 +38,7 @@ in {
   };
 
   applications = {
+    crush.enable = true;
     discord.enable = true;
     firefox.enable = true;
     kitty.enable = true;
