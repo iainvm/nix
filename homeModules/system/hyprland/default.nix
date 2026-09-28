@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  inputs,
   ...
 }: let
   default-settings = import ./files/default-settings.nix;
@@ -21,6 +22,7 @@ in {
       ".config/hypr/animations.lua".source = ./files/animations.lua;
       ".config/hypr/binds.lua".source = ./files/binds.lua;
       ".config/hypr/window-rules.lua".source = ./files/window-rules.lua;
+      ".config/hypr/plugins.lua".source = ./files/plugins.lua;
       ".config/hypr/user.lua".source = config.system.hyprland.settings;
     };
 
@@ -36,8 +38,12 @@ in {
         require("animations")
         require("binds")
         require("window-rules")
+        require("plugins")
         require("user")
       '';
+      plugins = [
+        inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
+      ];
     };
   };
 }
