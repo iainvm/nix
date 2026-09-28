@@ -55,7 +55,7 @@ hl.bind(
     { description = "Toggle Fullscreen" }
 )
 hl.bind(
-    keys(mod, "V"),
+    keys(mod, "G"),
     hl.dsp.window.float({ action = "toggle" }),
     { description = "Toggle Float" }
 )

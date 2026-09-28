@@ -1,0 +1,13 @@
+{
+    "shell": {
+        "mainMonitor": [
+            "G34WQC A",
+            "NE135A1M-NY1"
+        ]
+    },
+    "bar": {
+        "battery": {
+            "maxCharge": 80
+        }
+    }
+}
