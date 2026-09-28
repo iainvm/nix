@@ -34,6 +34,12 @@
       };
     };
 
+    home.activation.gitTemplateHooks = lib.mkIf config.cli.git.hooks.jira (
+      lib.hm.dag.entryAfter ["writeBoundary"] ''
+        run install -D -m 755 ${./files/hooks/prepare-commit-msg} "$HOME/.config/git/init/hooks/prepare-commit-msg"
+      ''
+    );
+
     programs.git = {
       enable = true;
 

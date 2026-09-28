@@ -86,6 +86,7 @@ in {
       enable = true;
       name = fullName;
       email = email;
+      hooks.jira = true;
     };
     direnv.enable = true;
     dpm.enable = true;
