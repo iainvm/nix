@@ -15,7 +15,17 @@ in {
   imports = [
     inputs.self.homeModules.default
     inputs.sops-nix.homeManagerModules.sops
+    inputs.myshell.homeManagerModules.default
   ];
+  myshell.enable = true;
+
+  home.file = {
+    ".config" = {
+      source = ./dotfiles;
+      target = ".config/";
+      recursive = true;
+    };
+  };
 
   sops = {
     age.keyFile = "/home/${user}/.config/sops/age/keys.txt";

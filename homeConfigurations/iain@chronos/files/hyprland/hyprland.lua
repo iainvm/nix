@@ -34,18 +34,23 @@ end
 
 hl.bind(
     keys(mod, "SPACE"),
-    hl.dsp.exec_cmd(config .. "wofi/launch.sh"),
-    { description = "Launch Wofi" }
+    hl.dsp.global("quickshell:openApplicationLauncher"),
+    { description = "Open the Application Launcher" }
+)
+hl.bind(
+    keys(mod, "V"),
+    hl.dsp.global("quickshell:openClipboardHistory"),
+    { description = "Open the Clipboard History" }
+)
+hl.bind(
+    keys(mod, "B"),
+    hl.dsp.global("quickshell:openBluetoothSettings"),
+    { description = "Open the Bluetooth setting" }
 )
 hl.bind(
     keys(mod, "X"),
     hl.dsp.exec_cmd(config .. "wofi/powermenu.sh"),
     { description = "Launch Power Menu" }
-)
-hl.bind(
-    keys(mod, "B"),
-    hl.dsp.exec_cmd(config .. "wofi/bluetooth.sh"),
-    { description = "Launch Bluetooth Menu" }
 )
 hl.bind(
     keys("Print"),
