@@ -15,7 +15,14 @@
       };
     };
 
-    security.pam.services.ly.enableGnomeKeyring = true;
-    security.pam.services.login.enableGnomeKeyring = true;
+    security.pam = {
+      services.login = {
+        enableGnomeKeyring = true;
+        fprintAuth =
+          lib.mkIf config.core.hardware.fingerprint-reader.enable
+          true;
+      };
+      services.ly.enableGnomeKeyring = true;
+    };
   };
 }

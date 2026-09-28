@@ -14,6 +14,7 @@
     ./display-managers/sddm
 
     ./hardware/bluetooth
+    ./hardware/fingerprint-reader
     ./hardware/network
     ./hardware/nvidia
     ./hardware/sound

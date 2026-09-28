@@ -20,10 +20,11 @@ in {
 
   core = {
     nix.flakes.enable = true;
-    display-manager.ly.enable = true;
+    display-manager.sddm.enable = true;
 
     # Hardware
     hardware = {
+      fingerprint-reader.enable = true;
       network = {
         enable = true;
         hostName = computerName;

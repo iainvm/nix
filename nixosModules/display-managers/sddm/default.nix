@@ -34,8 +34,16 @@
         embeddedTheme = "astronaut";
       })
     ];
-
     core.system.keyring.enable = true;
-    security.pam.services.sddm.enableGnomeKeyring = true;
+
+    security.pam = {
+      services.login = {
+        enableGnomeKeyring = true;
+        fprintAuth =
+          lib.mkIf config.core.hardware.fingerprint-reader.enable
+          true;
+      };
+      services.sddm.enableGnomeKeyring = true;
+    };
   };
 }
