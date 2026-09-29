@@ -1,4 +1,4 @@
-{nixpkgs, ...}: let
+{nixpkgs, inputs, ...}: let
   computerName = "hephaestus";
   pkgs = nixpkgs.legacyPackages."x86_64-linux";
 in {
@@ -37,6 +37,7 @@ in {
         #  device-id = "alsa_input.usb-SteelSeries_Arctis_Nova_7-00.mono-fallback";
         #};
       };
+      openlogi.enable = true;
       bluetooth.enable = true;
       thunderbolt.enable = true;
     };

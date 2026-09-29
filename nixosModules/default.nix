@@ -17,6 +17,7 @@
     ./hardware/fingerprint-reader
     ./hardware/network
     ./hardware/nvidia
+    ./hardware/openlogi
     ./hardware/sound
     ./hardware/thunderbolt
 
