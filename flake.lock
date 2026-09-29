@@ -690,11 +690,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1790570935,
-        "narHash": "sha256-meDjn8IvYZpLxQpYOPB14+U/RI7/IbAT3JdMI9f0zMY=",
+        "lastModified": 1790659046,
+        "narHash": "sha256-FfNovzeXJEcVYFi28ZRtyzs58MLgT1+4Kvk+gwSb3MQ=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "8df87d543439ecba7eb58a10ac34e0760ae1a078",
+        "rev": "061d4dbbe3556135301f07e8a0e67aea3ea27dc7",
         "type": "github"
       },
       "original": {
@@ -805,11 +805,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1790463110,
-        "narHash": "sha256-hKlVl12B1dF0Q5vd9dY3lIJM5mFGWYSlXwSLAqHZ1+s=",
+        "lastModified": 1790578696,
+        "narHash": "sha256-ZoxIApko70jCdbH3l20HWXOBaT2HZd87orzd2yJ9dVE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e158d9ed9b51c98974c5e66e1ba1c9e0255fecaa",
+        "rev": "7a0f122f5090cf4c2ade2a13a0e229d4e19ba71f",
         "type": "github"
       },
       "original": {
@@ -843,11 +843,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790582616,
-        "narHash": "sha256-UfXR7sYdpA2GrmmlmmBmquLWVfRrwtWOXxG4eMXsB9Y=",
+        "lastModified": 1790682773,
+        "narHash": "sha256-QBxXZtKEk+2I3HCB+jDD9vV0/0Kl7H4BfKwZ/NszH0w=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "87457acc04f1393b136a92413f1860c4080ded16",
+        "rev": "49529cf352b15e6f7c6f08b3edd5102bcebafb33",
         "type": "github"
       },
       "original": {
@@ -889,11 +889,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1790504541,
-        "narHash": "sha256-RMXC+4B/WFjp6MmBg4J/QwUiOD3DZuFg3k7zeau7wE8=",
+        "lastModified": 1790680100,
+        "narHash": "sha256-6eWjf0mblaJnleOjMHW7yXggD4UZ0oid/ejb7UpMizU=",
         "owner": "karaolidis",
         "repo": "nix-obsidian-extensions",
-        "rev": "111568e79d4a29f76ca837fd8f457f184270e0bc",
+        "rev": "e2b4ea5020183d967c7e2c6a50439caccc4108ba",
         "type": "github"
       },
       "original": {
@@ -910,11 +910,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1790673897,
-        "narHash": "sha256-qR9TFiKu5g80DN8h9KOIdLi6rIw2j+YEyIUjs5Tq7ZQ=",
+        "lastModified": 1790680753,
+        "narHash": "sha256-iYjF2nUWJ9oduk//wdM3T5d6ESSXWPumdo7wx0iXDoM=",
         "owner": "AprilNEA",
         "repo": "OpenLogi",
-        "rev": "1dd6864015f1769f57519b162ea77b4f05f8b6e7",
+        "rev": "858a483938694b2caa93b263b7debf885789b51a",
         "type": "github"
       },
       "original": {
