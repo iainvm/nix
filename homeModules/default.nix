@@ -39,5 +39,6 @@
 
     ./system/dunst
     ./system/hyprland
+    ./system/myshell
   ];
 }

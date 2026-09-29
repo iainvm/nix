@@ -5,10 +5,7 @@
 in {
   imports = [
     inputs.self.homeModules.default
-    inputs.myshell.homeManagerModules.default
   ];
-
-  myshell.enable = true;
 
   # Dotfiles
   home.file = {
@@ -30,6 +27,7 @@ in {
       enable = true;
       settings = ./files/hyprland/hyprland.lua;
     };
+    myshell.enable = true;
   };
 
   fonts = {
