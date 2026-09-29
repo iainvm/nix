@@ -672,11 +672,11 @@
         "qml-language-server": "qml-language-server"
       },
       "locked": {
-        "lastModified": 1790583654,
-        "narHash": "sha256-e5mBN4HP0ZuQsSPP5e8BX0Ntvm8ls4mln9By6H4fsbI=",
+        "lastModified": 1790680208,
+        "narHash": "sha256-vEGonYQu714PObx8Q9WsVUVZDaSJKsdKHrj4WKb3QO0=",
         "owner": "iainvm",
         "repo": "myshell",
-        "rev": "cb7572b8a356e2b31668162dffacf7ef9a55e3a4",
+        "rev": "3fa89d1ca254e6371158364da390c92bc2b6e16c",
         "type": "github"
       },
       "original": {
